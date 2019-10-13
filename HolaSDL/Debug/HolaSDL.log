@@ -1,5 +1,21 @@
-﻿  Game.cpp
+﻿  Arrow.cpp
+  Bow.cpp
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.cpp(14,26): warning C4244:  '=': conversión de 'double' a 'int'; posible pérdida de datos
+  Game.cpp
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.cpp(15,26): warning C4244:  '=': conversión de 'double' a 'int'; posible pérdida de datos
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\crtdbg.h(303,1): warning C4005:  '_malloca': redefinición de macro
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\malloc.h(122): message :  vea la definición anterior de '_malloca'
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(5,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-  HolaSDL.vcxproj -> C:\Users\forev\OneDrive\Desktop\PracticaOne\bin\HolaSDLDebug.exe
+  main.cpp
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(5,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\crtdbg.h(303,1): warning C4005:  '_malloca': redefinición de macro
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\malloc.h(122): message :  vea la definición anterior de '_malloca'
+  Texture.cpp
+  Vector2D.cpp
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(5,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\Vector2D.cpp(18,9): warning C4244:  '=': conversión de 'double' a 'uint'; posible pérdida de datos
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\Vector2D.cpp(19,9): warning C4244:  '=': conversión de 'double' a 'uint'; posible pérdida de datos
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\Vector2D.cpp(37,10): warning C4244:  '=': conversión de 'double' a 'uint'; posible pérdida de datos
+  Generando código...
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\Vector2D.cpp(38,10): warning C4244:  '=': conversión de 'double' a 'uint'; posible pérdida de datos
+  LINK : no se encontró C:\Users\anass\Desktop\PracticaOne\bin\HolaSDLDebug.exe o no lo generó el último vínculo incremental; ejecutando vínculo completo
+  HolaSDL.vcxproj -> C:\Users\anass\Desktop\PracticaOne\bin\HolaSDLDebug.exe
