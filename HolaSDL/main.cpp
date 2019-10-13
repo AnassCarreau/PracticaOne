@@ -1,9 +1,9 @@
-
 #include "SDL.h"
 #include "SDL_image.h"
 #include "checkML.h"
 #include <iostream>
 #include <vector>
+#include "Game.h"
 
 
 using namespace std;
@@ -24,7 +24,7 @@ void firstTest() {
 		cout << "Error cargando SDL" << endl;
 	else {
 		//direcciones de las imagenes que vamos a abrir
-		string filename = "..\\images\\background1.png";
+		string filename = "..\\images\\bg1.png";
 		string filename2 = "..\\images\\dog.png";
 		string filename3 = "..\\images\\helicopter.png";
 		//crecion de las texturas con dichas imagenes
@@ -34,7 +34,7 @@ void firstTest() {
 		SDL_Texture* textureFondo;
 		SDL_Texture* texturePerraco;
 		SDL_Texture* textureHelicoptero;
-		
+
 		textureFondo = SDL_CreateTextureFromSurface(renderer, fondo);
 		texturePerraco = SDL_CreateTextureFromSurface(renderer, perraco);
 		textureHelicoptero = SDL_CreateTextureFromSurface(renderer, helicopterito);
@@ -42,7 +42,7 @@ void firstTest() {
 		SDL_FreeSurface(fondo);
 		SDL_FreeSurface(perraco);
 		SDL_FreeSurface(helicopterito);
-		
+
 		//Para saber el tamaño de la textura del perro
 		int textW, textH;
 		SDL_QueryTexture(texturePerraco, nullptr, nullptr, &textW, &textH);
@@ -68,7 +68,7 @@ void firstTest() {
 		destRect2.h = textFrameH2;
 		destRect2.x = 600;
 		destRect2.y = 180;
-		
+
 		bool exit = false;
 		int i = 0;
 		int j = 799;
@@ -85,7 +85,7 @@ void firstTest() {
 
 			startTime = SDL_GetTicks();
 
-			
+
 			destRect2.x = j;
 
 			//este segundo bucle nos permite cerrar la ventana SDL sin necesidad de esperar el SDL_Delay
@@ -116,7 +116,7 @@ void firstTest() {
 					else if (event.key.keysym.sym == SDLK_g) {
 
 					}
-				}	
+				}
 
 			}
 			SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
@@ -128,14 +128,14 @@ void firstTest() {
 			SDL_RenderCopy(renderer, textureFondo, nullptr, nullptr);
 			SDL_RenderCopy(renderer, texturePerraco, &srcRect, &destRect);
 			SDL_RenderCopy(renderer, textureHelicoptero, &srcRect2, &destRect2);
-			
+
 			//muestra la escena
 			SDL_RenderPresent(renderer);
 
 			frameTime = SDL_GetTicks() - startTime;
 			if (frameTime < FRAME_RATE)
 				SDL_Delay(FRAME_RATE - frameTime); // Suspende por el tiempo restante
-		}		
+		}
 	}
 	//finalizacion
 	SDL_DestroyRenderer(renderer);
@@ -143,7 +143,8 @@ void firstTest() {
 	SDL_Quit();
 }
 
-int main(int argc, char* argv[]){
-	firstTest();
+int main(int argc, char* argv[]) {
+	//firstTest();
+	Game();
 	return 0;
 }

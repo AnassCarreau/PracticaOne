@@ -1,4 +1,4 @@
-#ifndef ARROW_H_
+/*#ifndef ARROW_H_
 #define ARROW_H_
 
 #include "SDL.h" // Windows
@@ -15,5 +15,5 @@ private:
 public:
 
 };
-#endif
+#endif*/
 

@@ -1,8 +1,10 @@
 #include "Vector2D.h"
 #include <math.h>
 
+typedef unsigned int uint;
+
 Vector2D::Vector2D() : x(), y() {}
-Vector2D::Vector2D(double x, double y) : x(x), y(y) {}
+Vector2D::Vector2D(uint x, uint y) : x(x), y(y) {}
 
 double Vector2D::getX() const {
 	return x;

@@ -7,15 +7,15 @@
 
 #include <iostream>
 
-using Point2D = Vector2D;
+typedef unsigned int uint;
 
 class Vector2D {
 private:
-	double x;
-	double y;
+	uint x;
+	uint y;
 public:
 	Vector2D();
-	Vector2D(double x, double y);
+	Vector2D(uint x,  uint y);
 	double getX() const;
 	double getY() const;
 	void normalize();
@@ -24,5 +24,7 @@ public:
 	Vector2D operator-(const Vector2D& v) const;
 	double operator*(const Vector2D& d) const;
 	friend std::ostream& operator<<(std::ostream& os, const Vector2D& v);
-};
+}; using Point2D = Vector2D;
+
+
 #endif // También lo escriben los IDEs (va con el #ifndef de arriba)

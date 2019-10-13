@@ -9,22 +9,25 @@
 //#include "Game.h"
 #include <iostream>
 
+typedef unsigned int uint;
+
 class Bow
 {
 private:
-	Point2D esqIzq;
-	double ancho, alto;
-	Vector2D velocidad;
+	Point2D esqIzq = Point2D(0,0); 
+	uint w = 0; // width
+	uint h = 0; // height
+	Vector2D velocidad = Vector2D(0,0);
 	//Arrow* flechaCarg;
-	Texture* textura;
+	Texture* arco = nullptr;
 	//Game* juego;
-	bool cargado;
+	bool cargado = false;
 public:
 	Bow();
-	Bow(Point2D esqIzq, double ancho, double alto, Vector2D vel, Texture* textura, bool cargado);
+	Bow(Point2D esqIzq, uint ancho, uint alto, Vector2D vel, Texture* textura, bool cargado);
 	void render();
 	void update();
-	void handleEvents();
+	void handleEvents(SDL_Event& event);
 };
 #endif
 
