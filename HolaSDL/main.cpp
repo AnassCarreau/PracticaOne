@@ -3,6 +3,7 @@
 #include "checkML.h"
 #include <iostream>
 #include <vector>
+#include "checkML.h"
 #include "Game.h"
 
 
@@ -143,6 +144,7 @@ void firstTest() {
 
 int main(int argc, char* argv[]) {
 	//firstTest();
+
 	Game();
 	return 0;
 }

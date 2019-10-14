@@ -1,13 +1,9 @@
 #ifndef BOW_H_
 #define BOW_H_
-
-#include "SDL.h" // Windows
-#include "SDL_image.h" // Windows
 #include "Vector2D.h"
-//#include "Arrow.h"
 #include "Texture.h"
-//#include "Game.h"
 #include <iostream>
+class Game;
 
 typedef unsigned int uint;
 
@@ -20,7 +16,7 @@ private:
 	Vector2D velocidad = Vector2D(0,0);
 	//Arrow* flechaCarg;
 	Texture* arco = nullptr;
-	//Game* juego;
+	Game* juego;
 	bool cargado = false;
 public:
 	Bow();
