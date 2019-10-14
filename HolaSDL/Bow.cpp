@@ -19,3 +19,7 @@ Bow::Bow(Point2D esqIzq, uint ancho, uint alto, Vector2D vel, Texture* textura, 
  void Bow::update() {
 
  }
+
+ void Bow::handleEvents(SDL_Event& event) {
+
+ }

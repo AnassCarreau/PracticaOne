@@ -1,9 +1,11 @@
 #include "Game.h"
 #include <string>
+#include <iostream>
 using namespace std;
+typedef unsigned int uint;
 /*enum TextureNames ("..\\images\\bg1.png", };
 enum { background= "..\\images\\bg1.png", bow, arrow };*/
-const char* types[] = { "..\\images\\bg1.png", "..\\images\\bow2.png", "..\\images\\arrow1.png" };
+//const char* types[] = { "..\\images\\bg1.png", "..\\images\\bow2.png", "..\\images\\arrow1.png" };
 
 Game::Game() {
 	// We first initialize SDL
@@ -12,12 +14,12 @@ Game::Game() {
 		WIN_WIDTH, WIN_HEIGHT, SDL_WINDOW_SHOWN);
 	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 	if (window == nullptr || renderer == nullptr) throw "Error loading the SDL window or renderer";
-	// We now create the textures
+
+	//Cracion de las texturas
 	for (uint i = 0; i < NUM_TEXTURES; i++) {
-		
-		textures[i]->load(types[i], 1, 1);
+		textures[i]->load(imags[i].filename, imags[i].nRows, imags[i].nCols);
 	}
-	// We finally create the game objects
+	//Cracion de los gameobjects
 	bow = new Bow();
 }
 Game::~Game() {
@@ -38,6 +40,7 @@ void Game::update() {
 }
 void Game::render() const {
 	SDL_RenderClear(renderer);
+	textures[0]->render(/*destRect*/, SDL_FLIP_NONE);
 	bow->render();
 	
 		SDL_RenderPresent(renderer);

@@ -84,8 +84,6 @@ void firstTest() {
 		while (!exit) {
 
 			startTime = SDL_GetTicks();
-
-
 			destRect2.x = j;
 
 			//este segundo bucle nos permite cerrar la ventana SDL sin necesidad de esperar el SDL_Delay
