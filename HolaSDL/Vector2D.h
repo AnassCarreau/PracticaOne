@@ -7,15 +7,14 @@
 
 #include <iostream>
 
-typedef unsigned int uint;
 
 class Vector2D {
 private:
-	uint x;
-	uint y;
+	double x;
+	double y;
 public:
 	Vector2D();
-	Vector2D(uint x,  uint y);
+	Vector2D(double x,  double y);
 	double getX() const;
 	double getY() const;
 	void normalize();

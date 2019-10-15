@@ -27,6 +27,7 @@ private:
 	// uint winWidth, winHeight; // También podrían estar aquí
 	Bow* bow = nullptr; 
 	Balloon* globo = nullptr;
+	Balloon* globos[10];
 
 	ImagenesAtributos imags[NUM_TEXTURES] = { {"..\\images\\bg1.png", 1, 1},{"..\\images\\Bow2.png", 1, 1},{"..\\images\\balloons.png", 7, 6} };
 public:

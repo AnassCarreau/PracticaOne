@@ -2,6 +2,7 @@
 #include "checkML.h"
 #include <string>
 #include <iostream>
+#include <random>
 using namespace std;
 typedef unsigned int uint;
 
@@ -24,7 +25,8 @@ Game::Game() {
 	//Creacion de los gameobjects
 
 	bow = new Bow(Point2D(0, 0), 80, 80, Vector2D(0, 10), textures[1], false);
-	globo = new Balloon(Point2D{ 600,520}, 80, 80, Vector2D(0, 1), textures[2], false, 0, nullptr);
+	globo = new Balloon(Point2D{ 600,520}, 80, 80, Vector2D(0, 0.01), textures[2], false, 0, nullptr);
+	globos[0]= new Balloon(Point2D{ 500,580 }, 80, 80, Vector2D(0, 0.01), textures[2], false, 0, nullptr);
 	run();
 }
 Game::~Game() {
@@ -42,17 +44,21 @@ Game::~Game() {
 void Game::update() {
 	bow->update();
 	globo->update();
+	globos[0]->update();
+
 	
 }
+
 void Game::render() const {
 
 	SDL_RenderClear(renderer);
 	SDL_Rect bk;
 	bk = { 0,0,WIN_WIDTH,WIN_HEIGHT };
-
+	
 	textures[0]->render(bk, SDL_FLIP_NONE);
 	bow->render();
 	globo->render();
+	globos[0]->render();
 
 		
 		SDL_RenderPresent(renderer);
