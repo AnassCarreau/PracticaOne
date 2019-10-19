@@ -3,6 +3,7 @@
 #include <string>
 #include <iostream>
 #include <random>
+#include <vector>
 using namespace std;
 typedef unsigned int uint;
 
@@ -26,7 +27,7 @@ Game::Game() {
 
 	bow = new Bow(Point2D(0, 0), 80, 80, Vector2D(0, 10), textures[1], false);
 	globo = new Balloon(Point2D{ 600,520}, 80, 80, Vector2D(0, 0.01), textures[2], false, 0, nullptr);
-	globos[0]= new Balloon(Point2D{ 500,580 }, 80, 80, Vector2D(0, 0.01), textures[2], false, 0, nullptr);
+	//globos[0]= new Balloon(Point2D{ 500,580 }, 80, 80, Vector2D(0, 0.01), textures[2], false, 0, nullptr);
 	run();
 }
 Game::~Game() {
@@ -44,7 +45,7 @@ Game::~Game() {
 void Game::update() {
 	bow->update();
 	globo->update();
-	globos[0]->update();
+	//globos[0]->update();
 
 	
 }
@@ -58,7 +59,7 @@ void Game::render() const {
 	textures[0]->render(bk, SDL_FLIP_NONE);
 	bow->render();
 	globo->render();
-	globos[0]->render();
+	//globos[0]->render();
 
 		
 		SDL_RenderPresent(renderer);
@@ -70,4 +71,10 @@ void Game::handleEvents() {
 		else { bow->handleEvents(event); }
 		
 	}
+}
+
+void generateBalloons() {
+	int color = rand() % 9;
+	uint posX = rand() % (800 - 200);
+
 }

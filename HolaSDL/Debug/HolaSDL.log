@@ -1,4 +1,17 @@
-﻿  Game.cpp
-C:\Windows Kits\10\Include\10.0.18362.0\ucrt\crtdbg.h(303,1): warning C4005:  '_malloca': macro redefinition
-C:\Windows Kits\10\Include\10.0.18362.0\ucrt\malloc.h(122): message :  see previous definition of '_malloca'
-  HolaSDL.vcxproj -> U:\hlocal\PracticaOne\bin\HolaSDLDebug.exe
+﻿  Arrow.cpp
+  Balloon.cpp
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Balloon.cpp(16,25): warning C4244:  '=': conversión de 'double' a 'int'; posible pérdida de datos
+  Bow.cpp
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Balloon.cpp(18,25): warning C4244:  '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.cpp(16,26): warning C4244:  '=': conversión de 'double' a 'int'; posible pérdida de datos
+  Game.cpp
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.cpp(23,10): warning C4244:  'inicializando': conversión de 'double' a 'uint'; posible pérdida de datos
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\crtdbg.h(303,1): warning C4005:  '_malloca': redefinición de macro
+  main.cpp
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\malloc.h(122): message :  vea la definición anterior de '_malloca'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\crtdbg.h(303,1): warning C4005:  '_malloca': redefinición de macro
+  Texture.cpp
+  Vector2D.cpp
+  Generando código...
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\malloc.h(122): message :  vea la definición anterior de '_malloca'
+  HolaSDL.vcxproj -> C:\Users\forev\OneDrive\Desktop\PracticaOne\bin\HolaSDLDebug.exe
