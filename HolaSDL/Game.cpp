@@ -25,9 +25,7 @@ Game::Game() {
 	}
 	//Creacion de los gameobjects
 
-	bow = new Bow(Point2D(0, 0), 80, 80, Vector2D(0, 10), textures[1], false);
-	globo = new Balloon(Point2D{ 600,520}, 80, 80, Vector2D(0, 0.01), textures[2], false, 0, nullptr);
-	//globos[0]= new Balloon(Point2D{ 500,580 }, 80, 80, Vector2D(0, 0.01), textures[2], false, 0, nullptr);
+	bow = new Bow(Point2D(0, 0), 80, 80, Vector2D(10, 10), textures[1], false);
 	run();
 }
 Game::~Game() {
@@ -44,10 +42,7 @@ Game::~Game() {
 }
 void Game::update() {
 	bow->update();
-	globo->update();
-	//globos[0]->update();
-
-	
+	generateBalloons();
 }
 
 void Game::render() const {
@@ -58,23 +53,35 @@ void Game::render() const {
 	
 	textures[0]->render(bk, SDL_FLIP_NONE);
 	bow->render();
-	globo->render();
-	//globos[0]->render();
-
-		
-		SDL_RenderPresent(renderer);
+	for (int i = 0; i < balloons.size(); i++)
+	{
+		balloons[i]->render();
+	}	
+	SDL_RenderPresent(renderer);
 }
 void Game::handleEvents() {
 	SDL_Event event;
 	while (SDL_PollEvent(&event) && !exit) {
 		if (event.type == SDL_QUIT) exit = true;
 		else { bow->handleEvents(event); }
-		
 	}
 }
 
-void generateBalloons() {
-	int color = rand() % 9;
-	uint posX = rand() % (800 - 200);
-
+void Game::generateBalloons() {
+	uint32_t startTime, frameTime;
+	//constante que define los milisegundos a partir de los que se actualiza el juego
+	const int FRAME_RATE = 100;
+	int h = rand() % 320+400;
+	startTime = SDL_GetTicks();
+	frameTime = SDL_GetTicks() - startTime;
+	if (frameTime < FRAME_RATE) {
+		globo = new Balloon(Point2D{ (double)h,520 }, 80, 80, Vector2D(0, 1), textures[2], false, 0, nullptr);
+		balloons.push_back(globo);
+		for (int i = 0; i < balloons.size(); i++) {
+			balloons[i]->update();
+		}
+		//SDL_Delay(FRAME_RATE - frameTime); // Suspende por el tiempo restante
+	}
+		
+	
 }

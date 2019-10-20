@@ -39,5 +39,7 @@ public:
 	void handleEvents();
 	void update();
 	void generateBalloons();
+	void destroyBalloons();
+
 };
 #endif
