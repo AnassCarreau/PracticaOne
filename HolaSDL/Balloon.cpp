@@ -8,8 +8,8 @@ typedef unsigned int uint;
 
 Balloon::Balloon() :esqIzq(), w(), h(), velocidad(), globo(), explotado(), instPinchazo(), tocando() {}
 
-Balloon::Balloon(Point2D esqIzq, uint ancho, uint alto, Vector2D vel, Texture* textura, bool explotado, uint instPinchazo, Game* tocando) 
-	: esqIzq(esqIzq), w(ancho), h(alto), velocidad(vel), globo(textura), explotado(explotado), instPinchazo(instPinchazo), tocando(tocando){}
+Balloon::Balloon(Point2D esqIzq, uint ancho, uint alto, Vector2D vel, Texture* textura, bool explotado, uint instPinchazo, Game* tocando, int color) 
+	: esqIzq(esqIzq), w(ancho), h(alto), velocidad(vel), globo(textura), explotado(explotado), instPinchazo(instPinchazo), tocando(tocando), color(color){}
 
 void Balloon::render() {
 	SDL_Rect srcDest;
@@ -17,7 +17,7 @@ void Balloon::render() {
 	srcDest.y = esqIzq.getY();
 	srcDest.w = w;
 	srcDest.h = h;
-	globo->renderFrame(srcDest, 0, 0, 0, SDL_FLIP_NONE);
+	globo->renderFrame(srcDest, color, 0, 0, SDL_FLIP_NONE);
 }
 
 void Balloon::update() {

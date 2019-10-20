@@ -34,15 +34,25 @@ Game::~Game() {
 	SDL_DestroyWindow(window);
 	SDL_Quit();
 }void Game::run() {
+	uint32_t startTime, frameTime; //variables para el control del tiempo
+	startTime = SDL_GetTicks(); //tiempo inicial en milisegundos
+	const int FRAME_RATE = 2000; //cada 2 segundos genero un globo
 	while (!exit) { // Falta el control de tiempo
 		handleEvents();
-		update();
-		render();
+		frameTime = SDL_GetTicks() - startTime; // Tiempo desde última actualización
+		if (frameTime >= FRAME_RATE) {
+			generateBalloons(); //genera globo
+			startTime = SDL_GetTicks();
+		}
+		update(); //actualiza los objetos del juego
+		render(); //renderiza los objetos del juego
 	}
 }
 void Game::update() {
 	bow->update();
-	generateBalloons();
+	for (int i = 0; i < balloons.size(); i++) {
+		balloons[i]->update();
+	}
 }
 
 void Game::render() const {
@@ -68,20 +78,8 @@ void Game::handleEvents() {
 }
 
 void Game::generateBalloons() {
-	uint32_t startTime, frameTime;
-	//constante que define los milisegundos a partir de los que se actualiza el juego
-	const int FRAME_RATE = 100;
 	int h = rand() % 320+400;
-	startTime = SDL_GetTicks();
-	frameTime = SDL_GetTicks() - startTime;
-	if (frameTime < FRAME_RATE) {
-		globo = new Balloon(Point2D{ (double)h,520 }, 80, 80, Vector2D(0, 1), textures[2], false, 0, nullptr);
-		balloons.push_back(globo);
-		for (int i = 0; i < balloons.size(); i++) {
-			balloons[i]->update();
-		}
-		//SDL_Delay(FRAME_RATE - frameTime); // Suspende por el tiempo restante
-	}
-		
-	
+	int color = rand() % 9;
+	globo = new Balloon(Point2D{(double)h,520 }, 80, 80, Vector2D(0, 0.05), textures[2], false, 0, nullptr, color);
+	balloons.push_back(globo);
 }

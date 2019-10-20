@@ -18,9 +18,10 @@ private:
 	uint instPinchazo = 0;
 	Texture* globo = nullptr;
 	Game* tocando = nullptr;
+	int color = 0;
 public:
 	Balloon();
-	Balloon(Point2D esqIzq, uint ancho, uint alto, Vector2D vel, Texture* textura, bool explotado, uint instPinchazo, Game* tocando);
+	Balloon(Point2D esqIzq, uint ancho, uint alto, Vector2D vel, Texture* textura, bool explotado, uint instPinchazo, Game* tocando, int color);
 	void render();
 	void update();
 };
