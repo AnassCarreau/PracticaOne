@@ -6,12 +6,13 @@
 #include "checkML.h"
 #include "Balloon.h"
 #include "Bow.h"
+#include "Arrow.h"
 #include <vector>
 typedef unsigned int uint;
 
 const uint WIN_WIDTH = 800;
 const uint WIN_HEIGHT = 600;
-const uint NUM_TEXTURES = 3;
+const uint NUM_TEXTURES = 5;
 struct ImagenesAtributos {
 	string filename;
 	uint nRows, nCols;
@@ -26,11 +27,14 @@ private:
 	int flechas;
 	Texture* textures[NUM_TEXTURES];
 	// uint winWidth, winHeight; // También podrían estar aquí
-	Bow* bow = nullptr; 
+	Bow* bow = nullptr;
 	Balloon* globo = nullptr;
+	Arrow* flecha = nullptr;
 	vector<Balloon*> balloons;
+	void generateBalloons();
 
-	ImagenesAtributos imags[NUM_TEXTURES] = { {"..\\images\\bg1.png", 1, 1},{"..\\images\\Bow2.png", 1, 1},{"..\\images\\balloons.png", 7, 6} };
+
+	ImagenesAtributos imags[NUM_TEXTURES] = { {"..\\images\\bg1.png", 1, 1},{"..\\images\\Bow2.png", 1, 1},{"..\\images\\balloons.png", 7, 6},{"..\\images\\Bow1.png", 1, 1},{"..\\images\\Arrow1.png",1,1} };
 public:
 	Game();
 	~Game();
@@ -38,8 +42,9 @@ public:
 	void render() const;
 	void handleEvents();
 	void update();
-	void generateBalloons();
-	void destroyBalloons();
+	void CargaFlecha(Point2D pos,Arrow*flecha);
+	void DisparaFlecha(Point2D pos);
+	bool MiraChoques(Point2D &globo);
 
 };
 #endif

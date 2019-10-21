@@ -2,7 +2,7 @@
 #define BOW_H_
 #include "Vector2D.h"
 #include "Texture.h"
-#include <iostream>
+#include"Arrow.h"
 class Game;
 
 typedef unsigned int uint;
@@ -16,14 +16,16 @@ private:
 	Vector2D velocidad = Vector2D(0,0);
 	//Arrow* flechaCarg;
 	Texture* arco = nullptr;
-	Game* juego;
+	Game* juego=nullptr;
+	Arrow* flecha;
 	bool cargado = false;
 public:
 	Bow();
-	Bow(Point2D esqIzq, uint ancho, uint alto, Vector2D vel, Texture* textura, bool cargado);
+	Bow(Point2D esqIzq, uint ancho, uint alto, Vector2D vel, Texture* textura, bool cargado,Game* game,Arrow*flechaCargada);
 	void render();
 	void update();
 	void handleEvents(SDL_Event& event);
+	
 };
 #endif
 

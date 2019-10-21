@@ -23,7 +23,8 @@ public:
 	Balloon();
 	Balloon(Point2D esqIzq, uint ancho, uint alto, Vector2D vel, Texture* textura, bool explotado, uint instPinchazo, Game* tocando, int color);
 	void render();
-	void update();
+	bool update();
+	Point2D Posglobo();
 };
 #endif
 

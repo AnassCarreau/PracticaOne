@@ -1,19 +1,23 @@
-/*#ifndef ARROW_H_
+#ifndef ARROW_H_
 #define ARROW_H_
 
-#include "SDL.h" // Windows
-#include "SDL_image.h" // Windows
 #include "Vector2D.h"
-#include <iostream>
-
+#include "Texture.h"
+class Game;
 class Arrow
 {
 private:
 	Point2D esqIzq;
 	double ancho, alto;
 	Vector2D velocidad;
+	Texture* flecha;
+	
 public:
-
+	Arrow();
+	Arrow(Point2D esqIzq, uint ancho, uint alto, Vector2D vel, Texture* textura);
+	void render();
+	bool update();
+	Point2D PosFlecha();
 };
-#endif*/
+#endif
 

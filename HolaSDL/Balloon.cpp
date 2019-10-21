@@ -20,11 +20,21 @@ void Balloon::render() {
 	globo->renderFrame(srcDest, color, 0, 0, SDL_FLIP_NONE);
 }
 
-void Balloon::update() {
+bool Balloon::update() {
 	double i = esqIzq.getX();
 	double j = esqIzq.getY();
-	if (i >= 0 && i <= WIN_WIDTH && j >= (-100) && j <= WIN_WIDTH) {
-		esqIzq = Point2D(i + velocidad.getX(), j - velocidad.getY());
-	}
 	
+	//explotado =tocando->MiraChoques(esqIzq);
+	if (i >= 0 && i <= WIN_WIDTH && j >= (-100) && j <= WIN_WIDTH && !explotado) {
+		esqIzq = Point2D(i + velocidad.getX(), j - velocidad.getY());
+		return false;
+	}
+	else
+	{
+		return true;
+	}
 }
+	Point2D	Balloon::Posglobo() {
+		return esqIzq.operator+(Vector2D(0, h / 2));
+ }
+	
