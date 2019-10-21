@@ -8,7 +8,7 @@ class Arrow
 {
 private:
 	Point2D esqIzq;
-	double ancho, alto;
+	uint ancho, alto;
 	Vector2D velocidad;
 	Texture* flecha;
 	

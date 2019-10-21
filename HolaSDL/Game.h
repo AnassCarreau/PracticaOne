@@ -30,6 +30,7 @@ private:
 	Bow* bow = nullptr;
 	Balloon* globo = nullptr;
 	Arrow* flecha = nullptr;
+	vector<Arrow*> arrows;
 	vector<Balloon*> balloons;
 	void generateBalloons();
 

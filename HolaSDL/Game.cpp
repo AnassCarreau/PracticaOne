@@ -23,15 +23,8 @@ Game::Game() {
 		textures[i] = new Texture(renderer, imags[i].filename, imags[i].nRows, imags[i].nCols);
 		
 	}
-	//Creacion de los gameobjects
+	//Creacion de los gameobjects (los globos y las flechas los generamos mediante un metodo que los genera en un vector)
 	bow = new Bow(Point2D(0, 0), 80, 80, Vector2D(10, 10), textures[1], false, this, nullptr);
-	globo=new Balloon(Point2D(0, 0), 80, 80, Vector2D(10, 10), textures[2], false, 0,this, 0);
-
-	flecha = new Arrow(Point2D(500, 500), 10, 10, Vector2D(0, 10), textures[4]);
-
-    
-
-	
 	run();
 }
 Game::~Game() {
@@ -56,9 +49,11 @@ Game::~Game() {
 }
 void Game::update() {
 	bow->update();
-	flecha->update();
 	for (int i = 0; i < balloons.size(); i++) {
 		balloons[i]->update();
+	}
+	for (int j = 0; j < arrows.size(); j++) {
+		arrows[j]->update();
 	}
 }
 
@@ -70,7 +65,10 @@ void Game::render() const {
 	
 	textures[0]->render(bk, SDL_FLIP_NONE);
 	bow->render();
-	flecha->render();
+	for (int j = 0; j < arrows.size(); j++)
+	{
+		arrows[j]->render();
+	}
 	for (int i = 0; i < balloons.size(); i++)
 	{
 		balloons[i]->render();
@@ -91,10 +89,6 @@ void Game::generateBalloons() {
 	int color = rand() % 9;
 	globo = new Balloon(Point2D{(double)h,520 }, 80, 80, Vector2D(0, 0.05), textures[2], false, 0, nullptr, color);
 	balloons.push_back(globo);
-	
-	//cout << balloons.size();
-	
-	
 }
 void Game::CargaFlecha(Point2D pos,Arrow* flecha)
 {
@@ -102,9 +96,10 @@ void Game::CargaFlecha(Point2D pos,Arrow* flecha)
 }
 void Game::DisparaFlecha(Point2D pos) {
 	bow = new Bow(pos, 60, 80, Vector2D(0, 10), textures[1], false,this,flecha);
-	
 	flecha = new Arrow(Point2D(pos.getX(),pos.getY()+30), 90, 20, Vector2D(0.1,0), textures[4]);
+	arrows.push_back(flecha);
 }
+
 /*bool Game::MiraChoques(Point2D &globa) {
 	
 	//Point2D glob = globo->Posglobo();
