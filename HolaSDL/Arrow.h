@@ -17,7 +17,7 @@ public:
 	Arrow(Point2D esqIzq, uint ancho, uint alto, Vector2D vel, Texture* textura);
 	void render();
 	bool update();
-	Point2D PosFlecha();
+	SDL_Rect* PosFlecha();
 };
 #endif
 

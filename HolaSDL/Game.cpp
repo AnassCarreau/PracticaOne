@@ -32,6 +32,7 @@ Game::~Game() {
 	SDL_DestroyRenderer(renderer);
 	SDL_DestroyWindow(window);
 	SDL_Quit();
+
 }void Game::run() {
 	uint32_t startTime, frameTime; //variables para el control del tiempo
 	startTime = SDL_GetTicks(); //tiempo inicial en milisegundos
@@ -51,11 +52,15 @@ void Game::update() {
 	bow->update();
 	for (int i = 0; i < balloons.size(); i++) {
 		if (balloons[i]->update()) {
-			deleteBalloon(balloons[i]);
+			delete balloons[i];
+			balloons.erase(balloons.begin()+i);
 		}
 	}
 	for (int j = 0; j < arrows.size(); j++) {
-		arrows[j]->update();
+		if (arrows[j]->update()) {
+			delete arrows[j];
+			arrows.erase(arrows.begin() + j);
+		}
 	}
 }
 
@@ -89,7 +94,7 @@ void Game::handleEvents() {
 void Game::generateBalloons() {
 	int h = rand() % 320+400;
 	int color = rand() % 9;
-	globo = new Balloon(Point2D{(double)h,600 }, 80, 80, Vector2D(0, 0.05), textures[2], false, 0, nullptr, color);
+	Balloon* globo = new Balloon(Point2D{(double)h,600 }, 80, 80, Vector2D(0, 0.05), textures[2], false, 0, this, color);
 	balloons.push_back(globo);
 }
 void Game::CargaFlecha(Point2D pos,Arrow* flecha)
@@ -97,20 +102,25 @@ void Game::CargaFlecha(Point2D pos,Arrow* flecha)
 	bow = new Bow(pos, 80, 80, Vector2D(0, 10), textures[3], true,this,flecha);
 }
 void Game::DisparaFlecha(Point2D pos) {
+	Arrow* flecha = new Arrow(Point2D(pos.getX(), pos.getY() + 30), 90, 20, Vector2D(0.1, 0), textures[4]);
 	bow = new Bow(pos, 60, 80, Vector2D(0, 10), textures[1], false,this,flecha);
-	flecha = new Arrow(Point2D(pos.getX(),pos.getY()+30), 90, 20, Vector2D(0.1,0), textures[4]);
 	arrows.push_back(flecha);
 }
 
-void Game::deleteBalloon(Balloon* globo) {
-	globo->Textura()->clear();
-}
 
-bool Game::MiraChoques() {
-	Point2D glob = globo->Posglobo();
-	Point2D flech = flecha->PosFlecha();
-	Point2D diff = flech.operator-(glob);
-	return diff.getX() < 5.00 && diff.getY() < 10.00;
+
+bool Game::MiraChoques(SDL_Rect* rectBalloon) {
+	
+		for (int i = 0; i < arrows.size(); i++)
+		{
+			if (SDL_HasIntersection(rectBalloon, arrows[i]->PosFlecha()))
+			{
+				return true;
+			}
+		}
+	
+	return false;
+	
 }
 	
 

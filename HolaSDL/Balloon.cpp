@@ -23,22 +23,20 @@ void Balloon::render() {
 bool Balloon::update() {
 	double i = esqIzq.getX();
 	double j = esqIzq.getY();
-
-	//explotado =tocando->MiraChoques();
-	if ( j >= 300 && j <= WIN_HEIGHT  && !explotado) {
-		esqIzq = Point2D(i , j - velocidad.getY());
+	SDL_Rect* rectBalloon = new SDL_Rect{ (int)esqIzq.getX(),(int)esqIzq.getY(),(int)w,(int)h };
+	explotado = game->MiraChoques(rectBalloon);
+	if ( j >=0 && j <= WIN_HEIGHT  && !explotado) {
+		esqIzq = esqIzq.operator-(velocidad);
 		return false;
 	}
 	else {
+
+		cout << "medieron";
 		return true;
 
 	}
 	
 }
-Point2D	Balloon::Posglobo() {
-	return Point2D(esqIzq.getX(), esqIzq.getY());
- }
-Texture* Balloon::Textura() {
-	return this->globo;
-}
+
+ 
 	

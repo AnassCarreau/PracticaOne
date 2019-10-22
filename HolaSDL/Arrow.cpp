@@ -25,6 +25,9 @@ bool Arrow::update() {
 	return i > 800;
 	
 }
-Point2D Arrow::PosFlecha() {
-	return Point2D(esqIzq.getX(), esqIzq.getY());
+SDL_Rect* Arrow::PosFlecha() {
+	SDL_Rect* rectArrow = new SDL_Rect{ (int)esqIzq.getX(), (int)esqIzq.getY(), (int)ancho,(int) alto };
+
+	return rectArrow;
+
 }
