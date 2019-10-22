@@ -2,6 +2,7 @@
 #define Balloon_H_
 
 #include "Vector2D.h"
+#include "Arrow.h"
 #include <iostream>
 #include "Texture.h"
 class Game;
@@ -25,6 +26,7 @@ public:
 	void render();
 	bool update();
 	Point2D Posglobo();
+	Texture* Textura();
 };
 #endif
 

@@ -32,9 +32,6 @@ private:
 	Arrow* flecha = nullptr;
 	vector<Arrow*> arrows;
 	vector<Balloon*> balloons;
-	void generateBalloons();
-
-
 	ImagenesAtributos imags[NUM_TEXTURES] = { {"..\\images\\bg1.png", 1, 1},{"..\\images\\Bow2.png", 1, 1},{"..\\images\\balloons.png", 7, 6},{"..\\images\\Bow1.png", 1, 1},{"..\\images\\Arrow1.png",1,1} };
 public:
 	Game();
@@ -45,7 +42,9 @@ public:
 	void update();
 	void CargaFlecha(Point2D pos,Arrow*flecha);
 	void DisparaFlecha(Point2D pos);
-	bool MiraChoques(Point2D &globo);
+	bool MiraChoques();
+	void generateBalloons();
+	void deleteBalloon(Balloon* balloon);
 
 };
 #endif

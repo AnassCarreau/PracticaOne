@@ -26,5 +26,5 @@ bool Arrow::update() {
 	
 }
 Point2D Arrow::PosFlecha() {
-	return esqIzq.operator+(Vector2D(ancho,alto/2));
+	return Point2D(esqIzq.getX(), esqIzq.getY());
 }

@@ -2,7 +2,7 @@
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\crtdbg.h(303,1): warning C4005:  '_malloca': redefinición de macro
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\malloc.h(122): message :  vea la definición anterior de '_malloca'
 C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(52,20): warning C4018:  '<': no coinciden signed/unsigned
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(55,20): warning C4018:  '<': no coinciden signed/unsigned
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(68,20): warning C4018:  '<': no coinciden signed/unsigned
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(72,20): warning C4018:  '<': no coinciden signed/unsigned
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(57,20): warning C4018:  '<': no coinciden signed/unsigned
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(70,20): warning C4018:  '<': no coinciden signed/unsigned
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(74,20): warning C4018:  '<': no coinciden signed/unsigned
   HolaSDL.vcxproj -> C:\Users\forev\OneDrive\Desktop\PracticaOne\bin\HolaSDLDebug.exe

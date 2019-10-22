@@ -36,7 +36,7 @@ Game::~Game() {
 	uint32_t startTime, frameTime; //variables para el control del tiempo
 	startTime = SDL_GetTicks(); //tiempo inicial en milisegundos
 	const int FRAME_RATE = 2000; //cada 2 segundos genero un globo
-	while (!exit) { // Falta el control de tiempo
+	while (!exit) { 
 		handleEvents();
 		frameTime = SDL_GetTicks() - startTime; // Tiempo desde última actualización
 		if (frameTime >= FRAME_RATE) {
@@ -50,7 +50,9 @@ Game::~Game() {
 void Game::update() {
 	bow->update();
 	for (int i = 0; i < balloons.size(); i++) {
-		balloons[i]->update();
+		if (balloons[i]->update()) {
+			deleteBalloon(balloons[i]);
+		}
 	}
 	for (int j = 0; j < arrows.size(); j++) {
 		arrows[j]->update();
@@ -87,7 +89,7 @@ void Game::handleEvents() {
 void Game::generateBalloons() {
 	int h = rand() % 320+400;
 	int color = rand() % 9;
-	globo = new Balloon(Point2D{(double)h,520 }, 80, 80, Vector2D(0, 0.05), textures[2], false, 0, nullptr, color);
+	globo = new Balloon(Point2D{(double)h,600 }, 80, 80, Vector2D(0, 0.05), textures[2], false, 0, nullptr, color);
 	balloons.push_back(globo);
 }
 void Game::CargaFlecha(Point2D pos,Arrow* flecha)
@@ -100,13 +102,15 @@ void Game::DisparaFlecha(Point2D pos) {
 	arrows.push_back(flecha);
 }
 
-/*bool Game::MiraChoques(Point2D &globa) {
-	
-	//Point2D glob = globo->Posglobo();
-	Point2D flech = flecha->PosFlecha();
-	Point2D diff = flech.operator-(globo->Posglobo());
-	return diff.getX() < 5.00 && diff.getY() <10.00;
+void Game::deleteBalloon(Balloon* globo) {
+	globo->Textura()->clear();
+}
 
-}*/
+bool Game::MiraChoques() {
+	Point2D glob = globo->Posglobo();
+	Point2D flech = flecha->PosFlecha();
+	Point2D diff = flech.operator-(glob);
+	return diff.getX() < 5.00 && diff.getY() < 10.00;
+}
 	
 
