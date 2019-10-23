@@ -1,9 +1,1 @@
-﻿  Game.cpp
-C:\Windows Kits\10\Include\10.0.18362.0\ucrt\crtdbg.h(303,1): warning C4005:  '_malloca': macro redefinition
-C:\Windows Kits\10\Include\10.0.18362.0\ucrt\malloc.h(122): message :  see previous definition of '_malloca'
-U:\hlocal\PracticaOne\HolaSDL\Game.cpp(53,20): warning C4018:  '<': signed/unsigned mismatch
-U:\hlocal\PracticaOne\HolaSDL\Game.cpp(59,20): warning C4018:  '<': signed/unsigned mismatch
-U:\hlocal\PracticaOne\HolaSDL\Game.cpp(75,20): warning C4018:  '<': signed/unsigned mismatch
-U:\hlocal\PracticaOne\HolaSDL\Game.cpp(79,20): warning C4018:  '<': signed/unsigned mismatch
-U:\hlocal\PracticaOne\HolaSDL\Game.cpp(114,21): warning C4018:  '<': signed/unsigned mismatch
-  HolaSDL.vcxproj -> U:\hlocal\PracticaOne\bin\HolaSDLDebug.exe
+﻿  HolaSDL.vcxproj -> C:\Users\forev\OneDrive\Desktop\PracticaOne\bin\HolaSDLDebug.exe
