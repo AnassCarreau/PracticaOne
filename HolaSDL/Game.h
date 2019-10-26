@@ -42,7 +42,5 @@ public:
 	void DisparaFlecha(Point2D pos);
 	bool MiraChoques(SDL_Rect*rectBalloon);
 	void generateBalloons();
-	
-
 };
 #endif

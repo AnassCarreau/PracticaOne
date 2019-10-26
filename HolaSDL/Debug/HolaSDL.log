@@ -1,1 +1,4 @@
-﻿  HolaSDL.vcxproj -> C:\Users\forev\OneDrive\Desktop\PracticaOne\bin\HolaSDLDebug.exe
+﻿  Balloon.cpp
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Balloon.cpp(16,25): warning C4244:  '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Balloon.cpp(17,25): warning C4244:  '=': conversión de 'double' a 'int'; posible pérdida de datos
+  HolaSDL.vcxproj -> C:\Users\forev\OneDrive\Desktop\PracticaOne\bin\HolaSDLDebug.exe

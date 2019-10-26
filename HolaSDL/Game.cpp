@@ -87,7 +87,8 @@ void Game::handleEvents() {
 	while (SDL_PollEvent(&event) && !exit) {
 		if (event.type == SDL_QUIT) exit = true;
 		else {
-			bow->handleEvents(event ); }
+			bow->handleEvents(event ); 
+		}
 	}
 }
 
@@ -122,5 +123,6 @@ bool Game::MiraChoques(SDL_Rect* rectBalloon) {
 	return false;
 	
 }
+
 	
 

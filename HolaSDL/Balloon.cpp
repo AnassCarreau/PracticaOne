@@ -4,7 +4,7 @@
 #include <random>
 
 typedef unsigned int uint;
-
+const int TIME_PER_FRAME = 100;
 
 Balloon::Balloon() :esqIzq(), w(), h(), velocidad(), globo(), explotado(), instPinchazo(), game() {}
 
@@ -17,6 +17,12 @@ void Balloon::render() {
 	srcDest.y = esqIzq.getY();
 	srcDest.w = w;
 	srcDest.h = h;
+	/*if (explotado) {
+		globo->renderFrame(srcDest, color, int((SDL_GetTicks() / TIME_PER_FRAME) % 6), 0, SDL_FLIP_NONE);
+	}
+	else {
+		globo->renderFrame(srcDest, color, 0, 0, SDL_FLIP_NONE);
+	}*/
 	globo->renderFrame(srcDest, color, 0, 0, SDL_FLIP_NONE);
 }
 
