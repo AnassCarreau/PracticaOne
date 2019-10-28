@@ -17,7 +17,7 @@ private:
 	//Arrow* flechaCarg;
 	Texture* arco = nullptr;
 	Game* juego=nullptr;
-	Arrow* flecha;
+	Arrow* flecha = nullptr;
 	bool cargado = false;
 public:
 	Bow();

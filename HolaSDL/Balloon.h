@@ -15,14 +15,14 @@ private:
 	uint h = 0;
 	uint w = 0;
 	Vector2D velocidad = Vector2D(0, 0);
-	int explotado = 0;
+	bool explotado = false;
 	uint instPinchazo = 0;
 	Texture* globo = nullptr;
 	Game* game = nullptr;
 	int color = 0;
 public:
 	Balloon();
-	Balloon(Point2D esqIzq, uint ancho, uint alto, Vector2D vel, Texture* textura, int explotado, uint instPinchazo, Game* tocando, int color);
+	Balloon(Point2D esqIzq, uint ancho, uint alto, Vector2D vel, Texture* textura, bool explotado, uint instPinchazo, Game* tocando, int color);
 	void render();
 	bool update();
 };

@@ -17,15 +17,15 @@ Game::Game() {
 	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 	if (window == nullptr || renderer == nullptr) throw "Error loading the SDL window or renderer";
 
-	//Cracion de las texturas
+	//Creacion de las texturas
 	for (uint i = 0; i < NUM_TEXTURES; i++) {
 	
 		textures[i] = new Texture(renderer, imags[i].filename, imags[i].nRows, imags[i].nCols);
 		
 	}
 	//Creacion de los gameobjects (los globos y las flechas los generamos mediante un metodo que los genera en un vector)
-	bow = new Bow(Point2D(0, 0), 80, 80, Vector2D(10, 10), textures[1], false, this, nullptr);
-	//scoreboard = new Scoreboard();
+	bow = new Bow(Point2D(0, 0), 80, 80, Vector2D(0, 10), textures[1], false, this, nullptr);
+	scoreboard = new Scoreboard(Point2D(60,0),40,40,textures[6],textures[5],10,0);
 
 	
 	run();
@@ -57,8 +57,9 @@ void Game::update() {
 	bow->update();
 	for (int i = 0; i < balloons.size(); i++) {
 		if (balloons[i]->update()) {
-		//	delete balloons[i];
-			//balloons.erase(balloons.begin()+i);
+			delete balloons[i];
+			balloons.erase(balloons.begin()+i);
+			scoreboard->Puntuacion(1);
 		}
 	}
 	for (int j = 0; j < arrows.size(); j++) {
@@ -85,6 +86,7 @@ void Game::render() const {
 	{
 		balloons[i]->render();
 	}	
+	scoreboard->render();
 	SDL_RenderPresent(renderer);
 }
 void Game::handleEvents() {
@@ -108,7 +110,7 @@ void Game::CargaFlecha(Point2D pos,Arrow* flecha)
 	bow = new Bow(pos, 80, 80, Vector2D(0, 10), textures[3], true,this,flecha);
 }
 void Game::DisparaFlecha(Point2D pos) {
-	Arrow* flecha = new Arrow(Point2D(pos.getX(), pos.getY() + 30), 90, 20, Vector2D(0.1, 0), textures[4]);
+	Arrow* flecha = new Arrow(Point2D(pos.getX()+20, pos.getY()+30 ), 90, 20, Vector2D(0.2, 0), textures[4]);
 	bow = new Bow(pos, 60, 80, Vector2D(0, 10), textures[1], false,this,flecha);
 	arrows.push_back(flecha);
 }

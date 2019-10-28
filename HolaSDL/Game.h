@@ -13,7 +13,7 @@ typedef unsigned int uint;
 
 const uint WIN_WIDTH = 800;
 const uint WIN_HEIGHT = 600;
-const uint NUM_TEXTURES = 5;
+const uint NUM_TEXTURES = 7;
 struct ImagenesAtributos {
 	string filename;
 	uint nRows, nCols;
@@ -24,15 +24,15 @@ private:
 	SDL_Window* window = nullptr;
 	SDL_Renderer* renderer = nullptr;
 	bool exit = false;
-	int puntuacion;
-	int flechas;
+	//int puntuacion=0;
+	int flechas=0;
 	Texture* textures[NUM_TEXTURES];
 	// uint winWidth, winHeight; // También podrían estar aquí
 	Bow* bow = nullptr;
 	vector<Arrow*> arrows;
 	vector<Balloon*> balloons;
 	Scoreboard* scoreboard;
-	ImagenesAtributos imags[NUM_TEXTURES] = { {"..\\images\\bg1.png", 1, 1},{"..\\images\\Bow2.png", 1, 1},{"..\\images\\balloons.png", 7, 6},{"..\\images\\Bow1.png", 1, 1},{"..\\images\\Arrow1.png",1,1} };
+	ImagenesAtributos imags[NUM_TEXTURES] = { {"..\\images\\bg1.png", 1, 1},{"..\\images\\Bow2.png", 1, 1},{"..\\images\\balloons.png", 7, 6},{"..\\images\\Bow1.png", 1, 1},{"..\\images\\Arrow1.png",1,1},{"..\\images\\Arrow2.png",1,1},{"..\\images\\digits1.png",1,10} };
 public:
 	Game();
 	~Game();

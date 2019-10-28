@@ -10,25 +10,29 @@ class Game;
 class Scoreboard
 {
 private:
-	vector<Texture*>mScore;
 	Point2D esqIzq = Point2D(0, 0);
-	Texture* texture;
-	uint ancho;
-	uint alto;
+	Texture* points=nullptr;
+	Texture* arrows=nullptr;
+	uint ancho = 0;
+	uint alto = 0;
 	static  const int MAX_ARROW_TEXTURES = 10;
-	Texture* arrowTextures[MAX_ARROW_TEXTURES];
-	int totalArrows;
+	vector<Texture*> TextArrows;
+	vector<Texture*>mScore;
+	vector<int>digitos;
+
+	int totalArrows = MAX_ARROW_TEXTURES;
+	int score = 0;
 
 
 public:
 	Scoreboard();
-
-	Scoreboard(Point2D esqIzq,uint ancho , uint alto ,Texture* textura);
+	Scoreboard(Point2D esqIzq,uint ancho , uint alto ,Texture* points, Texture* arrows, int totalArrows, int score);
 	~Scoreboard();
-	void Score(int score);
+	void Puntuacion(int score);
 	void Arrows(int arrows);
-		void render();
+	void render();
 	void update();
+	vector<int>DameVector();
 private:
 	void ClearBoard();
 };
