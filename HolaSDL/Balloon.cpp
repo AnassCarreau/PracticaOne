@@ -8,7 +8,7 @@ const int TIME_PER_FRAME = 100;
 
 Balloon::Balloon() :esqIzq(), w(), h(), velocidad(), globo(), explotado(), instPinchazo(), game() {}
 
-Balloon::Balloon(Point2D esqIzq, uint ancho, uint alto, Vector2D vel, Texture* textura, bool explotado, uint instPinchazo, Game* tocando, int color) 
+Balloon::Balloon(Point2D esqIzq, uint ancho, uint alto, Vector2D vel, Texture* textura, int explotado, uint instPinchazo, Game* tocando, int color) 
 	: esqIzq(esqIzq), w(ancho), h(alto), velocidad(vel), globo(textura), explotado(explotado), instPinchazo(instPinchazo), game(tocando), color(color){}
 
 void Balloon::render() {
@@ -17,31 +17,35 @@ void Balloon::render() {
 	srcDest.y = esqIzq.getY();
 	srcDest.w = w;
 	srcDest.h = h;
-	/*if (explotado) {
-		globo->renderFrame(srcDest, color, int((SDL_GetTicks() / TIME_PER_FRAME) % 6), 0, SDL_FLIP_NONE);
+	if (explotado!=0) {
+		globo->renderFrame(srcDest, color,explotado, 0, SDL_FLIP_NONE);
+		if (explotado==4)
+		{
+			cout << "Wow";
+		}
+		explotado++;
 	}
 	else {
 		globo->renderFrame(srcDest, color, 0, 0, SDL_FLIP_NONE);
-	}*/
-	globo->renderFrame(srcDest, color, 0, 0, SDL_FLIP_NONE);
+	}
+	//globo->renderFrame(srcDest, color, 0, 0, SDL_FLIP_NONE);
 }
 
 bool Balloon::update() {
 	double i = esqIzq.getX();
 	double j = esqIzq.getY();
 	SDL_Rect* rectBalloon = new SDL_Rect{ (int)esqIzq.getX(),(int)esqIzq.getY(),(int)w,(int)h };
+
 	explotado = game->MiraChoques(rectBalloon);
-	if ( j >=0 && j <= WIN_HEIGHT  && !explotado) {
+	if (j >= 0 && j <= WIN_HEIGHT && explotado == 0) {
 		esqIzq = esqIzq.operator-(velocidad);
 		return false;
 	}
-	else {
-
+	else if (explotado >6)
+	{
 		cout << "medieron";
 		return true;
-
 	}
-	
 }
 
  

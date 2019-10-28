@@ -25,10 +25,15 @@ Game::Game() {
 	}
 	//Creacion de los gameobjects (los globos y las flechas los generamos mediante un metodo que los genera en un vector)
 	bow = new Bow(Point2D(0, 0), 80, 80, Vector2D(10, 10), textures[1], false, this, nullptr);
+	//scoreboard = new Scoreboard();
+
+	
 	run();
 }
 Game::~Game() {
 	for (uint i = 0; i < NUM_TEXTURES; i++) delete textures[i];
+	//delete scoreboard;
+	//scoreboard = NULL;
 	SDL_DestroyRenderer(renderer);
 	SDL_DestroyWindow(window);
 	SDL_Quit();
@@ -52,8 +57,8 @@ void Game::update() {
 	bow->update();
 	for (int i = 0; i < balloons.size(); i++) {
 		if (balloons[i]->update()) {
-			delete balloons[i];
-			balloons.erase(balloons.begin()+i);
+		//	delete balloons[i];
+			//balloons.erase(balloons.begin()+i);
 		}
 	}
 	for (int j = 0; j < arrows.size(); j++) {

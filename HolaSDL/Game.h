@@ -8,6 +8,7 @@
 #include "Bow.h"
 #include "Arrow.h"
 #include <vector>
+#include "Scoreboard.h"
 typedef unsigned int uint;
 
 const uint WIN_WIDTH = 800;
@@ -30,6 +31,7 @@ private:
 	Bow* bow = nullptr;
 	vector<Arrow*> arrows;
 	vector<Balloon*> balloons;
+	Scoreboard* scoreboard;
 	ImagenesAtributos imags[NUM_TEXTURES] = { {"..\\images\\bg1.png", 1, 1},{"..\\images\\Bow2.png", 1, 1},{"..\\images\\balloons.png", 7, 6},{"..\\images\\Bow1.png", 1, 1},{"..\\images\\Arrow1.png",1,1} };
 public:
 	Game();
