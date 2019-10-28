@@ -27,7 +27,6 @@ private:
 	//int puntuacion=0;
 	int flechas=0;
 	Texture* textures[NUM_TEXTURES];
-	// uint winWidth, winHeight; // También podrían estar aquí
 	Bow* bow = nullptr;
 	vector<Arrow*> arrows;
 	vector<Balloon*> balloons;

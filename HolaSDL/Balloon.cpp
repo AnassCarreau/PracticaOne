@@ -1,7 +1,6 @@
 #include "Balloon.h"
 #include "Game.h"
 #include "Vector2D.h"
-#include <random>
 
 typedef unsigned int uint;
 const int TIME_PER_FRAME = 100;
@@ -24,7 +23,6 @@ void Balloon::render() {
 	else {
 		globo->renderFrame(srcDest, color, 0, 0, SDL_FLIP_NONE);
 	}
-	//globo->renderFrame(srcDest, color, 0, 0, SDL_FLIP_NONE);
 }
 
 bool Balloon::update() {

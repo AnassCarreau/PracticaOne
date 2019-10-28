@@ -1,0 +1,12 @@
+﻿  Scoreboard.cpp
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\Scoreboard.cpp(18,20): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\Scoreboard.cpp(52,25): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\Scoreboard.cpp(53,25): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\Scoreboard.cpp(57,20): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\Scoreboard.cpp(59,29): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+  Generando código
+  11 of 319 functions ( 3.4%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    1 functions had inline decision re-evaluated but remain unchanged
+  Generación de código finalizada
+  HolaSDL.vcxproj -> C:\Users\anass\Desktop\PracticaOne\bin\HolaSDLRelease.exe
