@@ -8,9 +8,9 @@ typedef unsigned int uint;
 bool arriba=true;
 bool abajo = true;
 
-Bow::Bow() :esqIzq(), w(), h(), velocidad(), arco(), cargado(),juego(),flecha(){}
+Bow::Bow() :esqIzq(), w(), h(), velocidad(), arco(), arcoC(),cargado(),juego(),flecha(){}
 
-Bow::Bow(Point2D esqIzq, uint ancho, uint alto, Vector2D vel, Texture* textura, bool cargado,Game*game,Arrow*flechaCargada) : esqIzq(esqIzq), w(ancho), h(alto), velocidad(vel), arco(textura), cargado(cargado),juego(game),flecha(flechaCargada) {}
+Bow::Bow(Point2D esqIzq, uint ancho, uint alto, Vector2D vel, Texture* textura, Texture*texture2,bool cargado,Game*game,Arrow*flechaCargada) : esqIzq(esqIzq), w(ancho), h(alto), velocidad(vel), arco(textura),arcoC(texture2), cargado(cargado),juego(game),flecha(flechaCargada) {}
 
  void Bow::render(){
 	 SDL_Rect srcDest;
@@ -18,7 +18,14 @@ Bow::Bow(Point2D esqIzq, uint ancho, uint alto, Vector2D vel, Texture* textura, 
 	 srcDest.y = esqIzq.getY();
 	 srcDest.w = w;
 	 srcDest.h = h;
-	 arco->render(srcDest, SDL_FLIP_NONE);
+	 if(cargado)
+		 arcoC->render(srcDest, SDL_FLIP_NONE);
+
+	 else
+	 {
+		 arco->render(srcDest, SDL_FLIP_NONE);
+
+	 }
  }
 
  void Bow::update() {
@@ -52,13 +59,14 @@ Bow::Bow(Point2D esqIzq, uint ancho, uint alto, Vector2D vel, Texture* textura, 
 		 }
 		 else if (event.key.keysym.sym == SDLK_LEFT && !cargado)
 		 {
-			juego->CargaFlecha(esqIzq,flecha);
-			 /*this->arco = arco->load("..\\images\\Bow2.png", 1, 1);
-			 arco->render();*/
+			juego->CargaFlecha();
+			 
+			cargado = true;
 		 }
 		 else if (event.key.keysym.sym == SDLK_RIGHT && cargado)
 		 {
-			 juego->DisparaFlecha(esqIzq /*flecha->DameVel()*/);
+			 juego->DisparaFlecha(esqIzq);
+			 cargado = false;
 		 }
 	 }
 

@@ -15,13 +15,14 @@ private:
 	uint h = 0; // height
 	Vector2D velocidad = Vector2D(0,0);
 	Texture* arco = nullptr;
+	Texture* arcoC = nullptr;
 	Game* juego=nullptr;
 	Arrow* flecha = nullptr;
 	bool cargado = false;
 	int time = 0;
 public:
 	Bow();
-	Bow(Point2D esqIzq, uint ancho, uint alto, Vector2D vel, Texture* textura, bool cargado,Game* game,Arrow*flechaCargada);
+	Bow(Point2D esqIzq, uint ancho, uint alto, Vector2D vel, Texture* textura,Texture* tectura, bool cargado,Game* game,Arrow*flechaCargada);
 	void render();
 	void update();
 	void handleEvents(SDL_Event& event);

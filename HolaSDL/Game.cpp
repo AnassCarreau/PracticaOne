@@ -24,7 +24,7 @@ Game::Game() {
 		
 	}
 	//Creacion de los gameobjects (los globos y las flechas los generamos mediante un metodo que los genera en un vector)
-	bow = new Bow(Point2D(0, 0), 80, 80, Vector2D(0, 10), textures[1], false, this, nullptr);
+	bow = new Bow(Point2D(0, 0), 80, 80, Vector2D(0, 10), textures[1],textures[3], false, this, nullptr);
 	scoreboard = new Scoreboard(Point2D(300,0),40,45,textures[6],textures[5],10,0);
 	flechas = 10;
 	
@@ -51,16 +51,20 @@ Game::~Game() {
 }void Game::run() {
 	uint32_t startTime, frameTime; //variables para el control del tiempo
 	startTime = SDL_GetTicks(); //tiempo inicial en milisegundos
-	const int FRAME_RATE = 2000; //cada 2 segundos genero un globo
+	const int FRAME_RATE = 2000 ; //cada 2 segundos genero un globo
+	const int FRAME_RATE_GLOBAL = 60;
 	while (!exit) { 
 		handleEvents();
-		frameTime = SDL_GetTicks() - startTime; // Tiempo desde última actualización
+		
+		frameTime = SDL_GetTicks() - startTime;
 		if (frameTime >= FRAME_RATE) {
 			generateBalloons(); //genera globo
 			startTime = SDL_GetTicks();
 		}
-		update(); //actualiza los objetos del juego
-		render(); //renderiza los objetos del juego
+		
+		
+		update();
+		render();
 	}
 	this->~Game();
 }
@@ -118,20 +122,16 @@ void Game::generateBalloons() {
 	Balloon* globo = new Balloon(Point2D{(double)h,600 }, 80, 80, Vector2D(0, 0.05), textures[2], false, 0, this, color);
 	balloons.push_back(globo);
 }
-void Game::CargaFlecha(Point2D pos,Arrow* flecha)
+void Game::CargaFlecha()
 {
-	bow = new Bow(pos, 80, 80, Vector2D(0, 10), textures[3], true,this,flecha);
-	/*int timeIni = SDL_GetTicks();
-	while (timeIni < timeIni+1000) {
-		flecha->IncrementaVel(0.1);
-		timeIni += 100;
-	}*/
+	timecharge = SDL_GetTicks();
 }
-void Game::DisparaFlecha(Point2D pos)/*, Vector2D vel*/ {
+void Game::DisparaFlecha(Point2D pos) {
 	if (flechas!=0)
 	{
-		Arrow* flecha = new Arrow(Point2D(pos.getX() + 20, pos.getY() + 30), 90, 20, Vector2D(0.2,0), textures[4]);
-		bow = new Bow(pos, 60, 80, Vector2D(0, 10), textures[1], false, this, flecha);
+		timeshoot = SDL_GetTicks();
+		timecharge =(timeshoot- timecharge)/10000;
+		Arrow* flecha = new Arrow(Point2D(pos.getX() + 20, pos.getY() + 30), 90, 20, Vector2D(timecharge,0), textures[4]);
 		arrows.push_back(flecha);
 		scoreboard->Arrows();
 		flechas--;

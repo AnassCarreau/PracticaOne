@@ -35,11 +35,9 @@ void Scoreboard::ClearBoard() {
 }
 void Scoreboard::Arrows()
 {
-	/*delete TextArrows[totalArrows];
-	TextArrows.erase(TextArrows.begin() + totalArrows);*/
-	//no puedo  debugear pero si puedes lo haces eleminando el elemento bn 
 	totalArrows--;
 
+	TextArrows.erase(TextArrows.begin() + totalArrows);
 	
 }
 void Scoreboard::Puntuacion(int score)
@@ -66,8 +64,9 @@ void Scoreboard::render(){
 		mScore[i]->renderFrame(srcDest, 0, digitos[i], 0, SDL_FLIP_NONE);
 
 	}
-	for (int i = 0; i < totalArrows; i++)
+	for (int i = 0; i < TextArrows.size(); i++)
 	{
+		
 		srcDest.x -= 25;
 
 		TextArrows[i]->render(srcDest, SDL_FLIP_NONE);

@@ -28,6 +28,8 @@ private:
 	int flechas=0;
 	Texture* textures[NUM_TEXTURES];
 	Bow* bow = nullptr;
+	double timecharge = 0;
+	double timeshoot=0;
 	vector<Arrow*> arrows;
 	vector<Balloon*> balloons;
 	Scoreboard* scoreboard;
@@ -39,8 +41,8 @@ public:
 	void render() const;
 	void handleEvents();
 	void update();
-	void CargaFlecha(Point2D pos,Arrow*flecha);
-	void DisparaFlecha(Point2D pos)/*, Vector2D vel*/;
+	void CargaFlecha();
+	void DisparaFlecha(Point2D pos);
 	bool MiraChoques(SDL_Rect*rectBalloon);
 	void generateBalloons();
 };

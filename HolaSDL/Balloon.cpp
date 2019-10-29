@@ -3,7 +3,7 @@
 #include "Vector2D.h"
 
 typedef unsigned int uint;
-const int TIME_PER_FRAME = 100;
+const int TIME_Animation = 600;
 
 Balloon::Balloon() :esqIzq(), w(), h(), velocidad(), globo(), explotado(), instPinchazo(), game() {}
 
@@ -18,7 +18,7 @@ void Balloon::render() {
 	srcDest.h = h;
 
 	if (explotado) {
-		globo->renderFrame(srcDest, color, int(((SDL_GetTicks() / TIME_PER_FRAME) % 6)), 0, SDL_FLIP_NONE);
+		globo->renderFrame(srcDest, color, int(((SDL_GetTicks() / TIME_Animation) % 6)), 0, SDL_FLIP_NONE);
 	}
 	else {
 		globo->renderFrame(srcDest, color, 0, 0, SDL_FLIP_NONE);
@@ -33,7 +33,7 @@ bool Balloon::update() {
 	explotado = game->MiraChoques(rectBalloon);
 	if ( instPinchazo==0 && explotado)
 	{
-		instPinchazo = SDL_GetTicks()+100;
+		instPinchazo = SDL_GetTicks()+600;
 	}
 	if (j >= 0 && j <= WIN_HEIGHT && !explotado) {
 		esqIzq = esqIzq.operator-(velocidad);
