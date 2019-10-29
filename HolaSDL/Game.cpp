@@ -32,8 +32,18 @@ Game::Game() {
 }
 Game::~Game() {
 	for (uint i = 0; i < NUM_TEXTURES; i++) delete textures[i];
-	//delete scoreboard;
-	//scoreboard = NULL;
+	delete scoreboard;
+	scoreboard = nullptr;
+	delete bow;
+	bow = nullptr;
+	for (int i = 0; i < arrows.size(); i++) {
+		delete arrows[i];
+		arrows[i] = nullptr;
+	}
+	for (int j = 0; j < balloons.size(); j++) {
+		delete balloons[j];
+		balloons[j] = nullptr;
+	}
 	SDL_DestroyRenderer(renderer);
 	SDL_DestroyWindow(window);
 	SDL_Quit();
@@ -52,6 +62,7 @@ Game::~Game() {
 		update(); //actualiza los objetos del juego
 		render(); //renderiza los objetos del juego
 	}
+	this->~Game();
 }
 void Game::update() {
 	bow->update();
@@ -102,19 +113,24 @@ void Game::handleEvents() {
 }
 
 void Game::generateBalloons() {
-	int h = rand() % 320+400;
-	int color = rand() % 9;
+	int h = rand() % 320+350;
+	int color = rand() % 7;
 	Balloon* globo = new Balloon(Point2D{(double)h,600 }, 80, 80, Vector2D(0, 0.05), textures[2], false, 0, this, color);
 	balloons.push_back(globo);
 }
 void Game::CargaFlecha(Point2D pos,Arrow* flecha)
 {
 	bow = new Bow(pos, 80, 80, Vector2D(0, 10), textures[3], true,this,flecha);
+	/*int timeIni = SDL_GetTicks();
+	while (timeIni < timeIni+1000) {
+		flecha->IncrementaVel(0.1);
+		timeIni += 100;
+	}*/
 }
-void Game::DisparaFlecha(Point2D pos) {
+void Game::DisparaFlecha(Point2D pos)/*, Vector2D vel*/ {
 	if (flechas!=0)
 	{
-		Arrow* flecha = new Arrow(Point2D(pos.getX() + 20, pos.getY() + 30), 90, 20, Vector2D(0.2, 0), textures[4]);
+		Arrow* flecha = new Arrow(Point2D(pos.getX() + 20, pos.getY() + 30), 90, 20, Vector2D(0.2,0), textures[4]);
 		bow = new Bow(pos, 60, 80, Vector2D(0, 10), textures[1], false, this, flecha);
 		arrows.push_back(flecha);
 		scoreboard->Arrows();

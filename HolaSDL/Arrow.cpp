@@ -31,3 +31,12 @@ SDL_Rect* Arrow::PosFlecha() {
 	return rectArrow;
 
 }
+
+/*void Arrow::IncrementaVel(double inc) {
+	velocidad = Vector2D(velocidad.getX() + inc, velocidad.getY());
+}
+
+/*Vector2D Arrow::DameVel() {
+	Vector2D vel = Vector2D(velocidad.getX(), velocidad.getY());
+	return velocidad;
+}*/

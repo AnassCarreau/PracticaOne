@@ -40,7 +40,7 @@ public:
 	void handleEvents();
 	void update();
 	void CargaFlecha(Point2D pos,Arrow*flecha);
-	void DisparaFlecha(Point2D pos);
+	void DisparaFlecha(Point2D pos)/*, Vector2D vel*/;
 	bool MiraChoques(SDL_Rect*rectBalloon);
 	void generateBalloons();
 };

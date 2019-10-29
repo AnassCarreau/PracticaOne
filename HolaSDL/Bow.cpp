@@ -52,13 +52,13 @@ Bow::Bow(Point2D esqIzq, uint ancho, uint alto, Vector2D vel, Texture* textura, 
 		 }
 		 else if (event.key.keysym.sym == SDLK_LEFT && !cargado)
 		 {
-			 juego->CargaFlecha(esqIzq,flecha);
-			 
-			 
+			juego->CargaFlecha(esqIzq,flecha);
+			 /*this->arco = arco->load("..\\images\\Bow2.png", 1, 1);
+			 arco->render();*/
 		 }
 		 else if (event.key.keysym.sym == SDLK_RIGHT && cargado)
 		 {
-			 juego->DisparaFlecha(esqIzq);
+			 juego->DisparaFlecha(esqIzq /*flecha->DameVel()*/);
 		 }
 	 }
 

@@ -18,6 +18,8 @@ public:
 	void render();
 	bool update();
 	SDL_Rect* PosFlecha();
+	//void IncrementaVel(double inc);
+	//Vector2D DameVel();
 };
 #endif
 

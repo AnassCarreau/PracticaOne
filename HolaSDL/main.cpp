@@ -146,5 +146,6 @@ int main(int argc, char* argv[]) {
 	//firstTest();
 
 	Game();
+	
 	return 0;
 }

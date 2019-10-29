@@ -14,11 +14,11 @@ private:
 	uint w = 0; // width
 	uint h = 0; // height
 	Vector2D velocidad = Vector2D(0,0);
-	//Arrow* flechaCarg;
 	Texture* arco = nullptr;
 	Game* juego=nullptr;
 	Arrow* flecha = nullptr;
 	bool cargado = false;
+	int time = 0;
 public:
 	Bow();
 	Bow(Point2D esqIzq, uint ancho, uint alto, Vector2D vel, Texture* textura, bool cargado,Game* game,Arrow*flechaCargada);

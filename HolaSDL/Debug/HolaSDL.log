@@ -1,23 +1,25 @@
 ﻿  Arrow.cpp
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Arrow.cpp(15,25): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Arrow.cpp(16,25): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Arrow.cpp(15,25): warning C4244:  '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Arrow.cpp(16,25): warning C4244:  '=': conversión de 'double' a 'int'; posible pérdida de datos
   Balloon.cpp
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Arrow.cpp(24,7): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Balloon.cpp(15,25): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Arrow.cpp(24,7): warning C4244:  'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Balloon.cpp(15,25): warning C4244:  '=': conversión de 'double' a 'int'; posible pérdida de datos
   Bow.cpp
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Balloon.cpp(16,25): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Balloon.cpp(16,25): warning C4244:  '=': conversión de 'double' a 'int'; posible pérdida de datos
   Game.cpp
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.cpp(18,26): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\crtdbg.h(303,1): warning C4005: '_malloca': redefinición de macro
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\malloc.h(122): message : vea la definición anterior de '_malloca'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.cpp(58,20): warning C4018: '<': no coinciden signed/unsigned
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.cpp(65,20): warning C4018: '<': no coinciden signed/unsigned
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.cpp(81,20): warning C4018: '<': no coinciden signed/unsigned
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.cpp(85,20): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.cpp(18,26): warning C4244:  '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\crtdbg.h(303,1): warning C4005:  '_malloca': redefinición de macro
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\malloc.h(122): message :  vea la definición anterior de '_malloca'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(39,20): warning C4018:  '<': no coinciden signed/unsigned
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(43,20): warning C4018:  '<': no coinciden signed/unsigned
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(69,20): warning C4018:  '<': no coinciden signed/unsigned
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(76,20): warning C4018:  '<': no coinciden signed/unsigned
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(92,20): warning C4018:  '<': no coinciden signed/unsigned
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(96,20): warning C4018:  '<': no coinciden signed/unsigned
   main.cpp
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.cpp(130,21): warning C4018: '<': no coinciden signed/unsigned
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\crtdbg.h(303,1): warning C4005: '_malloca': redefinición de macro
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(146,21): warning C4018:  '<': no coinciden signed/unsigned
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\crtdbg.h(303,1): warning C4005:  '_malloca': redefinición de macro
   Generando código...
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\malloc.h(122): message : vea la definición anterior de '_malloca'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Balloon.cpp(51): warning C4715: 'Balloon::update': no todas las rutas de acceso de control devuelven un valor
-  HolaSDL.vcxproj -> C:\Users\anass\Desktop\PracticaOne\bin\HolaSDLDebug.exe
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\malloc.h(122): message :  vea la definición anterior de '_malloca'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Balloon.cpp(51): warning C4715:  'Balloon::update': no todas las rutas de acceso de control devuelven un valor
+  HolaSDL.vcxproj -> C:\Users\forev\OneDrive\Desktop\PracticaOne\bin\HolaSDLDebug.exe
