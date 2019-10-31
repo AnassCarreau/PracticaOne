@@ -51,26 +51,25 @@ Game::~Game() {
 }void Game::run() {
 	uint32_t startTime, frameTime; //variables para el control del tiempo
 	startTime = SDL_GetTicks(); //tiempo inicial en milisegundos
-	const int FRAME_RATE = 2000 ; //cada 2 segundos genero un globo
-	const int FRAME_RATE_GLOBAL = 60;
+	const int FRAME_RATE = 60 ; //60fps
 	while (!exit) { 
 		handleEvents();
-		
+		//actualizamos el juego cada Frame_Rate
 		frameTime = SDL_GetTicks() - startTime;
 		if (frameTime >= FRAME_RATE) {
-			generateBalloons(); //genera globo
+			update();
 			startTime = SDL_GetTicks();
-		}
-		
-		
-		update();
+		}		
 		render();
 	}
 	this->~Game();
 }
 void Game::update() {
 	bow->update();
+	generateBalloons();
+	
 	for (int i = 0; i < balloons.size(); i++) {
+		
 		if (balloons[i]->update()) {
 			delete balloons[i];
 			balloons.erase(balloons.begin()+i);
@@ -117,10 +116,18 @@ void Game::handleEvents() {
 }
 
 void Game::generateBalloons() {
-	int h = rand() % 320+350;
-	int color = rand() % 7;
-	Balloon* globo = new Balloon(Point2D{(double)h,600 }, 80, 80, Vector2D(0, 0.05), textures[2], false, 0, this, color);
-	balloons.push_back(globo);
+	//se supone que crea el globo pero no lo muestra (creo que el problema esta en algo del render pero no estoy seguro)
+	const int FRAME_RATEGLOB = 1000; // cada segundo generamos un globo
+	uint start, frame;
+	start = SDL_GetTicks();
+	frame = SDL_GetTicks() - start;
+	if (frame >= FRAME_RATEGLOB) {
+		int h = rand() % 320 + 350;
+		int color = rand() % 7;
+		Balloon* globo = new Balloon(Point2D{ (double)h,600 }, 80, 80, Vector2D(0, 1), textures[2], false, 0, this, color);
+		balloons.push_back(globo);
+	}
+	
 }
 void Game::CargaFlecha()
 {
@@ -130,7 +137,7 @@ void Game::DisparaFlecha(Point2D pos) {
 	if (flechas!=0)
 	{
 		timeshoot = SDL_GetTicks();
-		timecharge =(timeshoot- timecharge)/10000;
+		timecharge =(timeshoot- timecharge)/100;
 		Arrow* flecha = new Arrow(Point2D(pos.getX() + 20, pos.getY() + 30), 90, 20, Vector2D(timecharge,0), textures[4]);
 		arrows.push_back(flecha);
 		scoreboard->Arrows();

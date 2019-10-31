@@ -1,11 +1,11 @@
 ﻿  Game.cpp
-C:\Windows Kits\10\Include\10.0.18362.0\ucrt\crtdbg.h(303,1): warning C4005:  '_malloca': macro redefinition
-C:\Windows Kits\10\Include\10.0.18362.0\ucrt\malloc.h(122): message :  see previous definition of '_malloca'
-U:\hlocal\PracticaOne\HolaSDL\Game.cpp(39,20): warning C4018:  '<': signed/unsigned mismatch
-U:\hlocal\PracticaOne\HolaSDL\Game.cpp(43,20): warning C4018:  '<': signed/unsigned mismatch
-U:\hlocal\PracticaOne\HolaSDL\Game.cpp(68,21): warning C4018:  '<': signed/unsigned mismatch
-U:\hlocal\PracticaOne\HolaSDL\Game.cpp(75,21): warning C4018:  '<': signed/unsigned mismatch
-U:\hlocal\PracticaOne\HolaSDL\Game.cpp(93,20): warning C4018:  '<': signed/unsigned mismatch
-U:\hlocal\PracticaOne\HolaSDL\Game.cpp(97,20): warning C4018:  '<': signed/unsigned mismatch
-U:\hlocal\PracticaOne\HolaSDL\Game.cpp(143,21): warning C4018:  '<': signed/unsigned mismatch
-  HolaSDL.vcxproj -> U:\hlocal\PracticaOne\bin\HolaSDLDebug.exe
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\crtdbg.h(303,1): warning C4005:  '_malloca': redefinición de macro
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\malloc.h(122): message :  vea la definición anterior de '_malloca'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(39,20): warning C4018:  '<': no coinciden signed/unsigned
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(43,20): warning C4018:  '<': no coinciden signed/unsigned
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(71,20): warning C4018:  '<': no coinciden signed/unsigned
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(79,20): warning C4018:  '<': no coinciden signed/unsigned
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(95,20): warning C4018:  '<': no coinciden signed/unsigned
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(99,20): warning C4018:  '<': no coinciden signed/unsigned
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(152,21): warning C4018:  '<': no coinciden signed/unsigned
+  HolaSDL.vcxproj -> C:\Users\forev\OneDrive\Desktop\PracticaOne\bin\HolaSDLDebug.exe
