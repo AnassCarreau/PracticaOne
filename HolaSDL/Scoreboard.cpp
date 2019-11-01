@@ -33,24 +33,24 @@ void Scoreboard::Puntuacion(int score)
 }
 void Scoreboard::render(){
 	
-	SDL_Rect srcDest;
-	srcDest.x = esqIzq.getX();
-	srcDest.y = esqIzq.getY();
-	srcDest.w = ancho;
-	srcDest.h = alto;
+	SDL_Rect destRect;
+	destRect.x = esqIzq.getX();
+	destRect.y = esqIzq.getY();
+	destRect.w = ancho;
+	destRect.h = alto;
 	for (int i = 0; i < digitos.size(); i++)
 	{
-		srcDest.x -= 25;
+		destRect.x -= 25;
 
-		points->renderFrame(srcDest, 0, digitos[i], 0, SDL_FLIP_NONE);
+		points->renderFrame(destRect, 0, digitos[i], 0, SDL_FLIP_NONE);
 
 	}
     for (int i = 0; i < numberarrows; i++)
 	{
 		
-		srcDest.x -= 25;
+		destRect.x -= 25;
 
-		arrows->render(srcDest, SDL_FLIP_NONE);
+		arrows->render(destRect, SDL_FLIP_NONE);
 	}
 		
 }

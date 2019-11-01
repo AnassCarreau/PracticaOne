@@ -2,11 +2,8 @@
 #define Balloon_H_
 
 #include "Vector2D.h"
-#include "Arrow.h"
-#include <iostream>
 #include "Texture.h"
 class Game;
-	using namespace std;
 typedef unsigned int uint;
 class Balloon
 {

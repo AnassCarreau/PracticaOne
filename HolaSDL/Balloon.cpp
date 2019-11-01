@@ -1,6 +1,5 @@
 #include "Balloon.h"
 #include "Game.h"
-#include "Vector2D.h"
 
 typedef unsigned int uint;
 const int TIME_Animation = 600;
@@ -11,18 +10,18 @@ Balloon::Balloon(Point2D esqIzq, uint ancho, uint alto, Vector2D vel, Texture* t
 	: esqIzq(esqIzq), w(ancho), h(alto), velocidad(vel), globo(textura), explotado(explotado), instPinchazo(instPinchazo), game(tocando), color(color){}
 
 void Balloon::render() {
-	SDL_Rect srcDest;
-	srcDest.x = esqIzq.getX();
-	srcDest.y = esqIzq.getY();
-	srcDest.w = w;
-	srcDest.h = h;
+	SDL_Rect destRect;
+	destRect.x = esqIzq.getX();
+	destRect.y = esqIzq.getY();
+	destRect.w = w;
+	destRect.h = h;
 	//si el globo esta explotado renderizamos con animacion
 	if (explotado) {
-		globo->renderFrame(srcDest, color, estado , 0, SDL_FLIP_NONE);
+		globo->renderFrame(destRect, color, estado , 0, SDL_FLIP_NONE);
 	}
 	//si no lo renderizamos normal
 	else {
-		globo->renderFrame(srcDest, color, 0, 0, SDL_FLIP_NONE);
+		globo->renderFrame(destRect, color, 0, 0, SDL_FLIP_NONE);
 	}
 }
 
@@ -31,7 +30,7 @@ bool  Balloon::update() {
 	double j = esqIzq.getY();
 	SDL_Rect* rectBalloon = new SDL_Rect{ (int)esqIzq.getX(),(int)esqIzq.getY(),(int)w,(int)h };
 
-	explotado = game->MiraChoques(rectBalloon);
+	explotado = game->OnCollisionEnter(rectBalloon);
 	if (explotado && instPinchazo == 0)
 	{
 		game->AddPoints();

@@ -27,7 +27,7 @@ public:
 	void Puntuacion(int score);
 	void Arrows();
 	void render();
-  
+	
 };
 #endif
 

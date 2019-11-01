@@ -1,6 +1,4 @@
 #include "Arrow.h"
-#include "Vector2D.h"
-#include"Game.h"
 
 
 typedef unsigned int uint;
@@ -11,12 +9,12 @@ Arrow::Arrow():esqIzq(), width(), height(), velocity(),flecha(){}
 Arrow::Arrow(Point2D esqIzq, uint width, uint height, Vector2D vel, Texture* textura)
 	: esqIzq(esqIzq), width(width), height(height), velocity(vel), flecha(textura) {}
 void Arrow::render() {
-	SDL_Rect srcDest;
-	srcDest.x = esqIzq.getX();
-	srcDest.y = esqIzq.getY();
-	srcDest.w = width;
-	srcDest.h = height;
-	flecha->renderFrame(srcDest, 0, 0, 0, SDL_FLIP_NONE);
+	SDL_Rect destRect;
+	destRect.x = esqIzq.getX();
+	destRect.y = esqIzq.getY();
+	destRect.w = width;
+	destRect.h = height;
+	flecha->renderFrame(destRect, 0, 0, 0, SDL_FLIP_NONE);
 }
 
 bool Arrow::update() {	

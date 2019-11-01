@@ -1,32 +1,33 @@
-﻿  Arrow.cpp
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Arrow.cpp(15,25): warning C4244:  '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Arrow.cpp(16,25): warning C4244:  '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Arrow.cpp(24,7): warning C4244:  'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Arrow.cpp(30,13): warning C4244:  'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
-  Balloon.cpp
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Arrow.cpp(31,13): warning C4244:  'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Balloon.cpp(15,25): warning C4244:  '=': conversión de 'double' a 'int'; posible pérdida de datos
+﻿  Balloon.cpp
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\Scores.h(4,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\Scores.h(5,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\Balloon.cpp(14,26): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
   Bow.cpp
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Balloon.cpp(16,25): warning C4244:  '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\Balloon.cpp(15,26): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\Scores.h(4,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\Scores.h(5,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
   Game.cpp
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.cpp(18,26): warning C4244:  '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\crtdbg.h(303,1): warning C4005:  '_malloca': redefinición de macro
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\malloc.h(122): message :  vea la definición anterior de '_malloca'
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(41,20): warning C4018:  '<': no coinciden signed/unsigned
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(45,20): warning C4018:  '<': no coinciden signed/unsigned
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(77,20): warning C4018:  '<': no coinciden signed/unsigned
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(85,20): warning C4018:  '<': no coinciden signed/unsigned
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(105,20): warning C4018:  '<': no coinciden signed/unsigned
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(110,20): warning C4018:  '<': no coinciden signed/unsigned
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.cpp(15,27): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\crtdbg.h(303,1): warning C4005: '_malloca': redefinición de macro
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\malloc.h(122): message : vea la definición anterior de '_malloca'
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\Scores.h(4,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\Scores.h(5,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.cpp(40,20): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.cpp(44,20): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.cpp(84,20): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.cpp(92,20): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.cpp(112,20): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.cpp(117,20): warning C4018: '<': no coinciden signed/unsigned
   main.cpp
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(176,21): warning C4018:  '<': no coinciden signed/unsigned
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\crtdbg.h(303,1): warning C4005:  '_malloca': redefinición de macro
-  Scoreboard.cpp
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\malloc.h(122): message :  vea la definición anterior de '_malloca'
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Scoreboard.cpp(38,25): warning C4244:  '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Scoreboard.cpp(39,25): warning C4244:  '=': conversión de 'double' a 'int'; posible pérdida de datos
-  Texture.cpp
-  Vector2D.cpp
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.cpp(185,21): warning C4018: '<': no coinciden signed/unsigned
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\crtdbg.h(303,1): warning C4005: '_malloca': redefinición de macro
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\malloc.h(122): message : vea la definición anterior de '_malloca'
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\Scores.h(4,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+  Scores.cpp
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\Scores.h(5,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\Scores.h(4,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\Scores.h(5,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\Scores.cpp(99,6): warning C4101: 'n': variable local sin referencia
   Generando código...
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Scoreboard.cpp(42,20): warning C4018:  '<': no coinciden signed/unsigned
-  HolaSDL.vcxproj -> C:\Users\forev\OneDrive\Desktop\PracticaOne\bin\HolaSDLDebug.exe
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\Scores.cpp(125,21): warning C4018: '<': no coinciden signed/unsigned
+  HolaSDL.vcxproj -> C:\Users\anass\Desktop\PracticaOne\bin\HolaSDLDebug.exe

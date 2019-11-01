@@ -26,8 +26,7 @@ Game::Game() {
 	//Creacion de los gameobjects (los globos y las flechas los generamos mediante un metodo que los genera en un vector)
 	bow = new Bow(Point2D(0, 0), 80, 80, Vector2D(0, 10), textures[1],textures[3], false, this, nullptr);
 	flechas = 10;
-
-	scoreboard = new Scoreboard(Point2D(300,0),40,45,textures[6],textures[5],flechas);
+	scoreboard = new Scoreboard(Point2D(300,0),25,35,textures[6],textures[5],flechas);
 	
 	run();
 }
@@ -54,7 +53,7 @@ Game::~Game() {
 void Game::run() {
 	uint32_t startTime, frameTime; //variables para el control del tiempo
 	startTime = SDL_GetTicks(); //tiempo inicial en milisegundos
-	startGTime = SDL_GetTicks();
+	startBaloonTime = SDL_GetTicks();
 	const int FRAME_RATE = 20 ; //20fps
 	while (!exit) { 
 		handleEvents();
@@ -66,6 +65,14 @@ void Game::run() {
 		}		
 		render();
 	}
+	string name;
+	cin >> name;
+	score.Load("score.txt");
+
+	score.addScore(name, points);
+
+	score.save("score.txt");
+	
 	this->~Game(); //llamamos al metodo de destruccion de basura al salir del juego para asi eliminar la basura
 }
 //metodo que actualiza el estado del juego
@@ -129,15 +136,15 @@ void Game::handleEvents() {
 //metodo que genera globo cada 2 segundos
 void Game::generateBalloons() {
 	
-	const int FRAME_RATEGLOB = 2000; // cada segundo generamos un globo
-	frameGTime = SDL_GetTicks() - startGTime;
-	if (frameGTime >= FRAME_RATEGLOB) {
+	const int FRAME_RATEGLOB = 2000; // cada dos segundos generamos un globo
+	frameBaloonTime = SDL_GetTicks() - startBaloonTime;
+	if (frameBaloonTime >= FRAME_RATEGLOB) {
 		int h =  rand() % 320 + 400;
 		int color = rand() % 7;
 		double velocidad = rand() % 2 + 0.5;
 		Balloon* globo = new Balloon(Point2D{ (double)h,600 }, 80, 80, Vector2D(0, velocidad), textures[2], false, 0, this, color);
 		balloons.push_back(globo);
-		startGTime = SDL_GetTicks();
+		startBaloonTime = SDL_GetTicks();
 
 	}
 	
@@ -155,7 +162,6 @@ void Game::DisparaFlecha(Point2D pos) {
 		timecharge =(timeshoot- timecharge)/1000;
 		if (timecharge>10)
 		{
-			cout << "hola";
 			timecharge = 10;
 		}
 		Arrow* flecha = new Arrow(Point2D(pos.getX() + 20, pos.getY() + 30), 90, 20, Vector2D(timecharge+2,0), textures[4]);
@@ -174,7 +180,7 @@ void Game::AddPoints()
 
 
 //metodo que mira si alguna flecha ha tocado con un globo
-bool Game::MiraChoques(SDL_Rect* rectBalloon) {
+bool Game::OnCollisionEnter(SDL_Rect* rectBalloon) {
 	
 		for (int i = 0; i < arrows.size(); i++)
 		{
@@ -187,6 +193,4 @@ bool Game::MiraChoques(SDL_Rect* rectBalloon) {
 	return false;
 	
 }
-
-	
 

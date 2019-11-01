@@ -5,6 +5,7 @@
 #include "SDL_image.h"
 #include "checkML.h"
 #include "Balloon.h"
+#include "Scores.h"
 #include "Bow.h"
 #include "Arrow.h"
 #include <vector>
@@ -33,7 +34,8 @@ private:
 	vector<Arrow*> arrows;
 	vector<Balloon*> balloons;
 	Scoreboard* scoreboard;
-	uint32_t startGTime=0, frameGTime=0; //variables para el control del tiempo
+	Scores score;
+	uint32_t startBaloonTime=0, frameBaloonTime=0; //variables para el control del tiempo
 	int points = 0;
 	const int POINT_ADD = 10;
 
@@ -47,8 +49,11 @@ public:
 	void update();
 	void CargaFlecha();
 	void DisparaFlecha(Point2D pos);
-	bool MiraChoques(SDL_Rect*rectBalloon);
+	bool OnCollisionEnter(SDL_Rect*rectBalloon);
 	void generateBalloons();
 	void AddPoints();
+	
+	
+
 };
 #endif

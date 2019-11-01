@@ -1,8 +1,5 @@
 #include "Bow.h"
-#include "Vector2D.h"
 #include "Game.h"
-#include"Arrow.h"
-#include "Texture.h"
 
 typedef unsigned int uint;
 bool arriba=true;
@@ -13,18 +10,18 @@ Bow::Bow() :esqIzq(), w(), h(), velocidad(), arco(), arcoC(),cargado(),juego(),f
 Bow::Bow(Point2D esqIzq, uint ancho, uint alto, Vector2D vel, Texture* textura, Texture*texture2,bool cargado,Game*game,Arrow*flechaCargada) : esqIzq(esqIzq), w(ancho), h(alto), velocidad(vel), arco(textura),arcoC(texture2), cargado(cargado),juego(game),flecha(flechaCargada) {}
 
  void Bow::render(){
-	 SDL_Rect srcDest;
-	 srcDest.x = 0;
-	 srcDest.y = esqIzq.getY();
-	 srcDest.w = w;
-	 srcDest.h = h;
+	 SDL_Rect destRect;
+	 destRect.x = 0;
+	 destRect.y = esqIzq.getY();
+	 destRect.w = w;
+	 destRect.h = h;
 	 //si el arco esta cargado renderizamos su imagen respectiva
 	 if(cargado)
-		 arcoC->render(srcDest, SDL_FLIP_NONE);
+		 arcoC->render(destRect, SDL_FLIP_NONE);
 	 //si no la normal
 	 else
 	 {
-		 arco->render(srcDest, SDL_FLIP_NONE);
+		 arco->render(destRect, SDL_FLIP_NONE);
 
 	 }
  }
