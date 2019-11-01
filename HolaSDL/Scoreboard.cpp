@@ -10,13 +10,12 @@ Scoreboard::Scoreboard(Point2D esqIzq, uint ancho, uint alto, Texture* points, T
 }
 
 
-
+//restamos flechas
 void Scoreboard::Arrows()
 {
 	numberarrows--;
-
-	
 }
+//metodo que controla los puntos
 void Scoreboard::Puntuacion(int score)
 {
 	digitos.clear();

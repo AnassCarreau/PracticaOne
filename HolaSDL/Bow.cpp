@@ -18,9 +18,10 @@ Bow::Bow(Point2D esqIzq, uint ancho, uint alto, Vector2D vel, Texture* textura, 
 	 srcDest.y = esqIzq.getY();
 	 srcDest.w = w;
 	 srcDest.h = h;
+	 //si el arco esta cargado renderizamos su imagen respectiva
 	 if(cargado)
 		 arcoC->render(srcDest, SDL_FLIP_NONE);
-
+	 //si no la normal
 	 else
 	 {
 		 arco->render(srcDest, SDL_FLIP_NONE);

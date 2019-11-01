@@ -31,6 +31,7 @@ Game::Game() {
 	
 	run();
 }
+//metodo de destruccion de basura
 Game::~Game() {
 	for (uint i = 0; i < NUM_TEXTURES; i++) delete textures[i];
 	delete scoreboard;
@@ -48,8 +49,9 @@ Game::~Game() {
 	SDL_DestroyRenderer(renderer);
 	SDL_DestroyWindow(window);
 	SDL_Quit();
-
-}void Game::run() {
+}
+//metodo principal del juego con estructura->eventos->actualizar->renderizar
+void Game::run() {
 	uint32_t startTime, frameTime; //variables para el control del tiempo
 	startTime = SDL_GetTicks(); //tiempo inicial en milisegundos
 	startGTime = SDL_GetTicks();
@@ -64,48 +66,57 @@ Game::~Game() {
 		}		
 		render();
 	}
-	this->~Game();
+	this->~Game(); //llamamos al metodo de destruccion de basura al salir del juego para asi eliminar la basura
 }
+//metodo que actualiza el estado del juego
 void Game::update() {
+	//actualizamos arco y generamos globos
 	bow->update();
 	generateBalloons();
-	
+	//actualizacion de globos
 	for (int i = 0; i < balloons.size(); i++) {
-		
+		//si el update devuelve true destruimos ese globo y lo quitamos del vector
 		if (balloons[i]->update()) {
 			delete balloons[i];
 			balloons.erase(balloons.begin()+i);
 		}
 	}
+	//actualizacion de flechas
 	for (int j = 0; j < arrows.size(); j++) {
+		//si el update devuelve true destruimos esa flecha y la quitamos del vector
 		if (arrows[j]->update()) {
 			delete arrows[j];
 			arrows.erase(arrows.begin() + j);
 		}
 	}
 }
-
+//metodo que renderiza todos los objetos del juego
 void Game::render() const {
-
+	//limpiamos
 	SDL_RenderClear(renderer);
+	//renderizado del fondo
 	SDL_Rect bk;
 	bk = { 0,0,WIN_WIDTH,WIN_HEIGHT };
 	
 	textures[0]->render(bk, SDL_FLIP_NONE);
+	//renderizado arco
 	bow->render();
+	//renderizado flechas
 	for (int j = 0; j < arrows.size(); j++)
 	{
 		arrows[j]->render();
 	}
+	//renderizado globos
 	for (int i = 0; i < balloons.size(); i++)
 	{
 		balloons[i]->render();
 	}	
-
+	//renderizado scoreboard
 	scoreboard->render();
-
+	//lo presentamos todo en pantalla
 	SDL_RenderPresent(renderer);
 }
+//metodo que controla los eventos del juego
 void Game::handleEvents() {
 	SDL_Event event;
 	while (SDL_PollEvent(&event) && !exit) {
@@ -115,9 +126,9 @@ void Game::handleEvents() {
 		}
 	}
 }
-
+//metodo que genera globo cada 2 segundos
 void Game::generateBalloons() {
-	//se supone que crea el globo pero no lo muestra (creo que el problema esta en algo del render pero no estoy seguro)
+	
 	const int FRAME_RATEGLOB = 2000; // cada segundo generamos un globo
 	frameGTime = SDL_GetTicks() - startGTime;
 	if (frameGTime >= FRAME_RATEGLOB) {
@@ -131,10 +142,12 @@ void Game::generateBalloons() {
 	}
 	
 }
+//metodo que coge el tiempo de carga de la flecha
 void Game::CargaFlecha()
 {
 	timecharge = SDL_GetTicks();
 }
+//metodo para disparar la flecha
 void Game::DisparaFlecha(Point2D pos) {
 	if (flechas!=0)
 	{
@@ -152,6 +165,7 @@ void Game::DisparaFlecha(Point2D pos) {
 	}
 	
 }
+//metodo para añadir puntos
 void Game::AddPoints()
 {
 	points += POINT_ADD;
@@ -159,7 +173,7 @@ void Game::AddPoints()
 }
 
 
-
+//metodo que mira si alguna flecha ha tocado con un globo
 bool Game::MiraChoques(SDL_Rect* rectBalloon) {
 	
 		for (int i = 0; i < arrows.size(); i++)

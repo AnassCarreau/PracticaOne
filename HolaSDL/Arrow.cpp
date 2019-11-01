@@ -25,6 +25,7 @@ bool Arrow::update() {
 	return i > 800;
 	
 }
+//metodo para saber el rect de la flecha
 SDL_Rect* Arrow::PosFlecha() {
 
 	int pointX = esqIzq.getX() + 3*width / 4;

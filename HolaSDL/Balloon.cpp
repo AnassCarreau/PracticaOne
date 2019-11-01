@@ -16,10 +16,11 @@ void Balloon::render() {
 	srcDest.y = esqIzq.getY();
 	srcDest.w = w;
 	srcDest.h = h;
-
+	//si el globo esta explotado renderizamos con animacion
 	if (explotado) {
 		globo->renderFrame(srcDest, color, estado , 0, SDL_FLIP_NONE);
 	}
+	//si no lo renderizamos normal
 	else {
 		globo->renderFrame(srcDest, color, 0, 0, SDL_FLIP_NONE);
 	}
