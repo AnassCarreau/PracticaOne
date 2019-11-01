@@ -53,7 +53,7 @@ Game::~Game() {
 	uint32_t startTime, frameTime; //variables para el control del tiempo
 	startTime = SDL_GetTicks(); //tiempo inicial en milisegundos
 	startGTime = SDL_GetTicks();
-	const int FRAME_RATE = 60 ; //60fps
+	const int FRAME_RATE = 20 ; //20fps
 	while (!exit) { 
 		handleEvents();
 		//actualizamos el juego cada Frame_Rate
@@ -140,6 +140,11 @@ void Game::DisparaFlecha(Point2D pos) {
 	{
 		timeshoot = SDL_GetTicks();
 		timecharge =(timeshoot- timecharge)/1000;
+		if (timecharge>10)
+		{
+			cout << "hola";
+			timecharge = 10;
+		}
 		Arrow* flecha = new Arrow(Point2D(pos.getX() + 20, pos.getY() + 30), 90, 20, Vector2D(timecharge+2,0), textures[4]);
 		arrows.push_back(flecha);
 		flechas--;

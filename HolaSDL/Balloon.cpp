@@ -42,7 +42,7 @@ bool  Balloon::update() {
 		return false;
 	}
 	
-	if (SDL_GetTicks() < instPinchazo + TIME_Animation && explotado && estado<7) {
+	if (SDL_GetTicks() < instPinchazo + TIME_Animation  && estado<7) {
 
 		estado++;
 		return false;
