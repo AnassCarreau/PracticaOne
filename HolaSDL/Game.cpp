@@ -121,9 +121,10 @@ void Game::generateBalloons() {
 	const int FRAME_RATEGLOB = 2000; // cada segundo generamos un globo
 	frameGTime = SDL_GetTicks() - startGTime;
 	if (frameGTime >= FRAME_RATEGLOB) {
-		int h = rand() % 320 + 350;
+		int h =  rand() % 320 + 400;
 		int color = rand() % 7;
-		Balloon* globo = new Balloon(Point2D{ (double)h,600 }, 80, 80, Vector2D(0, 1), textures[2], false, 0, this, color);
+		double velocidad = rand() % 2 + 0.5;
+		Balloon* globo = new Balloon(Point2D{ (double)h,600 }, 80, 80, Vector2D(0, velocidad), textures[2], false, 0, this, color);
 		balloons.push_back(globo);
 		startGTime = SDL_GetTicks();
 
@@ -138,8 +139,8 @@ void Game::DisparaFlecha(Point2D pos) {
 	if (flechas!=0)
 	{
 		timeshoot = SDL_GetTicks();
-		timecharge =(timeshoot- timecharge)/100;
-		Arrow* flecha = new Arrow(Point2D(pos.getX() + 20, pos.getY() + 30), 90, 20, Vector2D(timecharge,0), textures[4]);
+		timecharge =(timeshoot- timecharge)/1000;
+		Arrow* flecha = new Arrow(Point2D(pos.getX() + 20, pos.getY() + 30), 90, 20, Vector2D(timecharge+2,0), textures[4]);
 		arrows.push_back(flecha);
 		flechas--;
 		scoreboard->Arrows();
