@@ -25,8 +25,9 @@ Game::Game() {
 	}
 	//Creacion de los gameobjects (los globos y las flechas los generamos mediante un metodo que los genera en un vector)
 	bow = new Bow(Point2D(0, 0), 80, 80, Vector2D(0, 10), textures[1],textures[3], false, this, nullptr);
-	scoreboard = new Scoreboard(Point2D(300,0),40,45,textures[6],textures[5],10,0);
 	flechas = 10;
+
+	scoreboard = new Scoreboard(Point2D(300,0),40,45,textures[6],textures[5],flechas);
 	
 	run();
 }
@@ -51,6 +52,7 @@ Game::~Game() {
 }void Game::run() {
 	uint32_t startTime, frameTime; //variables para el control del tiempo
 	startTime = SDL_GetTicks(); //tiempo inicial en milisegundos
+	startGTime = SDL_GetTicks();
 	const int FRAME_RATE = 60 ; //60fps
 	while (!exit) { 
 		handleEvents();
@@ -73,7 +75,6 @@ void Game::update() {
 		if (balloons[i]->update()) {
 			delete balloons[i];
 			balloons.erase(balloons.begin()+i);
-			scoreboard->Puntuacion(10);
 		}
 	}
 	for (int j = 0; j < arrows.size(); j++) {
@@ -117,15 +118,15 @@ void Game::handleEvents() {
 
 void Game::generateBalloons() {
 	//se supone que crea el globo pero no lo muestra (creo que el problema esta en algo del render pero no estoy seguro)
-	const int FRAME_RATEGLOB = 1000; // cada segundo generamos un globo
-	uint start, frame;
-	start = SDL_GetTicks();
-	frame = SDL_GetTicks() - start;
-	if (frame >= FRAME_RATEGLOB) {
+	const int FRAME_RATEGLOB = 2000; // cada segundo generamos un globo
+	frameGTime = SDL_GetTicks() - startGTime;
+	if (frameGTime >= FRAME_RATEGLOB) {
 		int h = rand() % 320 + 350;
 		int color = rand() % 7;
 		Balloon* globo = new Balloon(Point2D{ (double)h,600 }, 80, 80, Vector2D(0, 1), textures[2], false, 0, this, color);
 		balloons.push_back(globo);
+		startGTime = SDL_GetTicks();
+
 	}
 	
 }
@@ -140,10 +141,15 @@ void Game::DisparaFlecha(Point2D pos) {
 		timecharge =(timeshoot- timecharge)/100;
 		Arrow* flecha = new Arrow(Point2D(pos.getX() + 20, pos.getY() + 30), 90, 20, Vector2D(timecharge,0), textures[4]);
 		arrows.push_back(flecha);
-		scoreboard->Arrows();
 		flechas--;
+		scoreboard->Arrows();
 	}
 	
+}
+void Game::AddPoints()
+{
+	points += POINT_ADD;
+	scoreboard->Puntuacion(points);
 }
 
 

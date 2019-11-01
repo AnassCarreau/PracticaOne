@@ -18,37 +18,37 @@ void Balloon::render() {
 	srcDest.h = h;
 
 	if (explotado) {
-		globo->renderFrame(srcDest, color, int(((SDL_GetTicks() / TIME_Animation) % 6)), 0, SDL_FLIP_NONE);
+		globo->renderFrame(srcDest, color, estado , 0, SDL_FLIP_NONE);
 	}
 	else {
 		globo->renderFrame(srcDest, color, 0, 0, SDL_FLIP_NONE);
 	}
 }
 
-bool Balloon::update() {
+bool  Balloon::update() {
 	double i = esqIzq.getX();
 	double j = esqIzq.getY();
 	SDL_Rect* rectBalloon = new SDL_Rect{ (int)esqIzq.getX(),(int)esqIzq.getY(),(int)w,(int)h };
 
 	explotado = game->MiraChoques(rectBalloon);
-	if ( instPinchazo==0 && explotado)
+	if (explotado && instPinchazo == 0)
 	{
-		instPinchazo = SDL_GetTicks()+600;
+		game->AddPoints();
+		instPinchazo = SDL_GetTicks();
 	}
+
 	if (j >= 0 && j <= WIN_HEIGHT && !explotado) {
 		esqIzq = esqIzq.operator-(velocidad);
 		return false;
 	}
-	else if (explotado)
-	{
-		if (instPinchazo  > SDL_GetTicks()) {
+	
+	if (SDL_GetTicks() < instPinchazo + TIME_Animation && explotado && estado<7) {
 
-			return false;
-		}
-		else return true;
-		
+		estado++;
+		return false;
 	}
-}
+	return true;
 
+}
  
 	

@@ -20,6 +20,7 @@ private:
 	Texture* globo = nullptr;
 	Game* game = nullptr;
 	int color = 0;
+	int estado = 0;
 public:
 	Balloon();
 	Balloon(Point2D esqIzq, uint ancho, uint alto, Vector2D vel, Texture* textura, bool explotado, uint instPinchazo, Game* tocando, int color);

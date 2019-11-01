@@ -33,6 +33,10 @@ private:
 	vector<Arrow*> arrows;
 	vector<Balloon*> balloons;
 	Scoreboard* scoreboard;
+	uint32_t startGTime=0, frameGTime=0; //variables para el control del tiempo
+	int points = 0;
+	const int POINT_ADD = 10;
+
 	ImagenesAtributos imags[NUM_TEXTURES] = { {"..\\images\\bg1.png", 1, 1},{"..\\images\\Bow2.png", 1, 1},{"..\\images\\balloons.png", 7, 6},{"..\\images\\Bow1.png", 1, 1},{"..\\images\\Arrow1.png",1,1},{"..\\images\\Arrow2.png",1,1},{"..\\images\\digits1.png",1,10} };
 public:
 	Game();
@@ -45,5 +49,6 @@ public:
 	void DisparaFlecha(Point2D pos);
 	bool MiraChoques(SDL_Rect*rectBalloon);
 	void generateBalloons();
+	void AddPoints();
 };
 #endif

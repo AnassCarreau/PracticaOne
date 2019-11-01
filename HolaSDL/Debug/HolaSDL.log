@@ -1,11 +1,7 @@
-﻿  Game.cpp
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\crtdbg.h(303,1): warning C4005:  '_malloca': redefinición de macro
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\malloc.h(122): message :  vea la definición anterior de '_malloca'
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(39,20): warning C4018:  '<': no coinciden signed/unsigned
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(43,20): warning C4018:  '<': no coinciden signed/unsigned
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(71,20): warning C4018:  '<': no coinciden signed/unsigned
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(79,20): warning C4018:  '<': no coinciden signed/unsigned
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(95,20): warning C4018:  '<': no coinciden signed/unsigned
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(99,20): warning C4018:  '<': no coinciden signed/unsigned
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(152,21): warning C4018:  '<': no coinciden signed/unsigned
-  HolaSDL.vcxproj -> C:\Users\forev\OneDrive\Desktop\PracticaOne\bin\HolaSDLDebug.exe
+﻿  Arrow.cpp
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\Arrow.cpp(15,25): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\Arrow.cpp(16,25): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\Arrow.cpp(24,7): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\Arrow.cpp(30,13): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\Arrow.cpp(31,13): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+  HolaSDL.vcxproj -> C:\Users\anass\Desktop\PracticaOne\bin\HolaSDLDebug.exe

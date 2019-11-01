@@ -16,22 +16,18 @@ private:
 	uint ancho = 0;
 	uint alto = 0;
 	static  const int MAX_ARROW_TEXTURES = 10;
-	vector<Texture*> TextArrows;
+	vector<int>digitos;
+	int numberarrows;
 
-	int totalArrows = MAX_ARROW_TEXTURES;
-	int score = 0;
 
 
 public:
 	Scoreboard();
-	Scoreboard(Point2D esqIzq,uint ancho , uint alto ,Texture* points, Texture* arrows, int totalArrows, int score);
-	~Scoreboard();
+	Scoreboard(Point2D esqIzq,uint ancho , uint alto ,Texture* points, Texture* arrows,int numberArrows);
 	void Puntuacion(int score);
 	void Arrows();
 	void render();
-	void DameVector(vector<int>&digitos,vector<Texture*>&mScore);
-  private:
-	void ClearBoard();
+  
 };
 #endif
 

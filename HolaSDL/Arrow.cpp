@@ -26,17 +26,14 @@ bool Arrow::update() {
 	
 }
 SDL_Rect* Arrow::PosFlecha() {
-	SDL_Rect* rectArrow = new SDL_Rect{ (int)esqIzq.getX(), (int)esqIzq.getY(), (int)ancho,(int) alto };
 
+	int pointX = esqIzq.getX() + 4*ancho / 5;
+	int pointY = esqIzq.getY();
+	int arrowwidth = ancho / 5;
+	int arrowheight = alto;
+	SDL_Rect* rectArrow = new SDL_Rect{ pointX, pointY, arrowwidth,arrowheight};
+	
 	return rectArrow;
 
 }
 
-/*void Arrow::IncrementaVel(double inc) {
-	velocidad = Vector2D(velocidad.getX() + inc, velocidad.getY());
-}
-
-/*Vector2D Arrow::DameVel() {
-	Vector2D vel = Vector2D(velocidad.getX(), velocidad.getY());
-	return velocidad;
-}*/
