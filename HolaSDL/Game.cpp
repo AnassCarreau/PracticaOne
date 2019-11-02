@@ -9,7 +9,6 @@ typedef unsigned int uint;
 
 Game::Game() {
 	//Primero inicializamos SDL
-	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 
 	SDL_Init(SDL_INIT_EVERYTHING);
 	window = SDL_CreateWindow("Practica 1", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
@@ -45,6 +44,7 @@ Game::~Game() {
 		delete balloons[j];
 		balloons[j] = nullptr;
 	}
+	
 	SDL_DestroyRenderer(renderer);
 	SDL_DestroyWindow(window);
 	SDL_Quit();
@@ -65,15 +65,16 @@ void Game::run() {
 		}		
 		render();
 	}
-	string name;
+	//pedimos el nombre del jugador
+    string name;
 	cin >> name;
+	//lee el archivo
 	score.Load("score.txt");
-
+	//añade la puntuacion de la partida y ordena las mejores
 	score.addScore(name, points);
-
+	//guarda el archivo
 	score.save("score.txt");
 	
-	this->~Game(); //llamamos al metodo de destruccion de basura al salir del juego para asi eliminar la basura
 }
 //metodo que actualiza el estado del juego
 void Game::update() {

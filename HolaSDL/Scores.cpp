@@ -4,6 +4,8 @@
 #include <fstream>
 using namespace std;
 
+
+//metodos para ordenar el vector de puntuaciones
 	void  Scores::merge(vector<ScoreReg*>& v, int l, int m, int r)
 	{
 		int i, j, k;
@@ -63,7 +65,7 @@ using namespace std;
 		}
 	}
 	
-
+//metodo que nos muestra en consola las mejores puntuaciones con el nombre de cada persona
 void Scores:: printTopNScores(int n)
 {
 	for (int i = 0; i < n; i++)
@@ -74,6 +76,7 @@ void Scores:: printTopNScores(int n)
 	}
 	
 }
+//metodo que añade el nombre y la puntuacion
 void Scores::addScore(const string& name, int score)
 {
 	ScoreReg* game = new ScoreReg();
@@ -84,21 +87,19 @@ void Scores::addScore(const string& name, int score)
 
 	if (TopScores.size()>9)
 	{
-		TopScores.erase(TopScores.begin(),TopScores.end());
+		TopScores.erase(TopScores.begin());
 
 	}
 	mergesort(TopScores,0,TopScores.size());
 	printTopNScores(TopScores.size());
 }
+
 void Scores::Load(const string& filename)
 {
 	ifstream input;
 	int num;
 	char c;
 	string name;
-	int n;
-
-
 	input.open(filename);
 	if (!input.is_open()) cout << "No se encuentra el fichero" << endl;
 	else {
@@ -106,7 +107,7 @@ void Scores::Load(const string& filename)
 		input >> num;
 		for (int i = 0; i < num; i++) {
 			ScoreReg* game = new ScoreReg();
-			input >> game->score  ;
+			input >> game->score;
 			input.get(c);
 			getline(input, game->name);
 			TopScores.push_back(game);

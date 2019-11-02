@@ -1,8 +1,8 @@
 #ifndef SCORESH
 #define SCORESH
 #include <string>
-#include <iostream>;
-#include <vector>;
+#include <iostream>
+#include <vector>
 using namespace std;
 
 class Scores
@@ -14,10 +14,10 @@ private:
 		int score;
 	};
 	vector<ScoreReg*>TopScores;
-	int hola;
+	
 
 public:
-	const int n = 10;
+	const int numPuntuaciones = 10;
 	void Load(const string& filename);
 	void printTopNScores(int n);
 	void addScore(const string& name, int score);
