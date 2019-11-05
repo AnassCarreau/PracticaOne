@@ -7,7 +7,7 @@
 using namespace std;
 
 class Game;
-class Scoreboard
+class Scoreboard:public GameObject
 {
 private:
 	Point2D esqIzq = Point2D(0, 0);

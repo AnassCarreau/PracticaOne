@@ -8,7 +8,10 @@
 #include "Scores.h"
 #include "Bow.h"
 #include "Arrow.h"
+#include "EventHandler.h";
+#include "GameObject.h";
 #include <vector>
+#include <list>
 #include "Scoreboard.h"
 typedef unsigned int uint;
 
@@ -34,6 +37,11 @@ private:
 	vector<Arrow*> arrows;
 	vector<Balloon*> balloons;
 	Scoreboard* scoreboard;
+
+	list <EventHandler*> eventHandler;
+	list<GameObject*> gameObjects;
+	list<Arrow*> arrowss;
+
 	Scores score;
 	uint32_t startBaloonTime=0, frameBaloonTime=0; //variables para el control del tiempo
 	int points = 0;
@@ -52,8 +60,6 @@ public:
 	bool OnCollisionEnter(SDL_Rect*rectBalloon);
 	void generateBalloons();
 	void AddPoints();
-	
-	
-
+	void KillObject(GameObject* object);
 };
 #endif

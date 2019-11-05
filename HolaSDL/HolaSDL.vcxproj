@@ -68,10 +68,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Arrow.cpp" />
+    <ClCompile Include="ArrowsError.cpp" />
+    <ClCompile Include="ArrowsGameObject.cpp" />
     <ClCompile Include="Balloon.cpp" />
     <ClCompile Include="Bow.cpp" />
+    <ClCompile Include="Butterfly.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Reward.cpp" />
     <ClCompile Include="Scoreboard.cpp" />
     <ClCompile Include="Scores.cpp" />
     <ClCompile Include="Texture.cpp" />
@@ -79,9 +83,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Arrow.h" />
+    <ClInclude Include="ArrowsError.h" />
+    <ClInclude Include="ArrowsGameObject.h" />
     <ClInclude Include="Balloon.h" />
     <ClInclude Include="Bow.h" />
+    <ClInclude Include="Butterfly.h" />
+    <ClInclude Include="EventHandler.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="GameObject.h" />
+    <ClInclude Include="Reward.h" />
     <ClInclude Include="Scoreboard.h" />
     <ClInclude Include="Scores.h" />
     <ClInclude Include="Texture.h" />

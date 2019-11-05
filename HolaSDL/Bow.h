@@ -3,12 +3,14 @@
 #include "Vector2D.h"
 #include "Texture.h"
 #include"Arrow.h"
+//#include "EventHandler.h";
+//#include "ArrowsGameObject.h";
+
 class Game;
 
 typedef unsigned int uint;
 
-class Bow
-{
+class Bow: public EventHandler,public ArrowsGameObject{
 private:
 	Point2D esqIzq = Point2D(0,0); 
 	uint w = 0; // width

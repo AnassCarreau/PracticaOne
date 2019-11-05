@@ -3,9 +3,11 @@
 
 #include "Vector2D.h"
 #include "Texture.h"
+//#include "ArrowsGameObject.h";
+
 class Game;
-class Arrow
-{
+class Arrow: public ArrowsGameObject{
+
 private:
 	Point2D esqIzq;
 	uint width, height;

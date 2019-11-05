@@ -195,3 +195,7 @@ bool Game::OnCollisionEnter(SDL_Rect* rectBalloon) {
 	
 }
 
+void Game::KillObject(GameObject *object) {
+	//delete object;
+}
+

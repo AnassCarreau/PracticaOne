@@ -3,12 +3,14 @@
 
 #include "Vector2D.h"
 #include "Texture.h"
+//#include "ArrowsGameObject.h";
+
 class Game;
 typedef unsigned int uint;
-class Balloon
-{
+class Balloon : public ArrowsGameObject {
+
 private:
-	Point2D esqIzq = Point2D(600,600);
+	Point2D esqIzq = Point2D(600, 600);
 	uint h = 0;
 	uint w = 0;
 	Vector2D velocidad = Vector2D(0, 0);
@@ -25,4 +27,5 @@ public:
 	bool update();
 };
 #endif
+
 
