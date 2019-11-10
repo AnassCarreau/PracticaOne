@@ -68,7 +68,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Arrow.cpp" />
-    <ClCompile Include="ArrowsError.cpp" />
     <ClCompile Include="ArrowsGameObject.cpp" />
     <ClCompile Include="Balloon.cpp" />
     <ClCompile Include="Bow.cpp" />
@@ -89,11 +88,14 @@
     <ClInclude Include="Bow.h" />
     <ClInclude Include="Butterfly.h" />
     <ClInclude Include="EventHandler.h" />
+    <ClInclude Include="FileFormatError.h" />
+    <ClInclude Include="FileNotFoundError.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="Reward.h" />
     <ClInclude Include="Scoreboard.h" />
     <ClInclude Include="Scores.h" />
+    <ClInclude Include="SDLError.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="Vector2D.h" />
   </ItemGroup>

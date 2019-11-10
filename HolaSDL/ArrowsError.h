@@ -1,12 +1,15 @@
 #ifndef ARROWSERROR_H_
 #define ARROWSERROR_H_
 
-#include <stdexcept>;
+#include <stdexcept>
+#include <string>
 using namespace std;
+
 class ArrowsError: public logic_error
 {
-	logic_error(const char* what_arg);
-
+	public:
+		ArrowsError() :logic_error("logical error") { what(); };
 };
+
 #endif
 
