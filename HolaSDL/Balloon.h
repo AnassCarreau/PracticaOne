@@ -9,22 +9,22 @@ typedef unsigned int uint;
 class Balloon : public ArrowsGameObject {
 
 private:
-	/*Point2D esqIzq = Point2D(600, 600);
+	Point2D esqIzq = Point2D(600, 600);
 	uint h = 0;
 	uint w = 0;
 	Vector2D velocidad = Vector2D(0, 0);
 	Texture* globo = nullptr;
-	Game* game = nullptr;*/
+	Game* game = nullptr;
 	int color = 0;
 	int estado = 0;
 	bool explotado = false;
 	uint instPinchazo = 0;
 public:
-	Balloon(Point2D esqIzq, uint ancho, uint alto, Vector2D vel, Texture textura, Game* game, int color, int estado, bool explotado, uint instPinchazo);
-
+	Balloon();
+	Balloon(Point2D esqIzq, uint ancho, uint alto, Vector2D vel, Texture* textura, bool explotado, uint instPinchazo, Game* tocando, int color);
 	void render();
-	//bool update();
-	void update();
+	bool update();
+	//void update();
 };
 #endif
 

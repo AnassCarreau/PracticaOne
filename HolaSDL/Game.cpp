@@ -86,18 +86,18 @@ void Game::update() {
 	//actualizacion de globos
 	for (int i = 0; i < balloons.size(); i++) {
 		//si el update devuelve true destruimos ese globo y lo quitamos del vector
-		/*if (balloons[i]->update()) {
+		if (balloons[i]->update()) {
 			delete balloons[i];
 			balloons.erase(balloons.begin()+i);
-		}*/
+		}
 	}
 	//actualizacion de flechas
 	for (int j = 0; j < arrows.size(); j++) {
 		//si el update devuelve true destruimos esa flecha y la quitamos del vector
-		/*if (arrows[j]->update()) {
+		if (arrows[j]->update()) {
 			delete arrows[j];
 			arrows.erase(arrows.begin() + j);
-		}*/
+		}
 	}
 }
 //metodo que renderiza todos los objetos del juego
@@ -209,7 +209,7 @@ bool Game::OnCollisionEnter(SDL_Rect* rectBalloon) {
 	
 }
 
-void Game::KillObject(GameObject *object) {
+/*void Game::KillObject(GameObject *object) {
 	//delete object;
 }
 void Game::NewLvl()
@@ -223,4 +223,4 @@ void Game::NewLvl()
 		delete balloons[j];
 		balloons[j] = nullptr;
 	}
-}
+}*/

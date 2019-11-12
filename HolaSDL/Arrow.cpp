@@ -5,7 +5,7 @@
 typedef unsigned int uint;
 
 
-Arrow::Arrow():esqIzq(), width(), height(), velocity(),flecha(){}
+//Arrow::Arrow():esqIzq(), width(), height(), velocity(),flecha(){}
 
 Arrow::Arrow(Point2D esqIzq, uint width, uint height, Vector2D vel, Texture* textura)
 	: esqIzq(esqIzq), width(width), height(height), velocity(vel), flecha(textura) {}

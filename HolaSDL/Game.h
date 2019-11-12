@@ -26,10 +26,10 @@ private:
 	vector<ArrowsGameObject*>go;
 	
 	//ArrowsGameObject* go[5];
-	go = new Bow();
-	go[1] = new Arrow();
-	go[2] = new Balloon();
-	go[3] = new Butterfly();
+	//go = new Bow();
+	//go[1] = new Arrow();
+	//go[2] = new Balloon();
+	//go[3] = new Butterfly();
 	SDL_Window* window = nullptr;
 	SDL_Renderer* renderer = nullptr;
 	bool exit = false;
@@ -40,14 +40,14 @@ private:
 	Bow* bow = nullptr;
 	double timecharge = 0;
 	double timeshoot=0;
-	//vector<Arrow*> arrows;
+	vector<Arrow*> arrows;
 	vector<Balloon*> balloons;
 	Scoreboard* scoreboard;
 	
 
-	list <EventHandler*> eventHandler;
+	/*list <EventHandler*> eventHandler;
 	list<GameObject*> gameObjects;
-	list<Arrow*> arrowss;
+	list<Arrow*> arrowss;*/
 
 	Scores score;
 	uint32_t startBaloonTime=0, frameBaloonTime=0; //variables para el control del tiempo
@@ -67,7 +67,7 @@ public:
 	bool OnCollisionEnter(SDL_Rect*rectBalloon);
 	void generateBalloons();
 	void AddPoints();
-	void KillObject(GameObject* object);
-	void NewLvl();
+	//void KillObject(GameObject* object);
+	//void NewLvl();
 };
 #endif

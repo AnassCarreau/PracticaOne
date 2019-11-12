@@ -6,24 +6,21 @@
 typedef unsigned int uint;
 const int TIME_Animation = 600;
 
-//Balloon::Balloon() :esqIzq(), w(), h(), velocidad(), globo(), explotado(), instPinchazo(), game() {}
+// Balloon::Balloon() :esqIzq(), w(), h(), velocidad(), globo(), explotado(), instPinchazo(), game() {}
 
-/*Balloon::Balloon(Point2D _esqIzq, uint _ancho, uint _alto, Vector2D _vel, Texture* _textura, Game* _tocando, int _color, int _estado, bool _explotado, uint _instPinchazo) : ArrowsGameObject(_esqIzq, _ancho, _alto, _vel, _textura, _tocando){
-	color = _color;
-	estado = _estado;
-	explotado = _explotado
-}*/
+Balloon::Balloon(Point2D esqIzq, uint ancho, uint alto, Vector2D vel, Texture* textura, bool explotado, uint instPinchazo, Game* tocando, int color)
+	: esqIzq(esqIzq), w(ancho), h(alto), velocidad(vel), globo(textura), explotado(explotado), instPinchazo(instPinchazo), game(tocando), color(color) {}
 	
-Balloon::Balloon(Point2D esqIzq, uint ancho, uint alto, Vector2D vel, Texture textura, Game* game, int color, int estado, bool explotado, uint instPinchazo) //: ArrowsGameObject(esqIzq, ancho, alto, vel, textura, game)
+/*Balloon::Balloon(Point2D esqIzq, uint ancho, uint alto, Vector2D vel, Texture textura, Game* game, int color, int estado, bool explotado, uint instPinchazo) //: ArrowsGameObject(esqIzq, ancho, alto, vel, textura, game)
 {
 	color = color;
 	estado = estado;
 	explotado = explotado;
-}
+}*/
 
 void Balloon::render() {
 	SDL_Rect destRect;
-	destRect.x = es.getX();
+	destRect.x = esqIzq.getX();
 	destRect.y = esqIzq.getY();
 	destRect.w = w;
 	destRect.h = h;
@@ -37,7 +34,7 @@ void Balloon::render() {
 	}
 }
 
-bool  Balloon::update() {
+void  Balloon::update() {
 	double i = esqIzq.getX();
 	double j = esqIzq.getY();
 	SDL_Rect* rectBalloon = new SDL_Rect{ (int)esqIzq.getX(),(int)esqIzq.getY(),(int)w,(int)h };
