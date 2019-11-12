@@ -1,247 +1,318 @@
 ﻿  Arrow.cpp
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Arrow.h(6,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(4,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(5,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Balloon.h(9,41): error C2504: 'ArrowsGameObject': clase base sin definir
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Balloon.h(25,13): error C2614: 'Balloon': inicialización de miembro no válida: 'ArrowsGameObject' no es una base o miembro
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.h(4,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.h(5,9): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.h(6,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.h(13,35): error C2504: 'ArrowsGameObject': clase base sin definir
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.h(22,7): error C2143: error de sintaxis: falta ';' delante de '*'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.h(22,7): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.h(22,25): error C2238: símbolos (token) inesperados delante de ';'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.h(27,9): error C2614: 'Bow': inicialización de miembro no válida: 'ArrowsGameObject' no es una base o miembro
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(26,18): error C2143: error de sintaxis: falta ';' delante de '*'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(26,18): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(26,25): error C2238: símbolos (token) inesperados delante de ';'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(27,8): error C2059: error de sintaxis: '='
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(27,19): error C2238: símbolos (token) inesperados delante de ';'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(28,8): error C2059: error de sintaxis: '='
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(28,21): error C2238: símbolos (token) inesperados delante de ';'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(29,8): error C2059: error de sintaxis: '='
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(29,23): error C2238: símbolos (token) inesperados delante de ';'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(30,8): error C2059: error de sintaxis: '='
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(30,26): error C2238: símbolos (token) inesperados delante de ';'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(48,7): error C2065: 'Arrow': identificador no declarado
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(48,13): error C2059: error de sintaxis: '>'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(6,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Arrow.cpp(14,26): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Arrow.cpp(15,26): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Arrow.cpp(23,7): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Arrow.cpp(40,13): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Arrow.h(5,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(4,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(5,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Balloon.h(4,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Balloon.h(5,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Balloon.h(9,41): error C2504:  'ArrowsGameObject': clase base sin definir
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Balloon.h(23,149): error C2061:  error de sintaxis: identificador 'Point2D'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(3,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(4,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(5,9): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(6,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(13,35): error C2504:  'ArrowsGameObject': clase base sin definir
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(22,7): error C2143:  error de sintaxis: falta ';' delante de '*'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(22,7): error C4430:  falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(22,25): error C2238:  símbolos (token) inesperados delante de ';'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(27,9): error C2614:  'Bow': inicialización de miembro no válida: 'ArrowsGameObject' no es una base o miembro
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(26,18): error C2143:  error de sintaxis: falta ';' delante de '*'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(26,18): error C4430:  falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(26,25): error C2238:  símbolos (token) inesperados delante de ';'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(27,8): error C2059:  error de sintaxis: '='
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(27,19): error C2238:  símbolos (token) inesperados delante de ';'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(28,8): error C2059:  error de sintaxis: '='
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(28,21): error C2238:  símbolos (token) inesperados delante de ';'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(29,8): error C2059:  error de sintaxis: '='
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(29,23): error C2238:  símbolos (token) inesperados delante de ';'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(30,8): error C2059:  error de sintaxis: '='
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(30,25): error C2238:  símbolos (token) inesperados delante de ';'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(48,7): error C2065:  'Arrow': identificador no declarado
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(48,13): error C2059:  error de sintaxis: '>'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(6,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(7,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(8,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Arrow.cpp(8,64): error C2512:  'ArrowsGameObject': no hay disponible un constructor predeterminado adecuado
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(10,7): message :  vea la declaración de 'ArrowsGameObject'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Arrow.cpp(11,81): error C2512:  'ArrowsGameObject': no hay disponible un constructor predeterminado adecuado
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(10,7): message :  vea la declaración de 'ArrowsGameObject'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Arrow.cpp(14,26): warning C4244:  '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Arrow.cpp(15,26): warning C4244:  '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Arrow.cpp(23,7): warning C4244:  'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Arrow.cpp(40,13): warning C4244:  'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
   ArrowsGameObject.cpp
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Arrow.cpp(41,13): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(4,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(5,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\crtdbg.h(303,1): warning C4005: '_malloca': redefinición de macro
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\malloc.h(122): message : vea la definición anterior de '_malloca'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Balloon.h(9,41): error C2504: 'ArrowsGameObject': clase base sin definir
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Balloon.h(25,13): error C2614: 'Balloon': inicialización de miembro no válida: 'ArrowsGameObject' no es una base o miembro
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.h(4,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.h(5,9): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Arrow.h(6,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Arrow.h(10,37): error C2504: 'ArrowsGameObject': clase base sin definir
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.h(6,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.h(13,35): error C2504: 'ArrowsGameObject': clase base sin definir
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.h(27,9): error C2614: 'Bow': inicialización de miembro no válida: 'ArrowsGameObject' no es una base o miembro
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(26,18): error C2143: error de sintaxis: falta ';' delante de '*'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(26,18): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(26,25): error C2238: símbolos (token) inesperados delante de ';'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(27,8): error C2059: error de sintaxis: '='
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(27,19): error C2238: símbolos (token) inesperados delante de ';'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(28,8): error C2059: error de sintaxis: '='
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(28,21): error C2238: símbolos (token) inesperados delante de ';'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(29,8): error C2059: error de sintaxis: '='
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(29,23): error C2238: símbolos (token) inesperados delante de ';'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(30,8): error C2059: error de sintaxis: '='
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(30,26): error C2238: símbolos (token) inesperados delante de ';'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(6,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.cpp(22,23): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.cpp(30,13): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Arrow.cpp(41,13): warning C4244:  'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(4,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(5,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\crtdbg.h(303,1): warning C4005:  '_malloca': redefinición de macro
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\malloc.h(122): message :  vea la definición anterior de '_malloca'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Balloon.h(4,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Balloon.h(5,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Balloon.h(9,41): error C2504:  'ArrowsGameObject': clase base sin definir
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Balloon.h(23,149): error C2061:  error de sintaxis: identificador 'Point2D'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(3,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(4,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(5,9): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Arrow.h(5,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Arrow.h(9,37): error C2504:  'ArrowsGameObject': clase base sin definir
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(6,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(13,35): error C2504:  'ArrowsGameObject': clase base sin definir
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(27,9): error C2614:  'Bow': inicialización de miembro no válida: 'ArrowsGameObject' no es una base o miembro
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(26,18): error C2143:  error de sintaxis: falta ';' delante de '*'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(26,18): error C4430:  falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(26,25): error C2238:  símbolos (token) inesperados delante de ';'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(27,8): error C2059:  error de sintaxis: '='
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(27,19): error C2238:  símbolos (token) inesperados delante de ';'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(28,8): error C2059:  error de sintaxis: '='
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(28,21): error C2238:  símbolos (token) inesperados delante de ';'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(29,8): error C2059:  error de sintaxis: '='
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(29,23): error C2238:  símbolos (token) inesperados delante de ';'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(30,8): error C2059:  error de sintaxis: '='
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(30,25): error C2238:  símbolos (token) inesperados delante de ';'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(6,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(7,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(8,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.cpp(22,23): warning C4244:  '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.cpp(30,13): warning C4244:  'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
   Balloon.cpp
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.cpp(31,13): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Balloon.h(9,41): error C2504: 'ArrowsGameObject': clase base sin definir
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Balloon.h(25,13): error C2614: 'Balloon': inicialización de miembro no válida: 'ArrowsGameObject' no es una base o miembro
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.h(4,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.h(5,9): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Arrow.h(6,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(4,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(5,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(6,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.h(6,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(27,8): error C2059: error de sintaxis: '='
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(27,19): error C2238: símbolos (token) inesperados delante de ';'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(28,8): error C2059: error de sintaxis: '='
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(28,21): error C2238: símbolos (token) inesperados delante de ';'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(29,8): error C2059: error de sintaxis: '='
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(29,23): error C2238: símbolos (token) inesperados delante de ';'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(30,8): error C2059: error de sintaxis: '='
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(30,26): error C2238: símbolos (token) inesperados delante de ';'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Balloon.cpp(9,20): error C2084: la función 'Balloon::Balloon(void)' ya tiene un cuerpo
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Balloon.h(25): message : vea la definición anterior de '{ctor}'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Balloon.cpp(12,2): error C2511: 'Balloon::Balloon(Point2D,uint,uint,Vector2D,Texture *,bool,uint,Game *,int)': la función miembro sobrecargada no se ha encontrado en 'Balloon'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Balloon.h(9): message : vea la declaración de 'Balloon'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Balloon.cpp(12,148): error C2550: 'Balloon::{ctor}': las listas de inicializadores de constructor solo se permiten en las definiciones de constructor
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Balloon.cpp(16,26): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Balloon.cpp(17,26): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Balloon.cpp(30,25): error C2556: 'bool Balloon::update(void)': la función sobrecargada solo se diferencia de 'void Balloon::update(void)' por el tipo de valor devuelto
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Balloon.h(29): message : vea la declaración de 'Balloon::update'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Balloon.cpp(30,16): error C2371: 'Balloon::update': nueva definición; tipos básicos distintos
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.cpp(31,13): warning C4244:  'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Balloon.h(4,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Balloon.h(5,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(4,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(5,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(3,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(4,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(5,9): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Arrow.h(5,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Arrow.h(9,37): error C2504:  'ArrowsGameObject': clase base sin definir
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(6,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(13,35): error C2504:  'ArrowsGameObject': clase base sin definir
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(27,9): error C2614:  'Bow': inicialización de miembro no válida: 'ArrowsGameObject' no es una base o miembro
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(26,18): error C2143:  error de sintaxis: falta ';' delante de '*'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(26,18): error C4430:  falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(26,25): error C2238:  símbolos (token) inesperados delante de ';'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(27,8): error C2059:  error de sintaxis: '='
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(27,19): error C2238:  símbolos (token) inesperados delante de ';'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(28,8): error C2059:  error de sintaxis: '='
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(28,21): error C2238:  símbolos (token) inesperados delante de ';'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(29,8): error C2059:  error de sintaxis: '='
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(29,23): error C2238:  símbolos (token) inesperados delante de ';'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(30,8): error C2059:  error de sintaxis: '='
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(30,25): error C2238:  símbolos (token) inesperados delante de ';'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(42,9): error C2065:  'Balloon': identificador no declarado
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(42,17): error C2059:  error de sintaxis: '>'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(6,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(7,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(8,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Balloon.cpp(17,176): error C2664:  'ArrowsGameObject::ArrowsGameObject(ArrowsGameObject &&)': el argumento 5 no puede convertirse de 'Texture' a 'Texture *'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Balloon.cpp(17,203): message :  No hay disponible ningún operador de conversión definido por el usuario que pueda realizar esta conversión, o bien no se puede llamar al operador
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Balloon.cpp(26,15): error C2065:  'esqIzq': identificador no declarado
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Balloon.cpp(27,15): error C2065:  'esqIzq': identificador no declarado
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Balloon.cpp(28,15): error C2065:  'w': identificador no declarado
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Balloon.cpp(29,15): error C2065:  'h': identificador no declarado
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Balloon.cpp(32,3): error C2065:  'globo': identificador no declarado
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Balloon.cpp(36,3): error C2065:  'globo': identificador no declarado
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Balloon.cpp(40,25): error C2556:  'bool Balloon::update(void)': la función sobrecargada solo se diferencia de 'void Balloon::update(void)' por el tipo de valor devuelto
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Balloon.h(27): message :  vea la declaración de 'Balloon::update'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Balloon.cpp(40,16): error C2371:  'Balloon::update': nueva definición; tipos básicos distintos
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Balloon.h(27): message :  vea la declaración de 'Balloon::update'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Balloon.cpp(41,13): error C2065:  'esqIzq': identificador no declarado
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Balloon.cpp(42,13): error C2065:  'esqIzq': identificador no declarado
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Balloon.cpp(43,45): error C2065:  'esqIzq': identificador no declarado
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Balloon.cpp(43,64): error C2065:  'esqIzq': identificador no declarado
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Balloon.cpp(43,83): error C2065:  'w': identificador no declarado
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Balloon.cpp(43,90): error C2065:  'h': identificador no declarado
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Balloon.cpp(45,18): error C2248:  'ArrowsGameObject::game': no se puede obtener acceso al miembro private miembro declarado en la clase 'ArrowsGameObject'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(17): message :  vea la declaración de 'ArrowsGameObject::game'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(10): message :  vea la declaración de 'ArrowsGameObject'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Balloon.cpp(48,7): error C2248:  'ArrowsGameObject::game': no se puede obtener acceso al miembro private miembro declarado en la clase 'ArrowsGameObject'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(17): message :  vea la declaración de 'ArrowsGameObject::game'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(10): message :  vea la declaración de 'ArrowsGameObject'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Balloon.cpp(53,3): error C2065:  'esqIzq': identificador no declarado
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Balloon.cpp(53,12): error C2065:  'esqIzq': identificador no declarado
   Bow.cpp
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Balloon.h(29): message : vea la declaración de 'Balloon::update'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.h(4,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.h(5,9): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Arrow.h(6,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(4,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(5,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Balloon.h(9,41): error C2504: 'ArrowsGameObject': clase base sin definir
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Balloon.h(25,13): error C2614: 'Balloon': inicialización de miembro no válida: 'ArrowsGameObject' no es una base o miembro
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(26,18): error C2143: error de sintaxis: falta ';' delante de '*'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(26,18): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(26,25): error C2238: símbolos (token) inesperados delante de ';'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(27,8): error C2059: error de sintaxis: '='
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(27,19): error C2238: símbolos (token) inesperados delante de ';'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(28,8): error C2059: error de sintaxis: '='
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(28,21): error C2238: símbolos (token) inesperados delante de ';'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(29,8): error C2059: error de sintaxis: '='
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(29,23): error C2238: símbolos (token) inesperados delante de ';'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(30,8): error C2059: error de sintaxis: '='
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(30,26): error C2238: símbolos (token) inesperados delante de ';'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(38,5): error C2143: error de sintaxis: falta ';' delante de '*'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(38,5): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(38,20): error C2238: símbolos (token) inesperados delante de ';'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(46,8): error C2065: 'EventHandler': identificador no declarado
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(46,21): error C2059: error de sintaxis: '>'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(48,7): error C2065: 'Arrow': identificador no declarado
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(48,13): error C2059: error de sintaxis: '>'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(6,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.h(6,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.cpp(9,12): error C2084: la función 'Bow::Bow(void)' ya tiene un cuerpo
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.h(27): message : vea la definición anterior de '{ctor}'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.cpp(11,142): error C2511: 'Bow::Bow(Point2D,uint,uint,Vector2D,Texture *,Texture *,bool,Game *,Arrow *)': la función miembro sobrecargada no se ha encontrado en 'Bow'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.h(13): message : vea la declaración de 'Bow'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Balloon.cpp(53,29): error C2065:  'velocidad': identificador no declarado
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(3,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(4,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(5,9): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Arrow.h(5,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(4,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(5,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Balloon.h(4,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Balloon.h(5,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Balloon.h(9,41): error C2504:  'ArrowsGameObject': clase base sin definir
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(26,18): error C2143:  error de sintaxis: falta ';' delante de '*'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(26,18): error C4430:  falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(26,25): error C2238:  símbolos (token) inesperados delante de ';'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(27,8): error C2059:  error de sintaxis: '='
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(27,19): error C2238:  símbolos (token) inesperados delante de ';'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(28,8): error C2059:  error de sintaxis: '='
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(28,21): error C2238:  símbolos (token) inesperados delante de ';'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(29,8): error C2059:  error de sintaxis: '='
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(29,23): error C2238:  símbolos (token) inesperados delante de ';'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(30,8): error C2059:  error de sintaxis: '='
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(30,25): error C2238:  símbolos (token) inesperados delante de ';'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(38,5): error C2143:  error de sintaxis: falta ';' delante de '*'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(38,5): error C4430:  falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(38,20): error C2238:  símbolos (token) inesperados delante de ';'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(46,8): error C2065:  'EventHandler': identificador no declarado
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(46,21): error C2059:  error de sintaxis: '>'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(48,7): error C2065:  'Arrow': identificador no declarado
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(48,13): error C2059:  error de sintaxis: '>'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(6,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(7,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(8,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(6,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.cpp(9,12): error C2084:  la función 'Bow::Bow(void)' ya tiene un cuerpo
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(27): message :  vea la definición anterior de '{ctor}'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.cpp(9,88): error C2512:  'ArrowsGameObject': no hay disponible un constructor predeterminado adecuado
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(10,7): message :  vea la declaración de 'ArrowsGameObject'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.cpp(11,142): error C2511:  'Bow::Bow(Point2D,uint,uint,Vector2D,Texture *,Texture *,bool,Game *,Arrow *)': la función miembro sobrecargada no se ha encontrado en 'Bow'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(13): message :  vea la declaración de 'Bow'
   Butterfly.cpp
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.cpp(11,277): error C2550: 'Bow::{ctor}': las listas de inicializadores de constructor solo se permiten en las definiciones de constructor
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(4,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(5,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\crtdbg.h(303,1): warning C4005: '_malloca': redefinición de macro
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\malloc.h(122): message : vea la definición anterior de '_malloca'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Balloon.h(9,41): error C2504: 'ArrowsGameObject': clase base sin definir
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Balloon.h(25,13): error C2614: 'Balloon': inicialización de miembro no válida: 'ArrowsGameObject' no es una base o miembro
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.h(4,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.h(5,9): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Arrow.h(6,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Arrow.h(10,37): error C2504: 'ArrowsGameObject': clase base sin definir
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.h(6,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.h(13,35): error C2504: 'ArrowsGameObject': clase base sin definir
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.h(27,9): error C2614: 'Bow': inicialización de miembro no válida: 'ArrowsGameObject' no es una base o miembro
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(26,18): error C2143: error de sintaxis: falta ';' delante de '*'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(26,18): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(26,25): error C2238: símbolos (token) inesperados delante de ';'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(27,8): error C2059: error de sintaxis: '='
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(27,19): error C2238: símbolos (token) inesperados delante de ';'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(28,8): error C2059: error de sintaxis: '='
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(28,21): error C2238: símbolos (token) inesperados delante de ';'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(29,8): error C2059: error de sintaxis: '='
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(29,23): error C2238: símbolos (token) inesperados delante de ';'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(30,8): error C2059: error de sintaxis: '='
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(30,26): error C2238: símbolos (token) inesperados delante de ';'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.cpp(11,277): error C2550:  'Bow::{ctor}': las listas de inicializadores de constructor solo se permiten en las definiciones de constructor
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(4,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(5,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\crtdbg.h(303,1): warning C4005:  '_malloca': redefinición de macro
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\malloc.h(122): message :  vea la definición anterior de '_malloca'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Balloon.h(4,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Balloon.h(5,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Balloon.h(9,41): error C2504:  'ArrowsGameObject': clase base sin definir
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Balloon.h(23,149): error C2061:  error de sintaxis: identificador 'Point2D'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(3,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(4,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(5,9): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Arrow.h(5,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Arrow.h(9,37): error C2504:  'ArrowsGameObject': clase base sin definir
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(6,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(13,35): error C2504:  'ArrowsGameObject': clase base sin definir
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(27,9): error C2614:  'Bow': inicialización de miembro no válida: 'ArrowsGameObject' no es una base o miembro
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(26,18): error C2143:  error de sintaxis: falta ';' delante de '*'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(26,18): error C4430:  falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(26,25): error C2238:  símbolos (token) inesperados delante de ';'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(27,8): error C2059:  error de sintaxis: '='
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(27,19): error C2238:  símbolos (token) inesperados delante de ';'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(28,8): error C2059:  error de sintaxis: '='
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(28,21): error C2238:  símbolos (token) inesperados delante de ';'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(29,8): error C2059:  error de sintaxis: '='
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(29,23): error C2238:  símbolos (token) inesperados delante de ';'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(30,8): error C2059:  error de sintaxis: '='
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(30,25): error C2238:  símbolos (token) inesperados delante de ';'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(6,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(7,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
   Game.cpp
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(6,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\crtdbg.h(303,1): warning C4005: '_malloca': redefinición de macro
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\malloc.h(122): message : vea la definición anterior de '_malloca'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Balloon.h(9,41): error C2504: 'ArrowsGameObject': clase base sin definir
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Balloon.h(25,13): error C2614: 'Balloon': inicialización de miembro no válida: 'ArrowsGameObject' no es una base o miembro
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.h(4,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.h(5,9): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Arrow.h(6,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(4,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(5,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(6,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.h(6,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(27,8): error C2059: error de sintaxis: '='
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(27,19): error C2238: símbolos (token) inesperados delante de ';'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(28,8): error C2059: error de sintaxis: '='
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(28,21): error C2238: símbolos (token) inesperados delante de ';'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(29,8): error C2059: error de sintaxis: '='
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(29,23): error C2238: símbolos (token) inesperados delante de ';'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(30,8): error C2059: error de sintaxis: '='
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(30,26): error C2238: símbolos (token) inesperados delante de ';'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.cpp(41,22): error C2065: 'arrows': identificador no declarado
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.cpp(42,10): error C2065: 'arrows': identificador no declarado
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.cpp(43,3): error C2065: 'arrows': identificador no declarado
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.cpp(45,20): warning C4018: '<': no coinciden signed/unsigned
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.cpp(87,20): warning C4018: '<': no coinciden signed/unsigned
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.cpp(95,22): error C2065: 'arrows': identificador no declarado
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.cpp(115,22): error C2065: 'arrows': identificador no declarado
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.cpp(117,3): error C2065: 'arrows': identificador no declarado
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.cpp(120,20): warning C4018: '<': no coinciden signed/unsigned
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.cpp(148,124): error C2661: 'Balloon::Balloon': ninguna función sobrecargada acepta 9 argumentos
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.cpp(171,3): error C2065: 'arrows': identificador no declarado
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.cpp(189,23): error C2065: 'arrows': identificador no declarado
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.cpp(191,41): error C2065: 'arrows': identificador no declarado
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.cpp(191,7): error C2660: 'SDL_HasIntersection': la función no acepta 1 argumentos
-C:\Users\anass\Desktop\PracticaOne\SDL2-2.0.4\include\SDL_rect.h(101,34): message : vea la declaración de 'SDL_HasIntersection'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.cpp(207,22): error C2065: 'arrows': identificador no declarado
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.cpp(208,10): error C2065: 'arrows': identificador no declarado
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.cpp(209,3): error C2065: 'arrows': identificador no declarado
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(8,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\crtdbg.h(303,1): warning C4005:  '_malloca': redefinición de macro
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\malloc.h(122): message :  vea la definición anterior de '_malloca'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Balloon.h(4,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Balloon.h(5,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(4,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(5,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(6,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(7,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(8,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(17,7): error C2143:  error de sintaxis: falta ';' delante de '*'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(17,7): error C4430:  falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(17,13): error C2238:  símbolos (token) inesperados delante de ';'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(27,100): error C2061:  error de sintaxis: identificador 'Game'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(3,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(4,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(5,9): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Arrow.h(5,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(6,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(27,8): error C2661:  'ArrowsGameObject::ArrowsGameObject': ninguna función sobrecargada acepta 6 argumentos
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(27,8): error C2059:  error de sintaxis: '='
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(27,19): error C2238:  símbolos (token) inesperados delante de ';'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(28,8): error C2059:  error de sintaxis: '='
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(28,21): error C2238:  símbolos (token) inesperados delante de ';'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(29,8): error C2059:  error de sintaxis: '='
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(29,23): error C2238:  símbolos (token) inesperados delante de ';'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(30,8): error C2059:  error de sintaxis: '='
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(30,25): error C2238:  símbolos (token) inesperados delante de ';'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(41,22): error C2065:  'arrows': identificador no declarado
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(42,10): error C2065:  'arrows': identificador no declarado
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(43,3): error C2065:  'arrows': identificador no declarado
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(45,20): warning C4018:  '<': no coinciden signed/unsigned
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(87,20): warning C4018:  '<': no coinciden signed/unsigned
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(95,22): error C2065:  'arrows': identificador no declarado
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(126,22): error C2065:  'arrows': identificador no declarado
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(128,3): error C2065:  'arrows': identificador no declarado
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(131,20): warning C4018:  '<': no coinciden signed/unsigned
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(159,124): error C2661:  'Balloon::Balloon': ninguna función sobrecargada acepta 9 argumentos
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(182,3): error C2065:  'arrows': identificador no declarado
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(200,23): error C2065:  'arrows': identificador no declarado
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(202,41): error C2065:  'arrows': identificador no declarado
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(202,7): error C2660:  'SDL_HasIntersection': la función no acepta 1 argumentos
+C:\Users\forev\OneDrive\Desktop\PracticaOne\SDL2-2.0.4\include\SDL_rect.h(101,34): message :  vea la declaración de 'SDL_HasIntersection'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(218,22): error C2065:  'arrows': identificador no declarado
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(219,10): error C2065:  'arrows': identificador no declarado
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(220,3): error C2065:  'arrows': identificador no declarado
   main.cpp
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.cpp(211,20): warning C4018: '<': no coinciden signed/unsigned
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Balloon.h(9,41): error C2504: 'ArrowsGameObject': clase base sin definir
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Balloon.h(25,13): error C2614: 'Balloon': inicialización de miembro no válida: 'ArrowsGameObject' no es una base o miembro
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.h(4,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.h(5,9): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Arrow.h(6,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(4,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(5,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(6,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.h(6,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(27,8): error C2059: error de sintaxis: '='
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(27,19): error C2238: símbolos (token) inesperados delante de ';'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(28,8): error C2059: error de sintaxis: '='
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(28,21): error C2238: símbolos (token) inesperados delante de ';'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(29,8): error C2059: error de sintaxis: '='
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(29,23): error C2238: símbolos (token) inesperados delante de ';'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(30,8): error C2059: error de sintaxis: '='
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(222,20): warning C4018:  '<': no coinciden signed/unsigned
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Balloon.h(4,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Balloon.h(5,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(4,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(5,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(6,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(7,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(8,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(17,7): error C2143:  error de sintaxis: falta ';' delante de '*'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(17,7): error C4430:  falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(17,13): error C2238:  símbolos (token) inesperados delante de ';'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(27,100): error C2061:  error de sintaxis: identificador 'Game'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(3,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(4,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(5,9): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Arrow.h(5,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(6,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(27,8): error C2661:  'ArrowsGameObject::ArrowsGameObject': ninguna función sobrecargada acepta 6 argumentos
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(27,8): error C2059:  error de sintaxis: '='
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(27,19): error C2238:  símbolos (token) inesperados delante de ';'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(28,8): error C2059:  error de sintaxis: '='
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(28,21): error C2238:  símbolos (token) inesperados delante de ';'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(29,8): error C2059:  error de sintaxis: '='
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(29,23): error C2238:  símbolos (token) inesperados delante de ';'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(30,8): error C2059:  error de sintaxis: '='
   Reward.cpp
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(30,26): error C2238: símbolos (token) inesperados delante de ';'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(4,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(5,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\crtdbg.h(303,1): warning C4005: '_malloca': redefinición de macro
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\malloc.h(122): message : vea la definición anterior de '_malloca'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Balloon.h(9,41): error C2504: 'ArrowsGameObject': clase base sin definir
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Balloon.h(25,13): error C2614: 'Balloon': inicialización de miembro no válida: 'ArrowsGameObject' no es una base o miembro
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.h(4,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.h(5,9): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Arrow.h(6,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Arrow.h(10,37): error C2504: 'ArrowsGameObject': clase base sin definir
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.h(6,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.h(13,35): error C2504: 'ArrowsGameObject': clase base sin definir
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.h(27,9): error C2614: 'Bow': inicialización de miembro no válida: 'ArrowsGameObject' no es una base o miembro
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(26,18): error C2143: error de sintaxis: falta ';' delante de '*'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(26,18): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(26,25): error C2238: símbolos (token) inesperados delante de ';'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(27,8): error C2059: error de sintaxis: '='
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(27,19): error C2238: símbolos (token) inesperados delante de ';'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(28,8): error C2059: error de sintaxis: '='
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(28,21): error C2238: símbolos (token) inesperados delante de ';'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(29,8): error C2059: error de sintaxis: '='
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(29,23): error C2238: símbolos (token) inesperados delante de ';'
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(30,8): error C2059: error de sintaxis: '='
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Game.h(30,26): error C2238: símbolos (token) inesperados delante de ';'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(30,25): error C2238:  símbolos (token) inesperados delante de ';'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Reward.h(4,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(4,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(5,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\crtdbg.h(303,1): warning C4005:  '_malloca': redefinición de macro
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\malloc.h(122): message :  vea la definición anterior de '_malloca'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Balloon.h(4,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Balloon.h(5,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Balloon.h(9,41): error C2504:  'ArrowsGameObject': clase base sin definir
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Balloon.h(23,149): error C2061:  error de sintaxis: identificador 'Point2D'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(3,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(4,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(5,9): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Arrow.h(5,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Arrow.h(9,37): error C2504:  'ArrowsGameObject': clase base sin definir
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(6,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(13,35): error C2504:  'ArrowsGameObject': clase base sin definir
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(27,9): error C2614:  'Bow': inicialización de miembro no válida: 'ArrowsGameObject' no es una base o miembro
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(26,18): error C2143:  error de sintaxis: falta ';' delante de '*'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(26,18): error C4430:  falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(26,25): error C2238:  símbolos (token) inesperados delante de ';'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(27,8): error C2059:  error de sintaxis: '='
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(27,19): error C2238:  símbolos (token) inesperados delante de ';'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(28,8): error C2059:  error de sintaxis: '='
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(28,21): error C2238:  símbolos (token) inesperados delante de ';'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(29,8): error C2059:  error de sintaxis: '='
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(29,23): error C2238:  símbolos (token) inesperados delante de ';'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(30,8): error C2059:  error de sintaxis: '='
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.h(30,25): error C2238:  símbolos (token) inesperados delante de ';'
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(6,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(7,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(8,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
   Scoreboard.cpp
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(6,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Scoreboard.h(11,1): error C2504: 'GameObject': clase base sin definir
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Scoreboard.cpp(38,26): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Scoreboard.cpp(39,26): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Reward.h(5,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Scoreboard.h(11,1): error C2504:  'GameObject': clase base sin definir
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Scoreboard.cpp(38,26): warning C4244:  '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Scoreboard.cpp(39,26): warning C4244:  '=': conversión de 'double' a 'int'; posible pérdida de datos
+  Scores.cpp
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Scoreboard.cpp(42,20): warning C4018:  '<': no coinciden signed/unsigned
+  Texture.cpp
+  Vector2D.cpp
   Generando código...
-C:\Users\anass\Desktop\PracticaOne\HolaSDL\Scoreboard.cpp(42,20): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Scores.cpp(126,21): warning C4018:  '<': no coinciden signed/unsigned

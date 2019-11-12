@@ -23,8 +23,10 @@ struct ImagenesAtributos {
 
 class Game {
 private:
-	ArrowsGameObject* go[5];
-	go[0] = new Bow();
+	vector<ArrowsGameObject*>go;
+	
+	//ArrowsGameObject* go[5];
+	go = new Bow();
 	go[1] = new Arrow();
 	go[2] = new Balloon();
 	go[3] = new Butterfly();

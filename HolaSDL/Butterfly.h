@@ -3,17 +3,10 @@
 #include "ArrowsGameObject.h"
 class Butterfly:public ArrowsGameObject
 {
+	public:	
+		void update();
+		void render();
 
-public:	
-	void update();
-	void render();
-
-}
-
-;
-
-
-
-
+};
 #endif
 
