@@ -18,6 +18,7 @@ private:
 	static  const int MAX_ARROW_TEXTURES = 10;
 	vector<int>digitos;
 	int numberarrows;
+	int puntos;
 
 
 
@@ -27,6 +28,7 @@ public:
 	void Puntuacion(int score);
 	void Arrows();
 	void render();
+	void update();
 	
 };
 #endif

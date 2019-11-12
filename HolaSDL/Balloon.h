@@ -1,10 +1,9 @@
 #ifndef Balloon_H_
 #define Balloon_H_
 
+
 #include "Vector2D.h"
 #include "Texture.h"
-//#include "ArrowsGameObject.h";
-
 class Game;
 typedef unsigned int uint;
 class Balloon : public ArrowsGameObject {
@@ -21,10 +20,13 @@ private:
 	int color = 0;
 	int estado = 0;
 public:
-	Balloon();
-	Balloon(Point2D esqIzq, uint ancho, uint alto, Vector2D vel, Texture* textura, bool explotado, uint instPinchazo, Game* tocando, int color);
+	//Balloon();
+//	Balloon(Point2D esqIzq, uint ancho, uint alto, Vector2D vel, Texture* textura, bool explotado, uint instPinchazo, Game* tocando, int color);
+	Balloon() :ArrowsGameObject(esqIzq, w, h, velocidad, globo, game) {};
+
 	void render();
-	bool update();
+	//bool update();
+	void update();
 };
 #endif
 

@@ -4,10 +4,10 @@
 
 class GameObject
 {
-	void render();
-	void update();
 protected:
-	virtual ~GameObject();
+	virtual void  render()=0 ;
+	virtual	void update()=0 ;
+	virtual ~GameObject() ;
 };
 #endif
 

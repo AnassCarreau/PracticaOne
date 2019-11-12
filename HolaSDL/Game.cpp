@@ -23,7 +23,9 @@ Game::Game() {
 		
 	}
 	//Creacion de los gameobjects (los globos y las flechas los generamos mediante un metodo que los genera en un vector)
-	bow = new Bow(Point2D(0, 0), 80, 80, Vector2D(0, 10), textures[1],textures[3], false, this, nullptr);
+	ArrowsGameObject* go[5];
+	//go[0]= new Arrow();
+   // go[1] = new Bow(Point2D(0, 0), 80, 80, Vector2D(0, 10), textures[1],textures[3], false, this, nullptr);
 	flechas = 10;
 	scoreboard = new Scoreboard(Point2D(300,0),25,35,textures[6],textures[5],flechas);
 	
@@ -84,29 +86,40 @@ void Game::update() {
 	//actualizacion de globos
 	for (int i = 0; i < balloons.size(); i++) {
 		//si el update devuelve true destruimos ese globo y lo quitamos del vector
-		if (balloons[i]->update()) {
+		/*if (balloons[i]->update()) {
 			delete balloons[i];
 			balloons.erase(balloons.begin()+i);
-		}
+		}*/
 	}
 	//actualizacion de flechas
 	for (int j = 0; j < arrows.size(); j++) {
 		//si el update devuelve true destruimos esa flecha y la quitamos del vector
-		if (arrows[j]->update()) {
+		/*if (arrows[j]->update()) {
 			delete arrows[j];
 			arrows.erase(arrows.begin() + j);
-		}
+		}*/
 	}
 }
 //metodo que renderiza todos los objetos del juego
 void Game::render() const {
+
+
+	//
+
+	for (ArrowsGameObject*a:go)
+	{
+		a->render();
+		a->update();
+	}
+
+	//
 	//limpiamos
 	SDL_RenderClear(renderer);
 	//renderizado del fondo
 	SDL_Rect bk;
 	bk = { 0,0,WIN_WIDTH,WIN_HEIGHT };
 	
-	textures[0]->render(bk, SDL_FLIP_NONE);
+	textures[level]->render(bk, SDL_FLIP_NONE);
 	//renderizado arco
 	bow->render();
 	//renderizado flechas
@@ -183,6 +196,7 @@ void Game::AddPoints()
 //metodo que mira si alguna flecha ha tocado con un globo
 bool Game::OnCollisionEnter(SDL_Rect* rectBalloon) {
 	
+	
 		for (int i = 0; i < arrows.size(); i++)
 		{
 			if (SDL_HasIntersection(rectBalloon, arrows[i]->PosFlecha()))
@@ -198,4 +212,15 @@ bool Game::OnCollisionEnter(SDL_Rect* rectBalloon) {
 void Game::KillObject(GameObject *object) {
 	//delete object;
 }
-
+void Game::NewLvl()
+{ 
+	level++;
+	for (int i = 0; i < arrows.size(); i++) {
+		delete arrows[i];
+		arrows[i] = nullptr;
+	}
+	for (int j = 0; j < balloons.size(); j++) {
+		delete balloons[j];
+		balloons[j] = nullptr;
+	}
+}

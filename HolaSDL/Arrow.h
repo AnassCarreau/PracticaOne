@@ -3,7 +3,8 @@
 
 #include "Vector2D.h"
 #include "Texture.h"
-//#include "ArrowsGameObject.h";
+#include "ArrowsGameObject.h";
+
 
 class Game;
 class Arrow: public ArrowsGameObject{
@@ -18,8 +19,10 @@ public:
 	Arrow();
 	Arrow(Point2D esqIzq, uint width, uint height, Vector2D vel, Texture* textura);
 	void render();
-	bool update();
+	void update();
 	SDL_Rect* PosFlecha();
+	SDL_Rect* getCollisionRect();
+
 	
 };
 #endif

@@ -7,7 +7,7 @@ private :
 	bool premio;
 	void update();
 	void render();
-	void handleEvent();
+	void handleEvent(SDL_Event& event);
 
 };
 #endif

@@ -8,8 +8,6 @@
 #include "Scores.h"
 #include "Bow.h"
 #include "Arrow.h"
-#include "EventHandler.h";
-#include "GameObject.h";
 #include <vector>
 #include <list>
 #include "Scoreboard.h"
@@ -25,18 +23,25 @@ struct ImagenesAtributos {
 
 class Game {
 private:
+	ArrowsGameObject* go[5];
+	go[0] = new Bow();
+	go[1] = new Arrow();
+	go[2] = new Balloon();
+	go[3] = new Butterfly();
 	SDL_Window* window = nullptr;
 	SDL_Renderer* renderer = nullptr;
 	bool exit = false;
-	//int puntuacion=0;
+	int level=0;
+	int puntuacion=0;
 	int flechas=0;
 	Texture* textures[NUM_TEXTURES];
 	Bow* bow = nullptr;
 	double timecharge = 0;
 	double timeshoot=0;
-	vector<Arrow*> arrows;
+	//vector<Arrow*> arrows;
 	vector<Balloon*> balloons;
 	Scoreboard* scoreboard;
+	
 
 	list <EventHandler*> eventHandler;
 	list<GameObject*> gameObjects;
@@ -61,5 +66,6 @@ public:
 	void generateBalloons();
 	void AddPoints();
 	void KillObject(GameObject* object);
+	void NewLvl();
 };
 #endif

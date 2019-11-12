@@ -8,22 +8,26 @@
 class ArrowsGameObject : public GameObject{
 
 	private:
-		ArrowsGameObject();
+
 		Point2D pos;
 		uint width, height;
 		Vector2D velocity;
 		Texture* textura;
 		Game* game;
-		//puto iterador 
+		vector<int>::iterator i;
+protected:
+	ArrowsGameObject();
+
 	public:
 		void render();
 		void update();
-		SDL_Rect* getDestRect();
+		SDL_Rect getDestRect();
 		SDL_Rect* getCollisionRect();
-		void loadFromFile();
-		void saveToFile();
+		void loadFromFile(ifstream &input);
+		void saveToFile(ofstream &outuput);
 		void setItList();
 		ArrowsGameObject(Point2D pos, uint width, uint height, Vector2D vel, Texture* textura,Game* game);
+
 };
 #endif
 

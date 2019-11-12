@@ -1,16 +1,16 @@
 #ifndef BOW_H_
 #define BOW_H_
-#include "Vector2D.h"
-#include "Texture.h"
-#include"Arrow.h"
-//#include "EventHandler.h";
-//#include "ArrowsGameObject.h";
+#include "Vector2D.h";
+#include "Texture.h";
+#include"Arrow.h";
+#include "EventHandler.h";
+
 
 class Game;
 
 typedef unsigned int uint;
 
-class Bow: public EventHandler,public ArrowsGameObject{
+class Bow: public ArrowsGameObject,public EventHandler{
 private:
 	Point2D esqIzq = Point2D(0,0); 
 	uint w = 0; // width
@@ -23,11 +23,13 @@ private:
 	bool cargado = false;
 	int time = 0;
 public:
-	Bow();
-	Bow(Point2D esqIzq, uint ancho, uint alto, Vector2D vel, Texture* textura,Texture* tectura, bool cargado,Game* game,Arrow*flechaCargada);
-	void render();
-	void update();
-	void handleEvents(SDL_Event& event);
+
+	Bow() :ArrowsGameObject(esqIzq, w, h, velocidad, arco, juego) {};
+	virtual	void render();
+	virtual	void update();
+	virtual void handleEvents(SDL_Event& event);
+	void saveToFile(ofstream &output)const;
+
 	
 };
 #endif
