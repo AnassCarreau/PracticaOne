@@ -57,6 +57,7 @@ void  Balloon::update() {
 		return false;
 	}
 	return true;
+	/*if (true) game->killobject(this)*/
 
 }
  

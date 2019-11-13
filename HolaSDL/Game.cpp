@@ -170,6 +170,10 @@ void Game::CargaFlecha()
 }
 //metodo para disparar la flecha
 void Game::DisparaFlecha(Point2D pos) {
+	//le llega a dispara flecha una flecha 
+	/*auto it=object.insert(object.end(),arrow)
+	arrows->setit(it)
+	*/
 	if (flechas!=0)
 	{
 		timeshoot = SDL_GetTicks();
@@ -210,6 +214,7 @@ bool Game::OnCollisionEnter(SDL_Rect* rectBalloon) {
 }
 
 /*void Game::KillObject(GameObject *object) {
+objecttoerase.pushback(ob)
 	//delete object;
 }
 void Game::NewLvl()

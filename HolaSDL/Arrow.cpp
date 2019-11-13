@@ -47,3 +47,4 @@ SDL_Rect* Arrow::PosFlecha() {
 
 }
 
+
