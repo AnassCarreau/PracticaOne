@@ -6,8 +6,15 @@
 
 class Reward:public ArrowsGameObject,public EventHandler
 {
+private:
+	Point2D esqIzq;
+	Vector2D vel;
+	uint ancho, alto;
+	Texture* textura;
+	Game* game;
+	bool premio;
 	public:
-		bool premio;
+		Reward(Point2D esqIzq, Vector2D vel, uint ancho, uint alto, Texture* textura, Game* game, bool premio);
 		void update();
 		void render();
 		void handleEvent(SDL_Event& event);

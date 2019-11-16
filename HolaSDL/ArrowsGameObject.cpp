@@ -1,20 +1,24 @@
-#include "ArrowsGameObject.h"
+#include "ArrowsGameObject.h";
 
-ArrowsGameObject::ArrowsGameObject(Point2D esqIzq, uint width, uint height, Vector2D vel, Texture* textura, Game* game)
-	: pos(esqIzq), width(width), height(height), velocity(vel), textura(textura), game(game)
+ArrowsGameObject::ArrowsGameObject(Point2D esqIzq, Vector2D vel, uint _width, uint _height, Texture* _textura, Game* _game)
 {
+	pos = esqIzq;
+	width = _width;
+	height = _height;
+	velocity = vel;
+	textura = _textura;
+	game = _game;
 	setItList();
 }
 void ArrowsGameObject::render()
 {
-	
 	textura->renderFrame(getDestRect(), 0, 0, 0, SDL_FLIP_NONE);
-
 }
 void ArrowsGameObject::update()
 {
 
 }
+
 SDL_Rect ArrowsGameObject::getDestRect()
 {
 	SDL_Rect destRect;
@@ -36,11 +40,25 @@ SDL_Rect* ArrowsGameObject::getCollisionRect()
 };
 void ArrowsGameObject::saveToFile(ofstream &output)
 {
+	//abrimos el archivo
+	output.open("guardados.txt");
+	//si no se abre lanzamos excepcion
+	if (!output.is_open()) cout << "No se ha podido guardar, no se encuentra el archivo" << endl;
+	//si se puede abrir guardamos la partida
+	else {
 
+	}
 }
 void ArrowsGameObject::loadFromFile(ifstream &input)
 {
+	//abrimos el archivo
+	input.open("guardados.txt");
+	//si no se puede abrir lanzamos una excepcion
+	if (!input.is_open()) cout << "No se encuentra el fichero" << endl;
+	//si se abre cargamos el archivo
+	else {
 
+	}
 }
 
 

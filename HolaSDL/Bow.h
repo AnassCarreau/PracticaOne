@@ -23,9 +23,6 @@ private:
 	bool cargado = false;
 	int time = 0;
 public:
-
-	//Bow() :ArrowsGameObject(esqIzq, w, h, velocidad, arco, juego) {};
-	Bow();
 	Bow(Point2D esqIzq, uint ancho, uint alto, Vector2D vel, Texture* textura, Texture* tectura, bool cargado, Game* game, Arrow* flechaCargada);
 	virtual	void render();
 	virtual	void update();

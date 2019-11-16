@@ -5,6 +5,7 @@
 #include "Game.h";
 #include "Vector2D.h";
 #include "Texture.h";
+#include <fstream>
 #include <vector>;
 
 class ArrowsGameObject : public GameObject{
@@ -24,8 +25,7 @@ class ArrowsGameObject : public GameObject{
 		void loadFromFile(ifstream &input);
 		void saveToFile(ofstream &outuput);
 		void setItList();
-		ArrowsGameObject(Point2D pos, uint width, uint height, Vector2D vel, Texture* textura,Game* game);
-
+		ArrowsGameObject(Point2D pos, Vector2D vel, uint width, uint height, Texture* textura,Game* game);
 };
 #endif
 

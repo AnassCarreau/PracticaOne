@@ -7,8 +7,11 @@ typedef unsigned int uint;
 
 //Arrow::Arrow():esqIzq(), width(), height(), velocity(),flecha(){}
 
-Arrow::Arrow(Point2D esqIzq, uint width, uint height, Vector2D vel, Texture* textura)
-	: esqIzq(esqIzq), width(width), height(height), velocity(vel), flecha(textura) {}
+/*Arrow::Arrow(Point2D esqIzq, uint width, uint height, Vector2D vel, Texture* textura)
+	: esqIzq(esqIzq), width(width), height(height), velocity(vel), flecha(textura) {}*/
+
+Arrow::Arrow(Vector2D dir, Texture* tex, Game* game, Point2D posIni, int ancho, int alto) : ArrowsGameObject(posIni, dir, ancho, alto, tex, game) {}
+
 void Arrow::render() {
 	SDL_Rect destRect;
 	destRect.x = esqIzq.getX();

@@ -8,15 +8,15 @@ const int TIME_Animation = 600;
 
 // Balloon::Balloon() :esqIzq(), w(), h(), velocidad(), globo(), explotado(), instPinchazo(), game() {}
 
-Balloon::Balloon(Point2D esqIzq, uint ancho, uint alto, Vector2D vel, Texture* textura, bool explotado, uint instPinchazo, Game* tocando, int color)
+/*Balloon::Balloon(Point2D esqIzq, uint ancho, uint alto, Vector2D vel, Texture* textura, bool explotado, uint instPinchazo, Game* tocando, int color)
 	: esqIzq(esqIzq), w(ancho), h(alto), velocidad(vel), globo(textura), explotado(explotado), instPinchazo(instPinchazo), game(tocando), color(color) {}
-	
-/*Balloon::Balloon(Point2D esqIzq, uint ancho, uint alto, Vector2D vel, Texture textura, Game* game, int color, int estado, bool explotado, uint instPinchazo) //: ArrowsGameObject(esqIzq, ancho, alto, vel, textura, game)
-{
-	color = color;
-	estado = estado;
-	explotado = explotado;
-}*/
+	*/
+
+Balloon::Balloon(Point2D esqIzq, uint ancho, uint alto, Vector2D vel, Texture* textura, bool _explotado, uint _instPinchazo, Game* tocando, int _color) : ArrowsGameObject(esqIzq, vel, ancho, alto, textura, tocando){
+	explotado = _explotado;
+	instPinchazo = _instPinchazo;
+	color = _color;
+}
 
 void Balloon::render() {
 	SDL_Rect destRect;

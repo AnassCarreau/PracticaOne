@@ -6,9 +6,12 @@ typedef unsigned int uint;
 bool arriba=true;
 bool abajo = true;
 
-//Bow::Bow() :esqIzq(), w(), h(), velocidad(), arco(), arcoC(),cargado(),juego(),flecha(){}
 
-Bow::Bow(Point2D esqIzq, uint ancho, uint alto, Vector2D vel, Texture* textura, Texture*texture2,bool cargado,Game*game,Arrow*flechaCargada) : esqIzq(esqIzq), w(ancho), h(alto), velocidad(vel), arco(textura),arcoC(texture2), cargado(cargado),juego(game),flecha(flechaCargada) {}
+Bow::Bow(Point2D esqIzq, uint ancho, uint alto, Vector2D vel, Texture* textura, Texture* _texture2,bool _cargado,Game*game,Arrow* _flechaCargada) : ArrowsGameObject(esqIzq, vel, ancho, alto, textura, game) {
+	arcoC = _texture2;
+	cargado = _cargado;
+	flecha = _flechaCargada;
+}
 
  void Bow::render(){
 	 
@@ -67,8 +70,10 @@ Bow::Bow(Point2D esqIzq, uint ancho, uint alto, Vector2D vel, Texture* textura, 
 	 }
  }
  void Bow::saveToFile(ofstream& output)const {
-
-
+	 if (cargado) output << "1";
+	 else output << "0";
+	 output << time;
+	 //ArrowsGameObject::saveToFile (output);
  }
 
 	 

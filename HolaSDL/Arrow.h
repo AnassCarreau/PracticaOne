@@ -15,8 +15,9 @@ private:
 	Texture* flecha;
 	
 public:
-	Arrow();
-	Arrow(Point2D esqIzq, uint width, uint height, Vector2D vel, Texture* textura);
+	//Arrow();
+	//Arrow(Point2D esqIzq, uint width, uint height, Vector2D vel, Texture* textura);
+	Arrow(Vector2D dir, Texture* tex, Game* game, Point2D posIni, int ancho, int alto);
 	void render();
 	void update();
 	SDL_Rect* PosFlecha();
