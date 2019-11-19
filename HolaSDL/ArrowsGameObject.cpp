@@ -12,6 +12,7 @@ ArrowsGameObject::ArrowsGameObject(Point2D esqIzq, Vector2D vel, uint _width, ui
 }
 void ArrowsGameObject::render()
 {
+	//getDestRect();
 	textura->renderFrame(getDestRect(), 0, 0, 0, SDL_FLIP_NONE);
 }
 void ArrowsGameObject::update()

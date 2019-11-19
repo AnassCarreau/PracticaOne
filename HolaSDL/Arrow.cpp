@@ -13,12 +13,13 @@ typedef unsigned int uint;
 Arrow::Arrow(Vector2D dir, Texture* tex, Game* game, Point2D posIni, int ancho, int alto) : ArrowsGameObject(posIni, dir, ancho, alto, tex, game) {}
 
 void Arrow::render() {
-	SDL_Rect destRect;
+	/*SDL_Rect destRect;
 	destRect.x = esqIzq.getX();
 	destRect.y = esqIzq.getY();
 	destRect.w = width;
-	destRect.h = height;
-	flecha->renderFrame(destRect, 0, 0, 0, SDL_FLIP_NONE);
+	destRect.h = height;*/
+	ArrowsGameObject::render();
+	flecha->render(ArrowsGameObject::getDestRect(), SDL_FLIP_NONE);
 }
 
 void Arrow::update() {	
