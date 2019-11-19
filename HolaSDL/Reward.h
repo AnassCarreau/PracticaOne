@@ -15,9 +15,9 @@ private:
 	bool premio;
 	public:
 		Reward(Point2D esqIzq, Vector2D vel, uint ancho, uint alto, Texture* textura, Game* game, bool premio);
-		void update();
-		void render();
-		void handleEvent(SDL_Event& event);
+		virtual void update();
+		virtual void render();
+		virtual void handleEvent(SDL_Event& event);
 
 };
 #endif

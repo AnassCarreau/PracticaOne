@@ -1,8 +1,8 @@
 #ifndef Balloon_H_
 #define Balloon_H_
 
-#include "Texture.h";
-#include "ArrowsGameObject.h";
+#include "Texture.h"
+#include "ArrowsGameObject.h"
 
 class Game;
 typedef unsigned int uint;
@@ -22,9 +22,9 @@ private:
 public:
 	//Balloon();
 	Balloon(Point2D esqIzq, uint ancho, uint alto, Vector2D vel, Texture* textura, bool explotado, uint instPinchazo, Game* tocando, int color);
-	void render();
-	bool update();
-	//void update();
+	virtual void render();
+	//bool update();
+	virtual void update();
 };
 #endif
 

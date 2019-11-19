@@ -82,7 +82,7 @@ public:
 	bool OnCollisionEnter(SDL_Rect*rectBalloon);
 	void generateBalloons();
 	void AddPoints();
-	//void KillObject(GameObject* object);
+	void KillObject(GameObject* object);
 	//void NewLvl();
 };
 #endif

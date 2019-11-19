@@ -18,13 +18,14 @@ class ArrowsGameObject : public GameObject{
 		Game* game;
 		//vector<int>::iterator i;
 	public:
-		void render();
-		void update();
+		virtual void render();
+		virtual void update();
 		SDL_Rect getDestRect();
 		SDL_Rect* getCollisionRect();
 		void loadFromFile(ifstream &input);
 		void saveToFile(ofstream &outuput);
 		void setItList();
+	protected:
 		ArrowsGameObject(Point2D pos, Vector2D vel, uint width, uint height, Texture* textura,Game* game);
 };
 #endif

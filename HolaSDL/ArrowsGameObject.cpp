@@ -12,8 +12,8 @@ ArrowsGameObject::ArrowsGameObject(Point2D esqIzq, Vector2D vel, uint _width, ui
 }
 void ArrowsGameObject::render()
 {
-	//getDestRect();
-	textura->renderFrame(getDestRect(), 0, 0, 0, SDL_FLIP_NONE);
+	//getDestRect(destRect);
+	//textura->renderFrame(getDestRect(), 0, 0, 0, SDL_FLIP_NONE);
 }
 void ArrowsGameObject::update()
 {
@@ -28,7 +28,6 @@ SDL_Rect ArrowsGameObject::getDestRect()
 	destRect.w = width;
 	destRect.h = height;
 	return destRect;
-
 }; 
 SDL_Rect* ArrowsGameObject::getCollisionRect()
 {
@@ -39,7 +38,7 @@ SDL_Rect* ArrowsGameObject::getCollisionRect()
 	SDL_Rect* rectArrow = new SDL_Rect{ pointX, pointY, arrowwidth,arrowheight };
 	return rectArrow;
 };
-void ArrowsGameObject::saveToFile(ofstream &output)
+void ArrowsGameObject::saveToFile(ofstream& output)
 {
 	//abrimos el archivo
 	output.open("guardados.txt");

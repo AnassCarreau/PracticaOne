@@ -6,12 +6,6 @@
 typedef unsigned int uint;
 const int TIME_Animation = 600;
 
-// Balloon::Balloon() :esqIzq(), w(), h(), velocidad(), globo(), explotado(), instPinchazo(), game() {}
-
-/*Balloon::Balloon(Point2D esqIzq, uint ancho, uint alto, Vector2D vel, Texture* textura, bool explotado, uint instPinchazo, Game* tocando, int color)
-	: esqIzq(esqIzq), w(ancho), h(alto), velocidad(vel), globo(textura), explotado(explotado), instPinchazo(instPinchazo), game(tocando), color(color) {}
-	*/
-
 Balloon::Balloon(Point2D esqIzq, uint ancho, uint alto, Vector2D vel, Texture* textura, bool _explotado, uint _instPinchazo, Game* tocando, int _color) : ArrowsGameObject(esqIzq, vel, ancho, alto, textura, tocando){
 	explotado = _explotado;
 	instPinchazo = _instPinchazo;
@@ -19,11 +13,12 @@ Balloon::Balloon(Point2D esqIzq, uint ancho, uint alto, Vector2D vel, Texture* t
 }
 
 void Balloon::render() {
-	SDL_Rect destRect;
+	/*SDL_Rect destRect;
 	destRect.x = esqIzq.getX();
 	destRect.y = esqIzq.getY();
 	destRect.w = w;
-	destRect.h = h;
+	destRect.h = h;*/
+	SDL_Rect destRect = ArrowsGameObject::getDestRect();
 	//si el globo esta explotado renderizamos con animacion
 	if (explotado) {
 		globo->renderFrame(destRect, color, estado , 0, SDL_FLIP_NONE);
@@ -48,15 +43,18 @@ void  Balloon::update() {
 
 	if (j >= 0 && j <= WIN_HEIGHT && !explotado) {
 		esqIzq = esqIzq.operator-(velocidad);
-		return false;
+		//return false;
 	}
-	
+	  
 	if (SDL_GetTicks() < instPinchazo + TIME_Animation  && estado<7) {
-
 		estado++;
-		return false;
+		//return false;
 	}
-	return true;
+	if (estado>=7)
+	{
+		game->KillObject(this);
+	}
+	//return true;
 	/*if (true) game->killobject(this)*/
 
 }

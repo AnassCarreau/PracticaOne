@@ -182,7 +182,7 @@ void Game::DisparaFlecha(Point2D pos) {
 		{
 			timecharge = 10;
 		}
-		Arrow* flecha = new Arrow(Point2D(pos.getX() + 20, pos.getY() + 30), 90, 20, Vector2D(timecharge+2,0), textures[4]);
+		Arrow* flecha = new Arrow(Vector2D(timecharge + 2, 0), textures[4], this, Point2D(pos.getX() + 20, pos.getY() + 30), 90, 20);
 		arrows.push_back(flecha);
 		flechas--;
 		scoreboard->Arrows();
@@ -213,10 +213,11 @@ bool Game::OnCollisionEnter(SDL_Rect* rectBalloon) {
 	
 }
 
-/*void Game::KillObject(GameObject *object) {
-objecttoerase.pushback(ob)
+void Game::KillObject(GameObject *object) {
+	//object.erase().pushback(object);
 	//delete object;
 }
+/*
 void Game::NewLvl()
 { 
 	level++;

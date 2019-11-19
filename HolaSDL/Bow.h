@@ -4,6 +4,7 @@
 #include "Texture.h";
 #include"Arrow.h";
 #include "EventHandler.h";
+#include "ArrowsGameObject.h";
 
 
 class Game;
@@ -27,9 +28,7 @@ public:
 	virtual	void render();
 	virtual	void update();
 	virtual void handleEvents(SDL_Event& event);
-	void saveToFile(ofstream &output)const;
-
-	
+	void saveToFile(ofstream &output);
 };
 #endif
 

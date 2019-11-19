@@ -4,12 +4,6 @@
 
 typedef unsigned int uint;
 
-
-//Arrow::Arrow():esqIzq(), width(), height(), velocity(),flecha(){}
-
-/*Arrow::Arrow(Point2D esqIzq, uint width, uint height, Vector2D vel, Texture* textura)
-	: esqIzq(esqIzq), width(width), height(height), velocity(vel), flecha(textura) {}*/
-
 Arrow::Arrow(Vector2D dir, Texture* tex, Game* game, Point2D posIni, int ancho, int alto) : ArrowsGameObject(posIni, dir, ancho, alto, tex, game) {}
 
 void Arrow::render() {
@@ -18,8 +12,8 @@ void Arrow::render() {
 	destRect.y = esqIzq.getY();
 	destRect.w = width;
 	destRect.h = height;*/
-	ArrowsGameObject::render();
-	flecha->render(ArrowsGameObject::getDestRect(), SDL_FLIP_NONE);
+	SDL_Rect destRect = ArrowsGameObject::getDestRect();
+	flecha->render(destRect, SDL_FLIP_NONE);
 }
 
 void Arrow::update() {	
@@ -34,10 +28,7 @@ SDL_Rect* Arrow::getCollisionRect() {
 	SDL_Rect* rectArrow = ArrowsGameObject::getCollisionRect();
 	rectArrow->x += 3 * width / 4;
 	rectArrow->w = width / 4;
-	
-	
 	return rectArrow;
-
 }
 SDL_Rect* Arrow::PosFlecha() {
 

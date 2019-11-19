@@ -11,8 +11,8 @@ private:
 	Game* game;
 	public:	
 		Butterfly(Point2D esqIzq, Vector2D vel, uint ancho, uint alto, Texture* textura, Game* game);
-		void update();
-		void render();
+		virtual void update();
+		virtual void render();
 
 };
 #endif

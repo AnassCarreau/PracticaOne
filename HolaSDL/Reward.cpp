@@ -9,7 +9,8 @@ void Reward::update() {
 }
 
 void Reward::render() {
-
+	SDL_Rect destRect = ArrowsGameObject::getDestRect();
+	textura->render(destRect, SDL_FLIP_NONE);
 }
 
 void Reward::handleEvent(SDL_Event& event)

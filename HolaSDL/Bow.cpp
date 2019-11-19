@@ -23,7 +23,6 @@ Bow::Bow(Point2D esqIzq, uint ancho, uint alto, Vector2D vel, Texture* textura, 
 	 else
 	 {
 		 arco->render(destRect, SDL_FLIP_NONE);
-
 	 }
  }
 
@@ -69,11 +68,11 @@ Bow::Bow(Point2D esqIzq, uint ancho, uint alto, Vector2D vel, Texture* textura, 
 		 }
 	 }
  }
- void Bow::saveToFile(ofstream& output)const {
+ void Bow::saveToFile(ofstream& output){
 	 if (cargado) output << "1";
 	 else output << "0";
 	 output << time;
-	 //ArrowsGameObject::saveToFile (output);
+	 ArrowsGameObject::saveToFile (output);
  }
 
 	 

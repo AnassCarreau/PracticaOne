@@ -7,5 +7,6 @@ void Butterfly::update() {
 }
 
 void Butterfly::render() {
-
+	SDL_Rect destRect = ArrowsGameObject::getDestRect();
+	textura->renderFrame(destRect, 0, 0, 0, SDL_FLIP_NONE);
 }
