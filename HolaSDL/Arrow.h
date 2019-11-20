@@ -10,12 +10,12 @@ class Arrow: public ArrowsGameObject{
 
 private:
 	Point2D esqIzq;
-	uint width, height;
+	uint width = 0, height = 0;
 	Vector2D velocity;
-	Texture* flecha;
+	Texture* flecha = nullptr;
 	
 public:
-	Arrow(Vector2D dir, Texture* tex, Game* game, Point2D posIni, int ancho, int alto);
+	Arrow(Vector2D dir, Texture* flecha, Game* game, Point2D posIni, uint width, uint height);
 	virtual void render();
 	virtual void update();
 	SDL_Rect* PosFlecha();

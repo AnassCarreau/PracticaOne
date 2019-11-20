@@ -4,7 +4,7 @@
 
 typedef unsigned int uint;
 
-Arrow::Arrow(Vector2D dir, Texture* tex, Game* game, Point2D posIni, int ancho, int alto) : ArrowsGameObject(posIni, dir, ancho, alto, tex, game) {}
+Arrow::Arrow(Vector2D dir, Texture* flecha, Game* game, Point2D posIni, uint width, uint height) : ArrowsGameObject(posIni, dir, width, height, flecha, game) {}
 
 void Arrow::render() {
 	/*SDL_Rect destRect;

@@ -20,7 +20,7 @@ private:
 	bool explotado = false;
 	uint instPinchazo = 0;
 public:
-	Balloon(Point2D esqIzq, uint ancho, uint alto, Vector2D vel, Texture* textura, bool explotado, uint instPinchazo, Game* tocando, int color);
+	Balloon(Point2D esqIzq, uint w, uint h, Vector2D velocidad, Texture* globo, bool explotado, uint instPinchazo, Game* game, int color);
 	virtual void render();
 	virtual void update();
 };

@@ -1,7 +1,7 @@
 #include "Reward.h"
 
-Reward::Reward(Point2D esqIzq, Vector2D vel, uint ancho, uint alto, Texture* textura, Game* game, bool _premio):ArrowsGameObject(esqIzq, vel, ancho, alto, textura, game){
-	premio = _premio;
+Reward::Reward(Point2D esqIzq, Vector2D vel, uint ancho, uint alto, Texture* premio, Game* game, bool _burbuja):ArrowsGameObject(esqIzq, vel, ancho, alto, premio, game){
+	burbuja = _burbuja;
 }
 
 void Reward::update() {
@@ -10,7 +10,7 @@ void Reward::update() {
 
 void Reward::render() {
 	SDL_Rect destRect = ArrowsGameObject::getDestRect();
-	textura->render(destRect, SDL_FLIP_NONE);
+	premio->render(destRect, SDL_FLIP_NONE);
 }
 
 void Reward::handleEvent(SDL_Event& event)

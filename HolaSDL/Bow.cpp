@@ -7,10 +7,10 @@ bool arriba=true;
 bool abajo = true;
 
 
-Bow::Bow(Point2D esqIzq, uint ancho, uint alto, Vector2D vel, Texture* textura, Texture* _texture2,bool _cargado,Game*game,Arrow* _flechaCargada) : ArrowsGameObject(esqIzq, vel, ancho, alto, textura, game) {
-	arcoC = _texture2;
+Bow::Bow(Point2D esqIzq, uint w, uint h, Vector2D velocidad, Texture* arco, Texture* _arcoC,bool _cargado,Game*game,Arrow* _flecha) : ArrowsGameObject(esqIzq, velocidad, w, h, arco, game) {
+	arcoC = _arcoC;
 	cargado = _cargado;
-	flecha = _flechaCargada;
+	flecha = _flecha;
 }
 
  void Bow::render(){
@@ -57,13 +57,13 @@ Bow::Bow(Point2D esqIzq, uint ancho, uint alto, Vector2D vel, Texture* textura, 
 		 }
 		 else if (event.key.keysym.sym == SDLK_LEFT && !cargado)
 		 {
-			 juego->CargaFlecha();
+			 game->CargaFlecha();
 
 			 cargado = true;
 		 }
 		 else if (event.key.keysym.sym == SDLK_RIGHT && cargado)
 		 {
-			 juego->DisparaFlecha(esqIzq);
+			 game->DisparaFlecha(esqIzq);
 			 cargado = false;
 		 }
 	 }

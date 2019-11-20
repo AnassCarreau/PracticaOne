@@ -19,7 +19,7 @@ private:
 	static  const int MAX_ARROW_TEXTURES = 10;
 	vector<int>digitos;
 	int numberarrows;
-	int puntos;
+	//int puntos = 0;
 
 
 

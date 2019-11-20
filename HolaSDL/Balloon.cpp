@@ -6,7 +6,7 @@
 typedef unsigned int uint;
 const int TIME_Animation = 600;
 
-Balloon::Balloon(Point2D esqIzq, uint ancho, uint alto, Vector2D vel, Texture* textura, bool _explotado, uint _instPinchazo, Game* tocando, int _color) : ArrowsGameObject(esqIzq, vel, ancho, alto, textura, tocando){
+Balloon::Balloon(Point2D esqIzq, uint w, uint h, Vector2D velocidad, Texture* globo, bool _explotado, uint _instPinchazo, Game* game, int _color) : ArrowsGameObject(esqIzq, velocidad, w, h, globo, game){
 	explotado = _explotado;
 	instPinchazo = _instPinchazo;
 	color = _color;
