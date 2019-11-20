@@ -20,8 +20,6 @@ public:
 	virtual void update();
 	SDL_Rect* PosFlecha();
 	SDL_Rect* getCollisionRect();
-
-	
 };
 #endif
 

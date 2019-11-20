@@ -4,6 +4,7 @@
 #include "Vector2D.h"
 #include "Texture.h"
 #include <vector>
+#include "GameObject.h"
 using namespace std;
 
 class Game;
