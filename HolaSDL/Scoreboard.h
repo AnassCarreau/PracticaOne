@@ -28,8 +28,8 @@ public:
 	Scoreboard(Point2D esqIzq,uint ancho , uint alto ,Texture* points, Texture* arrows,int numberArrows);
 	void Puntuacion(int score);
 	void Arrows();
-	void render();
-	void update();
+	virtual void render();
+	virtual void update();
 	
 };
 #endif

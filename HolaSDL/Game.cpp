@@ -86,18 +86,14 @@ void Game::update() {
 	//actualizacion de globos
 	for (int i = 0; i < balloons.size(); i++) {
 		//si el update devuelve true destruimos ese globo y lo quitamos del vector
-		if (balloons[i]->update()) {
-			delete balloons[i];
-			balloons.erase(balloons.begin()+i);
-		}
+		arrows[i]->update();
+
 	}
 	//actualizacion de flechas
 	for (int j = 0; j < arrows.size(); j++) {
 		//si el update devuelve true destruimos esa flecha y la quitamos del vector
-		if (arrows[j]->update()) {
-			delete arrows[j];
-			arrows.erase(arrows.begin() + j);
-		}
+		arrows[j]->update();
+			
 	}
 }
 //metodo que renderiza todos los objetos del juego

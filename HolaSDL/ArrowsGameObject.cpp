@@ -1,4 +1,5 @@
 #include "ArrowsGameObject.h";
+#include "Game.h";
 
 ArrowsGameObject::ArrowsGameObject(Point2D esqIzq, Vector2D vel, uint _width, uint _height, Texture* _textura, Game* _game)
 {
@@ -8,7 +9,7 @@ ArrowsGameObject::ArrowsGameObject(Point2D esqIzq, Vector2D vel, uint _width, ui
 	velocity = vel;
 	textura = _textura;
 	game = _game;
-	setItList();
+	//setItList();
 }
 void ArrowsGameObject::render()
 {

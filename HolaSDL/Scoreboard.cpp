@@ -55,6 +55,7 @@ void Scoreboard::render(){
 	}
 		
 }
+void Scoreboard::update(){}
 
 
 

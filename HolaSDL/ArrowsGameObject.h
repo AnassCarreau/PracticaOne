@@ -24,7 +24,7 @@ public:
 	SDL_Rect* getCollisionRect();
 	void loadFromFile(ifstream& input);
 	void saveToFile(ofstream& outuput);
-	void setItList();
+	//void setItList();
 };
 #endif
 
