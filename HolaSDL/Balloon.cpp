@@ -13,11 +13,6 @@ Balloon::Balloon(Point2D esqIzq, uint w, uint h, Vector2D velocidad, Texture* gl
 }
 
 void Balloon::render() {
-	/*SDL_Rect destRect;
-	destRect.x = esqIzq.getX();
-	destRect.y = esqIzq.getY();
-	destRect.w = w;
-	destRect.h = h;*/
 	SDL_Rect destRect = ArrowsGameObject::getDestRect();
 	//si el globo esta explotado renderizamos con animacion
 	if (explotado) {
@@ -42,19 +37,16 @@ void  Balloon::update() {
 	}
 
 	if (j >= 0 && j <= WIN_HEIGHT && !explotado) {
-		esqIzq = esqIzq.operator-(velocidad);
-		//return false;
+		ArrowsGameObject::update();
 	}
 	  
 	if (SDL_GetTicks() < instPinchazo + TIME_Animation  && estado<7) {
 		estado++;
-		//return false;
 	}
 	if (estado>=7)
 	{
 		game->KillObject(this);
 	}
-	//return true;
 	/*if (true) game->killobject(this)*/
 
 }

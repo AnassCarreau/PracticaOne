@@ -13,47 +13,38 @@ Bow::Bow(Point2D esqIzq, uint w, uint h, Vector2D velocidad, Texture* arco, Text
 	flecha = _flecha;
 }
 
- void Bow::render(){
-	 
-	 SDL_Rect destRect=ArrowsGameObject::getDestRect();
+ void Bow::render(){ 
+	 aux = arco;
 	 //si el arco esta cargado renderizamos su imagen respectiva
-	 if(cargado)
-		 arcoC->render(destRect, SDL_FLIP_NONE);
+	 if (cargado) {
+		 arco = arcoC;
+		 ArrowsGameObject::render();
+	 }
 	 //si no la normal
 	 else
 	 {
-		 arco->render(destRect, SDL_FLIP_NONE);
+		 arco = aux;
+		 ArrowsGameObject::render();
 	 }
  }
 
  void Bow::update() {
-	 
-	 if (esqIzq.getY()+h>=600)
+	 if (esqIzq.getY()+velocidad.getY()+h>=600 && esqIzq.getY() + velocidad.getY() + h <=0)
 	 {
-		 abajo = false;
-
-	 }
-	 else if (esqIzq.getY()<=0)
-	 {
-		 arriba = false;
-	 }
-	 else
-	 {
-		 abajo =arriba= true;
+		 ArrowsGameObject::update();
 	 }
 	
  }
  void Bow::handleEvents(SDL_Event& event) {
+	 //EventHandler::handleEvent(event);
 	 if (event.type == SDL_KEYDOWN) {
 
-		 if (event.key.keysym.sym == SDLK_DOWN && abajo) {
-
-			 esqIzq = esqIzq.operator+(velocidad);
+		 if (event.key.keysym.sym == SDLK_DOWN && velocidad.getY()<=0) {
+			 velocidad = velocidad * (-1);
 		 }
-		 else  if (event.key.keysym.sym == SDLK_UP && arriba) {
+		 else  if (event.key.keysym.sym == SDLK_UP && velocidad.getY() >=0) {
 
-			 esqIzq = esqIzq.operator-(velocidad);
-
+			 velocidad = velocidad * (-1);
 		 }
 		 else if (event.key.keysym.sym == SDLK_LEFT && !cargado)
 		 {

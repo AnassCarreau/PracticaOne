@@ -29,8 +29,6 @@ void Scoreboard::Puntuacion(int score)
 		score = score / 10;
 	}
 	digitos.push_back(score);
-
-
 }
 void Scoreboard::render(){
 	

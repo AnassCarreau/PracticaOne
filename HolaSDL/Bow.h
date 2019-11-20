@@ -19,6 +19,7 @@ private:
 	Vector2D velocidad = Vector2D(0,0);
 	Texture* arco = nullptr;
 	Texture* arcoC = nullptr;
+	Texture* aux = nullptr;
 	Game* game=nullptr;
 	Arrow* flecha = nullptr;
 	bool cargado = false;

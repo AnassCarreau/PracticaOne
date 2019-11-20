@@ -21,8 +21,6 @@ private:
 	int numberarrows;
 	//int puntos = 0;
 
-
-
 public:
 	Scoreboard();
 	Scoreboard(Point2D esqIzq,uint ancho , uint alto ,Texture* points, Texture* arrows,int numberArrows);
