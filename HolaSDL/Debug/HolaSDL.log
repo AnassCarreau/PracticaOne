@@ -1,100 +1,26 @@
-﻿  Arrow.cpp
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Arrow.h(5,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(4,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(5,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(6,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(8,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Arrow.cpp(30,13): warning C4244:  'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
-  ArrowsGameObject.cpp
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Arrow.cpp(31,13): warning C4244:  'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.cpp(1,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(4,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(5,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(6,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(8,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.cpp(2,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(3,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(4,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(5,9): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Arrow.h(5,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(6,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(7,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.cpp(27,23): warning C4244:  '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.cpp(34,13): warning C4244:  'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
-  Balloon.cpp
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.cpp(35,13): warning C4244:  'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(4,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(5,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(6,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(8,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(3,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(4,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(5,9): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Arrow.h(5,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(6,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-  Bow.cpp
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(7,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(3,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(4,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(5,9): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Arrow.h(5,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(4,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(5,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(6,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(8,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(6,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-  Butterfly.cpp
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(7,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(4,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(5,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(6,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+﻿  Bow.cpp
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.h(4,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.h(5,9): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\Arrow.h(5,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(4,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(5,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(6,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(8,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.h(6,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
   Game.cpp
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(8,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\crtdbg.h(303,1): warning C4005:  '_malloca': redefinición de macro
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\malloc.h(122): message :  vea la definición anterior de '_malloca'
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(4,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(5,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(6,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(8,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(3,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(4,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(5,9): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Arrow.h(5,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(6,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(7,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(26,20): warning C4101:  'go': variable local sin referencia
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(41,20): warning C4018:  '<': no coinciden signed/unsigned
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(45,20): warning C4018:  '<': no coinciden signed/unsigned
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(87,20): warning C4018:  '<': no coinciden signed/unsigned
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(93,20): warning C4018:  '<': no coinciden signed/unsigned
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(122,20): warning C4018:  '<': no coinciden signed/unsigned
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(127,20): warning C4018:  '<': no coinciden signed/unsigned
-  main.cpp
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(200,21): warning C4018:  '<': no coinciden signed/unsigned
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(4,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(5,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(6,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(8,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(3,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(4,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(5,9): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Arrow.h(5,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(6,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-  Reward.cpp
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Bow.h(7,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Reward.h(4,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(4,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(5,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(6,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(8,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-  Scoreboard.cpp
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Reward.h(5,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Scoreboard.cpp(36,26): warning C4244:  '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Scoreboard.cpp(37,26): warning C4244:  '=': conversión de 'double' a 'int'; posible pérdida de datos
-  Scores.cpp
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Scoreboard.cpp(40,20): warning C4018:  '<': no coinciden signed/unsigned
-  Texture.cpp
-  Vector2D.cpp
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.h(7,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\crtdbg.h(303,1): warning C4005: '_malloca': redefinición de macro
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\malloc.h(122): message : vea la definición anterior de '_malloca'
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(4,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(5,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(6,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\ArrowsGameObject.h(8,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.h(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.h(4,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.h(5,9): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\Arrow.h(5,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.h(6,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
   Generando código...
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Scores.cpp(126,21): warning C4018:  '<': no coinciden signed/unsigned
-  HolaSDL.vcxproj -> C:\Users\forev\OneDrive\Desktop\PracticaOne\bin\HolaSDLDebug.exe
+C:\Users\anass\Desktop\PracticaOne\HolaSDL\Bow.h(7,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+  HolaSDL.vcxproj -> C:\Users\anass\Desktop\PracticaOne\bin\HolaSDLDebug.exe

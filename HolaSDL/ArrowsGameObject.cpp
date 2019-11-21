@@ -9,7 +9,7 @@ ArrowsGameObject::ArrowsGameObject(Point2D esqIzq, Vector2D vel, uint _width, ui
 	velocity = vel;
 	textura = _textura;
 	game = _game;
-	//setItList();
+	setItList();
 }
 void ArrowsGameObject::render()
 {
@@ -61,4 +61,5 @@ void ArrowsGameObject::loadFromFile(ifstream &input)
 	}
 }
 
+void ArrowsGameObject::setItList(){}
 

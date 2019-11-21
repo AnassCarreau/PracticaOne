@@ -23,13 +23,16 @@ Game::Game() {
 		
 	}
 	//Creacion de los gameobjects (los globos y las flechas los generamos mediante un metodo que los genera en un vector)
-	ArrowsGameObject* go[5];
 	//go[0]= new Arrow();
    // go[1] = new Bow(Point2D(0, 0), 80, 80, Vector2D(0, 10), textures[1],textures[3], false, this, nullptr);
 	flechas = 10;
+	objects.push_back(new Arrow(Point2D(0, 0), textures[4], this, Vector2D(0, 10), 80, 80));
+	objects.push_back(new Bow(Point2D(20, 20), 80, 80, Vector2D(0, 10), textures[1],textures[3], false, this, nullptr));
+	
+
 	scoreboard = new Scoreboard(Point2D(300,0),25,35,textures[6],textures[5],flechas);
 	
-	run();
+	run();	
 }
 //metodo de destruccion de basura
 Game::~Game() {
@@ -38,14 +41,15 @@ Game::~Game() {
 	scoreboard = nullptr;
 	delete bow;
 	bow = nullptr;
-	for (int i = 0; i < arrows.size(); i++) {
+	/*for (int i = 0; i < arrows.size(); i++) {
 		delete arrows[i];
 		arrows[i] = nullptr;
 	}
 	for (int j = 0; j < balloons.size(); j++) {
 		delete balloons[j];
 		balloons[j] = nullptr;
-	}
+	}*/ 
+	//que cada objeto se destruya a si mismo 
 	
 	SDL_DestroyRenderer(renderer);
 	SDL_DestroyWindow(window);
@@ -80,32 +84,42 @@ void Game::run() {
 }
 //metodo que actualiza el estado del juego
 void Game::update() {
+	
+
+	for (auto it = objects.begin(); it != objects.end(); it++) {
+
+		(*it)->update();
+
+	}
 	//actualizamos arco y generamos globos
-	bow->update();
-	generateBalloons();
+	//bow->update();
+	//generateBalloons();
+	//it = objects.begin();
+	//while (it != objects.end()); ; ++it;
+		
+		
 	//actualizacion de globos
-	for (int i = 0; i < balloons.size(); i++) {
+	/*for (int i = 0; i < balloons.size(); i++) {
 		//si el update devuelve true destruimos ese globo y lo quitamos del vector
 		arrows[i]->update();
 
-	}
+	}*/
 	//actualizacion de flechas
-	for (int j = 0; j < arrows.size(); j++) {
+	/*for (int j = 0; j < arrows.size(); j++) {
 		//si el update devuelve true destruimos esa flecha y la quitamos del vector
 		arrows[j]->update();
 			
-	}
+	}*/
 }
 //metodo que renderiza todos los objetos del juego
 void Game::render() const {
 
 
-	//
 
-	for (ArrowsGameObject*a:go)
-	{
-		a->render();
-		a->update();
+	for (auto it = objects.begin(); it != objects.end(); it++){
+	
+		(*it)->render();
+
 	}
 
 	//
@@ -117,17 +131,17 @@ void Game::render() const {
 	
 	textures[level]->render(bk, SDL_FLIP_NONE);
 	//renderizado arco
-	bow->render();
+	//bow->render();
 	//renderizado flechas
-	for (int j = 0; j < arrows.size(); j++)
+	/*for (int j = 0; j < arrows.size(); j++)
 	{
 		arrows[j]->render();
-	}
+	}*/
 	//renderizado globos
-	for (int i = 0; i < balloons.size(); i++)
+/*	for (int i = 0; i < balloons.size(); i++)
 	{
 		balloons[i]->render();
-	}	
+	}	*/
 	//renderizado scoreboard
 	scoreboard->render();
 	//lo presentamos todo en pantalla
@@ -139,7 +153,7 @@ void Game::handleEvents() {
 	while (SDL_PollEvent(&event) && !exit) {
 		if (event.type == SDL_QUIT) exit = true;
 		else {
-			bow->handleEvents(event ); 
+			//bow->handleEvents(event ); 
 		}
 	}
 }
@@ -152,8 +166,8 @@ void Game::generateBalloons() {
 		int h =  rand() % 320 + 400;
 		int color = rand() % 7;
 		double velocidad = rand() % 2 + 0.5;
-		Balloon* globo = new Balloon(Point2D{ (double)h,600 }, 80, 80, Vector2D(0, velocidad), textures[2], false, 0, this, color);
-		balloons.push_back(globo);
+	objects.push_back(	new  Balloon(Point2D{ (double)h,600 }, 80, 80, Vector2D(0, velocidad), textures[2], false, 0, this, color));
+		//balloons.push_back(globo);
 		startBaloonTime = SDL_GetTicks();
 
 	}
@@ -197,7 +211,7 @@ void Game::AddPoints()
 bool Game::OnCollisionEnter(SDL_Rect* rectBalloon) {
 	
 	
-		for (int i = 0; i < arrows.size(); i++)
+	/*	for (int i = 0; i < arrows.size(); i++)
 		{
 			if (SDL_HasIntersection(rectBalloon, arrows[i]->PosFlecha()))
 			{
@@ -205,8 +219,8 @@ bool Game::OnCollisionEnter(SDL_Rect* rectBalloon) {
 			}
 		}
 	
+	return false;*/
 	return false;
-	
 }
 
 void Game::KillObject(GameObject *object) {

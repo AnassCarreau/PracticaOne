@@ -14,7 +14,7 @@ private:
 	Vector2D velocity;
 	Texture* textura;
 	Game* game;
-	//vector<int>::iterator i;
+	vector<int>::iterator i;
 protected:
 	ArrowsGameObject(Point2D pos, Vector2D vel, uint width, uint height, Texture* textura, Game* game);
 public:
@@ -24,7 +24,7 @@ public:
 	SDL_Rect* getCollisionRect();
 	void loadFromFile(ifstream& input);
 	void saveToFile(ofstream& outuput);
-	//void setItList();
+	void setItList();
 };
 #endif
 

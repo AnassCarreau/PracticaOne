@@ -7,14 +7,14 @@ bool arriba=true;
 bool abajo = true;
 
 
-Bow::Bow(Point2D esqIzq, uint w, uint h, Vector2D velocidad, Texture* arco, Texture* _arcoC,bool _cargado,Game*game,Arrow* _flecha) : ArrowsGameObject(esqIzq, velocidad, w, h, arco, game) {
+Bow::Bow(Point2D _esqIzq, uint _w, uint _h, Vector2D _velocidad, Texture* _arco, Texture* _arcoC,bool _cargado,Game*_game,Arrow* _flecha) : ArrowsGameObject(_esqIzq, _velocidad, _w, _h, _arco, _game) {
 	arcoC = _arcoC;
+	aux = arco;
 	cargado = _cargado;
 	flecha = _flecha;
 }
 
  void Bow::render(){ 
-	 aux = arco;
 	 //si el arco esta cargado renderizamos su imagen respectiva
 	 if (cargado) {
 		 arco = arcoC;

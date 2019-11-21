@@ -11,16 +11,16 @@ class Game;
 
 typedef unsigned int uint;
 
-class Bow: public ArrowsGameObject,public EventHandler{
+class Bow: public ArrowsGameObject{
 private:
-	Point2D esqIzq = Point2D(0,0); 
-	uint w = 0; // width
-	uint h = 0; // height
-	Vector2D velocidad = Vector2D(0,0);
-	Texture* arco = nullptr;
+	Point2D esqIzq; 
+	uint w; // width
+	uint h; // height
+	Vector2D velocidad;
+	Texture* arco;
 	Texture* arcoC = nullptr;
 	Texture* aux = nullptr;
-	Game* game=nullptr;
+	Game* game;
 	Arrow* flecha = nullptr;
 	bool cargado = false;
 	int time = 0;
@@ -28,6 +28,7 @@ public:
 	Bow(Point2D esqIzq, uint w, uint h, Vector2D velocidad, Texture* arco, Texture* arcoC, bool cargado, Game* game, Arrow* flecha);
 	virtual	void render();
 	virtual	void update();
+protected:
 	virtual void handleEvents(SDL_Event& event);
 	void saveToFile(ofstream &output);
 };

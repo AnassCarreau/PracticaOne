@@ -11,6 +11,7 @@
 #include <vector>
 #include <list>
 #include "Scoreboard.h"
+//#include "GameObject.h"
 typedef unsigned int uint;
 
 const uint WIN_WIDTH = 800;
@@ -22,14 +23,7 @@ struct ImagenesAtributos {
 };
 
 class Game {
-private:
-	vector<ArrowsGameObject*>go;
-	
-	//ArrowsGameObject* go[5];
-	//go = new Bow();
-	//go[1] = new Arrow();
-	//go[2] = new Balloon();
-	//go[3] = new Butterfly();
+private:	
 	SDL_Window* window = nullptr;
 	SDL_Renderer* renderer = nullptr;
 	bool exit = false;
@@ -40,15 +34,14 @@ private:
 	Bow* bow = nullptr;
 	double timecharge = 0;
 	double timeshoot=0;
-	vector<Arrow*> arrows;
 	vector<Balloon*> balloons;
 	Scoreboard* scoreboard;
 	
 
-	/*list <EventHandler*> eventHandler;
+	list <EventHandler*> eventHandler;
 	list<GameObject*> objectsToErase;
-	list<Arrow*> arrowss;
-	list<GameObject*>objects;*/
+	list<Arrow*> arrows;
+	list<GameObject*>objects;
 	/*void update()
 	for(..ob:objects)ob->update()
 	for (..ob::objectstoerase){
@@ -67,7 +60,8 @@ private:
 	/*list<GameObject*>::iterator it;it=objects.begin()
 	while(it!=objects.end())*it->update();++it; 
 	*/
-	
+	list<GameObject*>::iterator it;
+
 
 	ImagenesAtributos imags[NUM_TEXTURES] = { {"..\\images\\bg1.png", 1, 1},{"..\\images\\Bow2.png", 1, 1},{"..\\images\\balloons.png", 7, 6},{"..\\images\\Bow1.png", 1, 1},{"..\\images\\Arrow1.png",1,1},{"..\\images\\Arrow2.png",1,1},{"..\\images\\digits1.png",1,10} };
 public:
