@@ -16,18 +16,18 @@ void Balloon::render() {
 	SDL_Rect destRect = ArrowsGameObject::getDestRect();
 	//si el globo esta explotado renderizamos con animacion
 	if (explotado) {
-		globo->renderFrame(destRect, color, estado , 0, SDL_FLIP_NONE);
+		textura->renderFrame(destRect, color, estado , 0, SDL_FLIP_NONE);
 	}
 	//si no lo renderizamos normal
 	else {
-		globo->renderFrame(destRect, color, 0, 0, SDL_FLIP_NONE);
+		textura->renderFrame(destRect, color, 0, 0, SDL_FLIP_NONE);
 	}
 }
 
 void  Balloon::update() {
-	double i = esqIzq.getX();
-	double j = esqIzq.getY();
-	SDL_Rect* rectBalloon = new SDL_Rect{ (int)esqIzq.getX(),(int)esqIzq.getY(),(int)w,(int)h };
+	double i = pos.getX();
+	double j = pos.getY();
+	SDL_Rect* rectBalloon = new SDL_Rect{ (int)pos.getX(),(int)pos.getY(),(int)width,(int)height };
 
 	explotado = game->OnCollisionEnter(rectBalloon);
 	if (explotado && instPinchazo == 0)
@@ -45,7 +45,8 @@ void  Balloon::update() {
 	}
 	if (estado>=7)
 	{
-		game->KillObject(this);
+		
+		game->KillObject(this->i);
 	}
 	/*if (true) game->killobject(this)*/
 

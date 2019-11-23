@@ -8,17 +8,17 @@ Butterfly::Butterfly(Point2D esqIzq, Vector2D vel, uint ancho, uint alto, Textur
 void Butterfly::render() {
 	SDL_Rect destRect = ArrowsGameObject::getDestRect();
 	if (!viva) {
-		butterfly->renderFrame(destRect, mariposon, 0, 0, SDL_FLIP_NONE);
+		textura->renderFrame(destRect, mariposon, 0, 0, SDL_FLIP_NONE);
 	}
 	else {
-		butterfly->renderFrame(destRect, mariposon, vuelo, 0, SDL_FLIP_NONE);
+		textura->renderFrame(destRect, mariposon, vuelo, 0, SDL_FLIP_NONE);
 	}
 }
 
 void Butterfly::update() {
-	double i = esqIzq.getX();
-	double j = esqIzq.getY();
-	SDL_Rect* rectButterfly = new SDL_Rect{ (int)esqIzq.getX(),(int)esqIzq.getY(),(int)ancho,(int)alto };
+	double i = pos.getX();
+	double j = pos.getY();
+	SDL_Rect* rectButterfly = new SDL_Rect{ (int)pos.getX(),(int)pos.getY(),(int)width,(int)height };
 
 	//viva = game->OnCollisionEnter(rectButterfly);
 	if (!viva)
@@ -38,8 +38,8 @@ void Butterfly::update() {
 	if (vuelo >= 9)
 	{
 		//se cae hacia abajo y es eliminada
-		vel = Vector2D(vel.getX() * 0, 2);
+		velocity = Vector2D(velocity.getX() * 0, 2);
 		//aqui tiene que pasar cierto tiempo y despues ser eliminada
-		game->KillObject(this);
+		game->KillObject(this->i);
 	}
 }

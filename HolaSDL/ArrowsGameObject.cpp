@@ -1,16 +1,8 @@
 #include "ArrowsGameObject.h";
 #include "Game.h";
 
-ArrowsGameObject::ArrowsGameObject(Point2D esqIzq, Vector2D vel, uint _width, uint _height, Texture* _textura, Game* _game)
-{
-	pos = esqIzq;
-	width = _width;
-	height = _height;
-	velocity = vel;
-	textura = _textura;
-	game = _game;
-	setItList();
-}
+ArrowsGameObject::ArrowsGameObject(Point2D esqIzq, Vector2D vel, uint _width, uint _height, Texture* _textura, Game* _game):pos(esqIzq),velocity ( vel) ,width ( _width),height ( _height),textura ( _textura),game( _game)
+{}
 void ArrowsGameObject::render()
 {
 	textura->render(getDestRect(), SDL_FLIP_NONE);
@@ -23,7 +15,7 @@ void ArrowsGameObject::update()
 SDL_Rect ArrowsGameObject::getDestRect()
 {
 	SDL_Rect destRect;
-	destRect.x = 0;
+	destRect.x = pos.getX();
 	destRect.y = pos.getY();
 	destRect.w = width;
 	destRect.h = height;
@@ -61,5 +53,8 @@ void ArrowsGameObject::loadFromFile(ifstream &input)
 	}
 }
 
-void ArrowsGameObject::setItList(){}
+void ArrowsGameObject::setItList(list<GameObject*>::iterator it)
+{
+	i = it;
+}
 

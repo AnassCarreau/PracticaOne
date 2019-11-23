@@ -4,11 +4,6 @@
 class Butterfly:public ArrowsGameObject
 {
 private:
-	Point2D esqIzq;
-	Vector2D vel;
-	uint ancho = 0, alto = 0;
-	Texture* butterfly = nullptr;
-	Game* game = nullptr;
 	bool viva = true;
 	int mariposon = 0;
 	int vuelo = 0;

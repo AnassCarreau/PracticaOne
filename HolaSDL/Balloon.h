@@ -9,12 +9,6 @@ typedef unsigned int uint;
 class Balloon : public ArrowsGameObject {
 
 private:
-	Point2D esqIzq = Point2D(600, 600);
-	uint h = 0;
-	uint w = 0;
-	Vector2D velocidad = Vector2D(0, 0);
-	Texture* globo = nullptr;
-	Game* game = nullptr;
 	int color = 0;
 	int estado = 0;
 	bool explotado = false;

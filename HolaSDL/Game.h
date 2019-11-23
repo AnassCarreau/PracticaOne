@@ -11,7 +11,7 @@
 #include <vector>
 #include <list>
 #include "Scoreboard.h"
-//#include "GameObject.h"
+
 typedef unsigned int uint;
 
 const uint WIN_WIDTH = 800;
@@ -31,16 +31,16 @@ private:
 	int puntuacion=0;
 	int flechas=0;
 	Texture* textures[NUM_TEXTURES];
-	Bow* bow = nullptr;
+	//Bow* bow = nullptr;
 	double timecharge = 0;
 	double timeshoot=0;
-	vector<Balloon*> balloons;
 	Scoreboard* scoreboard;
-	
 
 	list <EventHandler*> eventHandler;
 	list<GameObject*> objectsToErase;
 	list<Arrow*> arrows;
+	list<Balloon*> balloons;
+
 	list<GameObject*>objects;
 	/*void update()
 	for(..ob:objects)ob->update()
@@ -60,7 +60,7 @@ private:
 	/*list<GameObject*>::iterator it;it=objects.begin()
 	while(it!=objects.end())*it->update();++it; 
 	*/
-	list<GameObject*>::iterator it;
+	
 
 
 	ImagenesAtributos imags[NUM_TEXTURES] = { {"..\\images\\bg1.png", 1, 1},{"..\\images\\Bow2.png", 1, 1},{"..\\images\\balloons.png", 7, 6},{"..\\images\\Bow1.png", 1, 1},{"..\\images\\Arrow1.png",1,1},{"..\\images\\Arrow2.png",1,1},{"..\\images\\digits1.png",1,10} };
@@ -76,7 +76,7 @@ public:
 	bool OnCollisionEnter(SDL_Rect*rectBalloon);
 	void generateBalloons();
 	void AddPoints();
-	void KillObject(GameObject* object);
+	void KillObject(list<GameObject*>::iterator it);
 	//void NewLvl();
 };
 #endif

@@ -4,7 +4,7 @@
 #include <SDL.h>
 class EventHandler
 {
-	protected:
+	public:
 		virtual void handleEvent(SDL_Event& event)=0;
 };
 #endif

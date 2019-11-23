@@ -5,17 +5,17 @@
 #include "Vector2D.h";
 #include "Texture.h";
 #include <fstream>
-#include <vector>;
+#include <list>
 class Game;
 class ArrowsGameObject : public GameObject {
-private:
+
+protected:
 	Point2D pos;
 	uint width, height;
 	Vector2D velocity;
 	Texture* textura;
 	Game* game;
-	vector<int>::iterator i;
-protected:
+	list<GameObject*>::iterator i;
 	ArrowsGameObject(Point2D pos, Vector2D vel, uint width, uint height, Texture* textura, Game* game);
 public:
 	virtual void render();
@@ -24,7 +24,8 @@ public:
 	SDL_Rect* getCollisionRect();
 	void loadFromFile(ifstream& input);
 	void saveToFile(ofstream& outuput);
-	void setItList();
+	void setItList(list<GameObject*>::iterator it);
+	
 };
 #endif
 
