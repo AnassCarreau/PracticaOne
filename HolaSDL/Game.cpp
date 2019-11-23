@@ -24,10 +24,12 @@ Game::Game() {
 	}
 	//Creacion de los gameobjects (los globos y las flechas los generamos mediante un metodo que los genera en un vector)
 	flechas = 10;
-	//Arrow*flecha= new Arrow(Point2D(0, 100),textures[1],this,  Vector2D(0, 10), 80, 80);
 	Bow* arco = new Bow(Point2D(0, 100), 80, 80, Vector2D(0, 10), textures[1], textures[3], this);
 	auto it=objects.insert(objects.end(),arco);
 	arco->setItList(it);
+	//creacion de las mariposas
+	CreateButterflys();
+
 	//eventHandler.push_back(arco);
 	
 	
@@ -94,6 +96,8 @@ void Game::run() {
 //metodo que actualiza el estado del juego
 void Game::update() {
 	
+	generateBalloons();
+	
 
 	for (auto it = objects.begin(); it != objects.end(); it++) {
 
@@ -102,10 +106,13 @@ void Game::update() {
 	}
 	//actualizamos arco y generamos globos
 	//bow->update();
-	generateBalloons();
 	//it = objects.begin();
 	//while (it != objects.end()); ; ++it;
-		
+	for (auto it = objectsToErase.begin(); it != objectsToErase.end(); ++it) {
+
+		objects.remove(*it);
+	}
+	objectsToErase.clear();
 		
 	//actualizacion de globos
 	/*for (int i = 0; i < balloons.size(); i++) {
@@ -122,10 +129,6 @@ void Game::update() {
 }
 //metodo que renderiza todos los objetos del juego
 void Game::render() const {
-
-
-
-	
 	//
 	//limpiamos
 	SDL_RenderClear(renderer);
@@ -141,19 +144,8 @@ void Game::render() const {
 
 	}
 
-	//renderizado flechas
-	/*for (int j = 0; j < arrows.size(); j++)
-	{
-		arrows[j]->render();
-	}*/
-	//renderizado globos
-/*	for (int i = 0; i < balloons.size(); i++)
-	{
-		balloons[i]->render();
-	}	*/
-	//renderizado scoreboard
+	
 	scoreboard->render();
-	//lo presentamos todo en pantalla
 	SDL_RenderPresent(renderer);
 }
 //metodo que controla los eventos del juego
@@ -176,10 +168,10 @@ void Game::generateBalloons() {
 	if (frameBaloonTime >= FRAME_RATEGLOB) {
 		int h =  rand() % 320 + 400;
 		int color = rand() % 7;
-		double velocidad = rand() % 2 + 0.5;
+		double velocidad = rand() % 5 + 0.5;
 		Balloon* globo=new  Balloon(Point2D{ (double)h,600 }, 80, 80, Vector2D(0, -velocidad), textures[2], false, 0, this, color);
-		objects.push_back(globo);
-		//balloons.push_back(globo);
+		auto it = objects.insert(objects.end(), globo);
+		globo->setItList(it);
 		startBaloonTime = SDL_GetTicks();
 
 	}
@@ -205,8 +197,11 @@ void Game::DisparaFlecha(Point2D pos) {
 			timecharge = 10;
 		}
 		Arrow* flecha = new Arrow(Vector2D(timecharge + 2, 0), textures[4], this, Point2D(pos.getX() + 20, pos.getY() + 30), 90, 20);
-		objects.push_back(flecha);
+		auto it = objects.insert(objects.end(), flecha);
+		arrows.push_back(flecha);
+		flecha->setItList(it);
 		flechas--;
+
 		scoreboard->Arrows();
 	}
 	
@@ -223,21 +218,34 @@ void Game::AddPoints()
 bool Game::OnCollisionEnter(SDL_Rect* rectBalloon) {
 	
 	
-	/*	for (int i = 0; i < arrows.size(); i++)
+		for (auto it= arrows.begin();it!=arrows.end();++it)
 		{
-			if (SDL_HasIntersection(rectBalloon, arrows[i]->PosFlecha()))
+			if (SDL_HasIntersection(rectBalloon, (*it)->getCollisionRect()))
 			{
 				return true;
 			}
 		}
 	
-	return false;*/
 	return false;
 }
 
 void Game::KillObject(list<GameObject*>::iterator it) {
 
 	objectsToErase.push_back(*it);
+}
+
+void Game::CreateButterflys() {
+	int posiX, posiY, velX, velY;
+	for (uint j = 0; j < NUM_BUTTERFLYS; j++) {
+		posiX = rand() %  600+ 100;
+		posiY = rand() % 400 + 100;
+		velX = rand() % 5 - 2;
+		velY = rand() % 5 - 2;
+
+		Butterfly* mariposa = new Butterfly(Point2D((double)posiX, (double)posiY), Vector2D((double)velX, (double)velY), 60, 60, textures[7], this);
+		auto it = objects.insert(objects.end(), mariposa);
+		mariposa->setItList(it);
+	}
 }
 /*
 void Game::NewLvl()

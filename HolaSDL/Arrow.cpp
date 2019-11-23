@@ -1,4 +1,5 @@
 #include "Arrow.h"
+#include "Game.h"
 #include "checkML.h"
 
 
@@ -11,7 +12,15 @@ void Arrow::render() {
 }
 
 void Arrow::update() {	
-	ArrowsGameObject::update();
+	if ( pos.getX()+width  < WIN_WIDTH)
+	{
+		ArrowsGameObject::update();
+
+	}
+	else
+	{
+		game->KillObject(i);
+	}
 }
 //metodo para saber el rect de la flecha
 SDL_Rect* Arrow::getCollisionRect() {
@@ -20,15 +29,6 @@ SDL_Rect* Arrow::getCollisionRect() {
 	rectArrow->w = width / 4;
 	return rectArrow;
 }
-SDL_Rect* Arrow::PosFlecha() {
 
-	int pointX = esqIzq.getX() + 3 * width / 4;
-	int pointY = esqIzq.getY();
-	int arrowwidth = width / 4;
-	int arrowheight = height;
-	SDL_Rect* rectArrow = new SDL_Rect{ pointX, pointY, arrowwidth,arrowheight };
-
-	return rectArrow;
-}
 
 

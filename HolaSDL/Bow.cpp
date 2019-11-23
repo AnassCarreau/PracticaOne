@@ -23,7 +23,7 @@ Bow::Bow(Point2D _pos, uint _w, uint _h, Vector2D _velocity, Texture* _texture, 
 	 //si no la normal
 	 else
 	 {
-		
+		 textura = aux;
 		 ArrowsGameObject::render();
 	 }
  }
@@ -48,7 +48,7 @@ Bow::Bow(Point2D _pos, uint _w, uint _h, Vector2D _velocity, Texture* _texture, 
 		 }
 		 else if (event.key.keysym.sym == SDLK_LEFT && !cargado)
 		 {
-			// game->CargaFlecha();
+			 game->CargaFlecha();
 
 			 cargado = true;
 		 }

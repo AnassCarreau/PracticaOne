@@ -7,7 +7,7 @@ Butterfly::Butterfly(Point2D esqIzq, Vector2D vel, uint ancho, uint alto, Textur
 
 void Butterfly::render() {
 	SDL_Rect destRect = ArrowsGameObject::getDestRect();
-	if (!viva) {
+	if (muerte) {
 		textura->renderFrame(destRect, mariposon, 0, 0, SDL_FLIP_NONE);
 	}
 	else {
@@ -18,17 +18,17 @@ void Butterfly::render() {
 void Butterfly::update() {
 	double i = pos.getX();
 	double j = pos.getY();
-	SDL_Rect* rectButterfly = new SDL_Rect{ (int)pos.getX(),(int)pos.getY(),(int)width,(int)height };
+	
 
-	//viva = game->OnCollisionEnter(rectButterfly);
-	if (!viva)
+	muerte = game->OnCollisionEnter(&getDestRect());
+	if (muerte)
 	{
 		//game->RestaPuntos();
-		//instMuerte = SDL_GetTicks();
+		instMuerte = SDL_GetTicks();
 	}
 
-	if (i >= 200 && i <= WIN_WIDTH && j >= 0 && j <= WIN_HEIGHT && viva) {
-		//ArrowsGameObject::update();
+	if (i >= 0 && i <= WIN_WIDTH - 60 && j >= 0 && j <= WIN_HEIGHT - 60 && !muerte) {
+		ArrowsGameObject::update();
 		//mientras este viva y en los limites cada cierto tiempo le cambiamos la direccion?
 	}
 

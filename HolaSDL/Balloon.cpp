@@ -1,6 +1,6 @@
 #include "Balloon.h"
-#include "Game.h"
 #include "checkML.h"
+#include "Game.h"
 
 
 typedef unsigned int uint;
@@ -27,18 +27,22 @@ void Balloon::render() {
 void  Balloon::update() {
 	double i = pos.getX();
 	double j = pos.getY();
-	SDL_Rect* rectBalloon = new SDL_Rect{ (int)pos.getX(),(int)pos.getY(),(int)width,(int)height };
 
-	explotado = game->OnCollisionEnter(rectBalloon);
+	explotado = game->OnCollisionEnter(&getDestRect());
 	if (explotado && instPinchazo == 0)
 	{
 		game->AddPoints();
 		instPinchazo = SDL_GetTicks();
 	}
 
-	if (j >= 0 && j <= WIN_HEIGHT && !explotado) {
+	if (j >= 0 && j <= WIN_HEIGHT) {
 		ArrowsGameObject::update();
 	}
+	else
+	{
+		game->KillObject(this->i);
+	}
+	
 	  
 	if (SDL_GetTicks() < instPinchazo + TIME_Animation  && estado<7) {
 		estado++;
@@ -48,7 +52,6 @@ void  Balloon::update() {
 		
 		game->KillObject(this->i);
 	}
-	/*if (true) game->killobject(this)*/
 
 }
  
