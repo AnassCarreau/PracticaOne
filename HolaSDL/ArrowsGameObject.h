@@ -20,10 +20,9 @@ protected:
 	list<GameObject*>::iterator i;
 	ArrowsGameObject(Point2D pos, Vector2D vel, uint width, uint height, Texture* textura, Game* game);
 public:
-
 	virtual void render();
 	virtual void update();
-	SDL_Rect getDestRect();
+	SDL_Rect* getDestRect();
 	SDL_Rect* getCollisionRect();
 	void loadFromFile(ifstream& input);
 	void saveToFile(ofstream& outuput);

@@ -1,10 +1,12 @@
 #ifndef BUTTERFLY_H_
 #define BUTTERFLY_H_
 #include "ArrowsGameObject.h"
+const int POINT= -5;
+
 class Butterfly:public ArrowsGameObject
 {
 	private:
-		bool muerte;
+		bool muerte=false;
 		int mariposon = 0;
 		int vuelo = 0;
 		int instMuerte = 0;
@@ -12,6 +14,7 @@ class Butterfly:public ArrowsGameObject
 		Butterfly(Point2D esqIzq, Vector2D vel, uint ancho, uint alto, Texture* butterfly, Game* game);
 		virtual void update();
 		virtual void render();
+		void Pong();
 
 };
 #endif

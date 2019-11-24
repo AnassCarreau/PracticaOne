@@ -4,11 +4,13 @@
 #include "Texture.h"
 #include "ArrowsGameObject.h";
 
-
 class Game;
 class Arrow: public ArrowsGameObject{
-		
+private:
+	int hits=0;
 public:
+
+	int getHits();
 	Arrow(Vector2D dir, Texture* flecha, Game* game, Point2D posIni, uint width, uint height);
 	virtual void render();
 	virtual void update();

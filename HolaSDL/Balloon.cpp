@@ -13,14 +13,14 @@ Balloon::Balloon(Point2D esqIzq, uint w, uint h, Vector2D velocidad, Texture* gl
 }
 
 void Balloon::render() {
-	SDL_Rect destRect = ArrowsGameObject::getDestRect();
+	SDL_Rect* destRect = ArrowsGameObject::getDestRect();
 	//si el globo esta explotado renderizamos con animacion
 	if (explotado) {
-		textura->renderFrame(destRect, color, estado , 0, SDL_FLIP_NONE);
+		textura->renderFrame(*destRect, color, estado , 0, SDL_FLIP_NONE);
 	}
 	//si no lo renderizamos normal
 	else {
-		textura->renderFrame(destRect, color, 0, 0, SDL_FLIP_NONE);
+		textura->renderFrame(*destRect, color, 0, 0, SDL_FLIP_NONE);
 	}
 }
 
@@ -28,10 +28,10 @@ void  Balloon::update() {
 	double i = pos.getX();
 	double j = pos.getY();
 
-	explotado = game->OnCollisionEnter(&getDestRect());
+	explotado = game->OnCollisionEnter(getCollisionRect(),this->i);
 	if (explotado && instPinchazo == 0)
 	{
-		game->AddPoints();
+		//game->AddPoints(POINTS,);
 		instPinchazo = SDL_GetTicks();
 	}
 
@@ -49,7 +49,11 @@ void  Balloon::update() {
 	}
 	if (estado>=7)
 	{
-		
+		int estadistica = rand() % 3;
+		if (estadistica == 0)
+		{
+			game->CreateReward(pos);
+		}
 		game->KillObject(this->i);
 	}
 

@@ -8,8 +8,11 @@ class Reward:public ArrowsGameObject,public EventHandler
 {
 private:
 	bool burbuja = false;
+	Texture* burbuje = nullptr;
+	int color = 0;
+	int estado = 0;
 	public:
-		Reward(Point2D esqIzq, Vector2D vel, uint ancho, uint alto, Texture* premio, Game* game, bool burbuja);
+		Reward(Point2D esqIzq, Vector2D vel, uint ancho, uint alto, Texture* premio,Texture*burbuje, Game* game,int color );
 		virtual void update();
 		virtual void render();
 		virtual void handleEvent(SDL_Event& event);

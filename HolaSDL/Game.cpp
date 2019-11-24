@@ -4,6 +4,7 @@
 #include <iostream>
 #include <random>
 #include <vector>
+#include <math.h>
 using namespace std;
 typedef unsigned int uint;
 
@@ -27,10 +28,11 @@ Game::Game() {
 	Bow* arco = new Bow(Point2D(0, 100), 80, 80, Vector2D(0, 10), textures[1], textures[3], this);
 	auto it=objects.insert(objects.end(),arco);
 	arco->setItList(it);
+	eventHandler.push_back(arco);
+
 	//creacion de las mariposas
 	CreateButterflys();
 
-	//eventHandler.push_back(arco);
 	
 	
 	
@@ -42,7 +44,8 @@ Game::Game() {
 	
 
 	scoreboard = new Scoreboard(Point2D(300,0),25,35,textures[6],textures[5],flechas);
-	
+	 it = objects.insert(objects.end(), scoreboard);
+
 	run();	
 }
 //metodo de destruccion de basura
@@ -145,7 +148,7 @@ void Game::render() const {
 	}
 
 	
-	scoreboard->render();
+	//scoreboard->render();
 	SDL_RenderPresent(renderer);
 }
 //metodo que controla los eventos del juego
@@ -155,8 +158,11 @@ void Game::handleEvents() {
 		if (event.type == SDL_QUIT) exit = true;
 		else {
 			
-			dynamic_cast<Bow*>(*objects.begin())->handleEvent(event);
-				
+			for (auto it = eventHandler.begin(); it != eventHandler.end(); ++it) {
+
+				(*it)->handleEvent(event);
+
+			}
 		}
 	}
 }
@@ -207,21 +213,29 @@ void Game::DisparaFlecha(Point2D pos) {
 	
 }
 //metodo para añadir puntos
-void Game::AddPoints()
+void Game::AddPoints(int pointsadd,int hits)
 {
-	points += POINT_ADD;
-	scoreboard->Puntuacion(points);
+	points += pointsadd+sqrt(hits-1)*pointsadd;
+	
+	if (points>=0)
+	{
+		scoreboard->Puntuacion(points);
+
+	}
 }
 
 
+
 //metodo que mira si alguna flecha ha tocado con un globo
-bool Game::OnCollisionEnter(SDL_Rect* rectBalloon) {
+bool Game::OnCollisionEnter(SDL_Rect* rect,list<GameObject*>::iterator collider) {
 	
 	
 		for (auto it= arrows.begin();it!=arrows.end();++it)
 		{
-			if (SDL_HasIntersection(rectBalloon, (*it)->getCollisionRect()))
+			if (SDL_HasIntersection(rect, (*it)->getCollisionRect()))
 			{
+				if (dynamic_cast<Balloon*>(*collider) != nullptr)
+				{ AddPoints(POINTS, (*it)->getHits()); }
 				return true;
 			}
 		}
@@ -247,16 +261,24 @@ void Game::CreateButterflys() {
 		mariposa->setItList(it);
 	}
 }
-/*
+void Game::CreateReward(Point2D pos)
+{
+	
+		int color = rand() % 5;
+		Reward* premio = new Reward(pos, Vector2D(0, 0.1), 80, 80, textures[8], textures[9], this, color);
+		auto it = objects.insert(objects.end(), premio);
+		eventHandler.push_back(premio);
+		premio->setItList(it);
+	
+	
+}
+
 void Game::NewLvl()
 { 
 	level++;
-	for (int i = 0; i < arrows.size(); i++) {
-		delete arrows[i];
-		arrows[i] = nullptr;
-	}
-	for (int j = 0; j < balloons.size(); j++) {
-		delete balloons[j];
-		balloons[j] = nullptr;
-	}
-}*/
+	/*for (auto it = objects.begin(); it != objects.end(); ++it) {
+
+		(*it)->render();
+
+	}*/
+}

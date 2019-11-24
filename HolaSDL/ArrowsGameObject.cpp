@@ -5,28 +5,24 @@ ArrowsGameObject::ArrowsGameObject(Point2D esqIzq, Vector2D vel, uint _width, ui
 {}
 void ArrowsGameObject::render()
 {
-	textura->render(getDestRect(), SDL_FLIP_NONE);
+	textura->render(*getDestRect(), SDL_FLIP_NONE);
 }
 void ArrowsGameObject::update()
 {
 	pos = pos + velocity;
 }
 
-SDL_Rect ArrowsGameObject::getDestRect()
+SDL_Rect* ArrowsGameObject::getDestRect()
 {
-	SDL_Rect destRect;
-	destRect.x = pos.getX();
-	destRect.y = pos.getY();
-	destRect.w = width;
-	destRect.h = height;
-	return destRect;
+	
+	return new SDL_Rect{ (int)pos.getX(),  (int)pos.getY(),(int)width,(int)height };
 }; 
 SDL_Rect* ArrowsGameObject::getCollisionRect()
 {
-	int pointX = pos.getX();
-	int pointY = pos.getY();
-	int arrowwidth = width;
-	int arrowheight = height;
+	int pointX = pos.getX()+width/2;
+	int pointY = pos.getY()+height/2;
+	int arrowwidth = width-width/2;
+	int arrowheight = height-height/2;
 	SDL_Rect* rectArrow = new SDL_Rect{ pointX, pointY, arrowwidth,arrowheight };
 	return rectArrow;
 };

@@ -9,15 +9,17 @@
 #include "Bow.h"
 #include "Arrow.h"
 #include "Butterfly.h";
-#include <vector>
 #include <list>
 #include "Scoreboard.h"
+#include "Reward.h"
 
 typedef unsigned int uint;
 
 const uint WIN_WIDTH = 800;
 const uint WIN_HEIGHT = 600;
-const uint NUM_TEXTURES = 8;
+const uint NUM_TEXTURES = 10;
+const uint NUM_Lvl = 4;
+
 const uint NUM_BUTTERFLYS = 10;
 
 struct ImagenesAtributos {
@@ -45,28 +47,14 @@ class Game {
 		list<Balloon*> balloons;
 
 		list<GameObject*>objects;
-		/*void update()
-		for(..ob:objects)ob->update()
-		for (..ob::objectstoerase){
-		delete ob
-		objects.erase(ob.setit)
-		o
-		objects.remove(ob)}
-		objectstoerase.clear()
 	
-		*/
 
 		Scores score;
 		uint32_t startBaloonTime=0, frameBaloonTime=0; //variables para el control del tiempo
 		int points = 0;
-		const int POINT_ADD = 10;
-		/*list<GameObject*>::iterator it;it=objects.begin()
-		while(it!=objects.end())*it->update();++it; 
-		*/
-	
+		//ImagenesAtributos niveles[NUM_TEXTURES] = { {"..\\images\\bg1.png", 1, 1},{"..\\images\\Bow2.png", 1, 1},{"..\\images\\balloons.png", 7, 6},{"..\\images\\Bow1.png", 1, 1},{"..\\images\\Arrow1.png",1,1},{"..\\images\\Arrow2.png",1,1},{"..\\images\\digits1.png",1,10},{"..\\images\\butterfly2.png",4,10} };
 
-
-		ImagenesAtributos imags[NUM_TEXTURES] = { {"..\\images\\bg1.png", 1, 1},{"..\\images\\Bow2.png", 1, 1},{"..\\images\\balloons.png", 7, 6},{"..\\images\\Bow1.png", 1, 1},{"..\\images\\Arrow1.png",1,1},{"..\\images\\Arrow2.png",1,1},{"..\\images\\digits1.png",1,10},{"..\\images\\butterfly2.png",4,10} };
+		ImagenesAtributos imags[NUM_TEXTURES] = { {"..\\images\\bg1.png", 1, 1},{"..\\images\\Bow2.png", 1, 1},{"..\\images\\balloons.png", 7, 6},{"..\\images\\Bow1.png", 1, 1},{"..\\images\\Arrow1.png",1,1},{"..\\images\\Arrow2.png",1,1},{"..\\images\\digits1.png",1,10},{"..\\images\\butterfly2.png",4,10},{"..\\images\\rewards.png",10,8} ,{"..\\images\\bubble.png",1,1} };
 	public:
 		Game();
 		~Game();
@@ -76,11 +64,12 @@ class Game {
 		void update();
 		void CargaFlecha();
 		void DisparaFlecha(Point2D pos);
-		bool OnCollisionEnter(SDL_Rect*rectBalloon);
+		bool OnCollisionEnter(SDL_Rect* rect,list<GameObject*>::iterator it);
 		void generateBalloons();
-		void AddPoints();
+		void AddPoints(int points,int hits);
 		void KillObject(list<GameObject*>::iterator it);
 		void CreateButterflys();
-		//void NewLvl();
+		void CreateReward(Point2D pos);
+		void NewLvl();
 };
 #endif

@@ -2,8 +2,7 @@
 #include "checkML.h"
 
 using namespace std;
-Scoreboard::Scoreboard() :esqIzq(), ancho(), alto(), points(),arrows(),numberarrows() {	
-}
+
 Scoreboard::Scoreboard(Point2D esqIzq, uint ancho, uint alto, Texture* points, Texture* arrows,int numberArrows) : esqIzq(esqIzq), ancho(ancho), alto(alto), points(points), arrows(arrows),numberarrows(numberArrows)
 {
 	digitos.push_back(0);
@@ -16,6 +15,8 @@ void Scoreboard::Arrows()
 {
 	numberarrows--;
 }
+
+
 //metodo que controla los puntos
 void Scoreboard::Puntuacion(int score)
 {

@@ -22,12 +22,14 @@ private:
 	//int puntos = 0;
 
 public:
-	Scoreboard();
 	Scoreboard(Point2D esqIzq,uint ancho , uint alto ,Texture* points, Texture* arrows,int numberArrows);
 	void Puntuacion(int score);
 	void Arrows();
 	virtual void render();
 	virtual void update();
+	//virtual ~GameObject();
+	//virtual ~GameObject();
+
 	
 };
 #endif
