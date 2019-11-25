@@ -20,28 +20,29 @@ void Butterfly::update() {
 	double j = pos.getY();
 	
 
-	muerte = game->OnCollisionEnter(getCollisionRect(),this->i);
-	if (muerte && instMuerte == 0)
-	{
-		//game->AddPoints(POINT);
-		instMuerte = SDL_GetTicks();
+	if(!muerte)muerte = game->OnCollisionEnter(getCollisionRect(),this->i);
+	if (!muerte && vuelo < 9) {
+		vuelo++;
+		if (vuelo >= 9) {
+			vuelo = 0;
+		}
 	}
+	else if (muerte && instMuerte==0)
+	{
+		instMuerte = SDL_GetTicks();
+		game->AddPoints(-5, 0);
+		velocity = Vector2D(0, 2);
+	}
+	else if (SDL_GetTicks() > instMuerte + TIME_Animation) {
+
+		game->KillObject(this->i);
+
+	}
+
+	
 	    Pong();
 		ArrowsGameObject::update();
-		//mientras este viva y en los limites cada cierto tiempo le cambiamos la direccion?
-	
-
-	if (SDL_GetTicks() < instMuerte + TIME_Animation && vuelo < 9 && muerte) {
-		vuelo++;
-		velocity = Vector2D(0, 2);
-
-	}
-	if (vuelo >= 9)
-	{
-		//se cae hacia abajo y es eliminada
-		//aqui tiene que pasar cierto tiempo y despues ser eliminada
-		game->KillObject(this->i);
-	}
+		//mientras este viva y en los limites cada cierto tiempo le cambiamos la direccion
 }
 void Butterfly::Pong()
 {

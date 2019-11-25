@@ -112,10 +112,7 @@ void Game::update() {
 
 		(*it)->update();
 
-	}
-	
-	
-	
+	}	
 }
 //metodo que renderiza todos los objetos del juego
 void Game::render() const {
@@ -131,7 +128,6 @@ void Game::render() const {
 	for (auto it = objects.begin(); it != objects.end(); ++it){
 	
 		(*it)->render();
-
 	}
 	
 	SDL_RenderPresent(renderer);
@@ -200,8 +196,12 @@ void Game::DisparaFlecha(Point2D pos) {
 //metodo para añadir puntos
 void Game::AddPoints(int pointsadd,int hits)
 {
-	points += pointsadd+sqrt(hits-1)*pointsadd;
-	
+	if (hits <= 0) {
+		points += pointsadd;
+	}
+	else {
+		points += pointsadd + sqrt(hits - 1) * pointsadd;
+	}
 	if (points>=0)
 	{
 		scoreboard->Puntuacion(points);
