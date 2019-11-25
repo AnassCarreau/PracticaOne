@@ -15,6 +15,8 @@ private:
 		Reward(Point2D esqIzq, Vector2D vel, uint ancho, uint alto, Texture* premio,Texture*burbuje, Game* game,int color );
 		virtual void update();
 		virtual void render();
+	//	virtual ~Reward() {};
+
 		virtual void handleEvent(SDL_Event& event);
 
 };

@@ -14,6 +14,8 @@ class Butterfly:public ArrowsGameObject
 		Butterfly(Point2D esqIzq, Vector2D vel, uint ancho, uint alto, Texture* butterfly, Game* game);
 		virtual void update();
 		virtual void render();
+		//virtual ~Butterfly() {};
+
 		void Pong();
 
 };

@@ -14,6 +14,8 @@ public:
 	Arrow(Vector2D dir, Texture* flecha, Game* game, Point2D posIni, uint width, uint height);
 	virtual void render();
 	virtual void update();
+	//virtual ~Arrow() {};
+
 	SDL_Rect* getCollisionRect();
 };
 #endif

@@ -3,6 +3,8 @@
 
 ArrowsGameObject::ArrowsGameObject(Point2D esqIzq, Vector2D vel, uint _width, uint _height, Texture* _textura, Game* _game):pos(esqIzq),velocity ( vel) ,width ( _width),height ( _height),textura ( _textura),game( _game)
 {}
+
+
 void ArrowsGameObject::render()
 {
 	textura->render(*getDestRect(), SDL_FLIP_NONE);

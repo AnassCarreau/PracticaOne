@@ -23,15 +23,16 @@ Game::Game() {
 		textures[i] = new Texture(renderer, imags[i].filename, imags[i].nRows, imags[i].nCols);
 		
 	}
+	scoreboard = new Scoreboard(Point2D(300, 0), 25, 35, textures[5], textures[4], NUM_FLECHAS);
+	auto it = objects.insert(objects.end(), scoreboard);
 	NewLvl();
 	//Creacion de los gameobjects (los globos y las flechas los generamos mediante un metodo que los genera en un vector)
 	Bow* arco = new Bow(Point2D(0, 100), 80, 80, Vector2D(0, 10), textures[0], textures[2], this);
-	auto it=objects.insert(objects.end(),arco);
+	 it=objects.insert(objects.end(),arco);
 	arco->setItList(it);
 	eventHandler.push_back(arco);
 
 	//creacion de las mariposas
-	CreateButterflys();
 
 	
 	
@@ -43,8 +44,7 @@ Game::Game() {
 	
 	
 
-	scoreboard = new Scoreboard(Point2D(300,0),25,35,textures[5],textures[4],flechas);
-	 it = objects.insert(objects.end(), scoreboard);
+	
 
 	run();	
 }
@@ -159,7 +159,7 @@ void Game::generateBalloons() {
 	if (frameBaloonTime >= FRAME_RATEGLOB) {
 		int h =  rand() % 320 + 400;
 		int color = rand() % 7;
-		double velocidad = rand() % 5 + 0.5;
+		double velocidad = rand() % (int)VEL_BUT.max + VEL_BUT.min;
 		Balloon* globo=new  Balloon(Point2D{ (double)h,600 }, 80, 80, Vector2D(0, -velocidad), textures[1], false, 0, this, color);
 		auto it = objects.insert(objects.end(), globo);
 		globo->setItList(it);
@@ -179,7 +179,7 @@ void Game::DisparaFlecha(Point2D pos) {
 	/*auto it=object.insert(object.end(),arrow)
 	arrows->setit(it)
 	*/
-	if (flechas!=0)
+	if (NUM_FLECHAS !=0)
 	{
 		timeshoot = SDL_GetTicks();
 		timecharge =(timeshoot- timecharge)/1000;
@@ -191,9 +191,9 @@ void Game::DisparaFlecha(Point2D pos) {
 		auto it = objects.insert(objects.end(), flecha);
 		arrows.push_back(flecha);
 		flecha->setItList(it);
-		flechas--;
+		NUM_FLECHAS--;
 
-		scoreboard->Arrows();
+		scoreboard->Arrows(NUM_FLECHAS);
 	}
 	
 }
@@ -246,14 +246,15 @@ void Game::KillObject(list<GameObject*>::iterator it) {
 }
 
 void Game::CreateButterflys() {
-	int posiX, posiY, velX, velY;
+	int posiX, posiY;
+		double velX, velY;
 	for (uint j = 0; j < NUM_BUTTERFLYS; j++) {
 		posiX = rand() %  600+ 100;
 		posiY = rand() % 400 + 100;
-		velX = rand() % 5 - 2;
-		velY = rand() % 5 - 2;
+		velX = rand() % (int)VEL_BUT.max - VEL_BUT.min;
+		velY = rand() % (int)VEL_BUT.max - VEL_BUT.min;
 
-		Butterfly* mariposa = new Butterfly(Point2D((double)posiX, (double)posiY), Vector2D((double)velX, (double)velY), 60, 60, textures[6], this);
+		Butterfly* mariposa = new Butterfly(Point2D((double)posiX, (double)posiY), Vector2D(velX, velY), 60, 60, textures[6], this);
 		auto it = objects.insert(objects.end(), mariposa);
 		mariposa->setItList(it);
 	}
@@ -272,7 +273,24 @@ void Game::CreateReward(Point2D pos)
 }
 
 void Game::NewLvl()
-{ 
+{
 	level++;
 	fondo = new Texture(renderer, niveles[level].filename, 1, 1);
+	for (auto it = objects.begin(); it != objects.end(); ++it) {
+		if (dynamic_cast<Bow*>(*it) == nullptr && dynamic_cast<Scoreboard*>(*it) == nullptr)
+		{
+			objectsToErase.push_back(*it);
+			eventHandler.remove(dynamic_cast<Reward*>(*it));
+		}
+		
+	}
+	
+	arrows.clear();
+	NUM_FLECHAS = niveles[level].numFlecha;
+	NUM_BUTTERFLYS = niveles[level].numMariposas;
+	VEL_BAL = niveles[level].velBal;
+	VEL_BUT = niveles[level].velBut;
+	scoreboard->Arrows(NUM_FLECHAS);
+	CreateButterflys();
+
 }

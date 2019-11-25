@@ -11,9 +11,9 @@ Scoreboard::Scoreboard(Point2D esqIzq, uint ancho, uint alto, Texture* points, T
 
 
 //restamos flechas
-void Scoreboard::Arrows()
+void Scoreboard::Arrows(int arrow)
 {
-	numberarrows--;
+	numberarrows = arrow;
 }
 
 

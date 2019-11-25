@@ -23,6 +23,8 @@ public:
 	Bow(Point2D esqIzq, uint w, uint h, Vector2D velocidad, Texture* arco, Texture* arcoC,  Game* game);
 	virtual void render();
 	virtual void update();
+	//virtual ~Bow() {};
+
 	virtual void handleEvent(SDL_Event& event);
 	// ~Bow() {};
 
