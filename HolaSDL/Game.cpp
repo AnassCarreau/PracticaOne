@@ -23,9 +23,9 @@ Game::Game() {
 		textures[i] = new Texture(renderer, imags[i].filename, imags[i].nRows, imags[i].nCols);
 		
 	}
+	NewLvl();
 	//Creacion de los gameobjects (los globos y las flechas los generamos mediante un metodo que los genera en un vector)
-	flechas = 10;
-	Bow* arco = new Bow(Point2D(0, 100), 80, 80, Vector2D(0, 10), textures[1], textures[3], this);
+	Bow* arco = new Bow(Point2D(0, 100), 80, 80, Vector2D(0, 10), textures[0], textures[2], this);
 	auto it=objects.insert(objects.end(),arco);
 	arco->setItList(it);
 	eventHandler.push_back(arco);
@@ -43,7 +43,7 @@ Game::Game() {
 	
 	
 
-	scoreboard = new Scoreboard(Point2D(300,0),25,35,textures[6],textures[5],flechas);
+	scoreboard = new Scoreboard(Point2D(300,0),25,35,textures[5],textures[4],flechas);
 	 it = objects.insert(objects.end(), scoreboard);
 
 	run();	
@@ -84,6 +84,13 @@ void Game::run() {
 			startTime = SDL_GetTicks();
 		}		
 		render();
+		for (auto it = objectsToErase.begin(); it != objectsToErase.end(); ++it) {
+			objects.remove(*it);
+			eventHandler.remove(dynamic_cast<EventHandler*>(*it));
+		}
+		objectsToErase.clear();
+		
+
 	}
 	//pedimos el nombre del jugador
     string name;
@@ -101,34 +108,14 @@ void Game::update() {
 	
 	generateBalloons();
 	
-
-	for (auto it = objects.begin(); it != objects.end(); it++) {
+	for (auto it = objects.begin(); it != objects.end(); ++it) {
 
 		(*it)->update();
 
 	}
-	//actualizamos arco y generamos globos
-	//bow->update();
-	//it = objects.begin();
-	//while (it != objects.end()); ; ++it;
-	for (auto it = objectsToErase.begin(); it != objectsToErase.end(); ++it) {
-
-		objects.remove(*it);
-	}
-	objectsToErase.clear();
-		
-	//actualizacion de globos
-	/*for (int i = 0; i < balloons.size(); i++) {
-		//si el update devuelve true destruimos ese globo y lo quitamos del vector
-		arrows[i]->update();
-
-	}*/
-	//actualizacion de flechas
-	/*for (int j = 0; j < arrows.size(); j++) {
-		//si el update devuelve true destruimos esa flecha y la quitamos del vector
-		arrows[j]->update();
-			
-	}*/
+	
+	
+	
 }
 //metodo que renderiza todos los objetos del juego
 void Game::render() const {
@@ -139,16 +126,14 @@ void Game::render() const {
 	SDL_Rect bk;
 	bk = { 0,0,WIN_WIDTH,WIN_HEIGHT };
 	
-	textures[level]->render(bk, SDL_FLIP_NONE);
+	fondo->render(bk, SDL_FLIP_NONE);
 	//renderizado arco
 	for (auto it = objects.begin(); it != objects.end(); ++it){
 	
 		(*it)->render();
 
 	}
-
 	
-	//scoreboard->render();
 	SDL_RenderPresent(renderer);
 }
 //metodo que controla los eventos del juego
@@ -169,13 +154,13 @@ void Game::handleEvents() {
 //metodo que genera globo cada 2 segundos
 void Game::generateBalloons() {
 	
-	const int FRAME_RATEGLOB = 2000; // cada dos segundos generamos un globo
+	const int FRAME_RATEGLOB = 500; // cada dos segundos generamos un globo
 	frameBaloonTime = SDL_GetTicks() - startBaloonTime;
 	if (frameBaloonTime >= FRAME_RATEGLOB) {
 		int h =  rand() % 320 + 400;
 		int color = rand() % 7;
 		double velocidad = rand() % 5 + 0.5;
-		Balloon* globo=new  Balloon(Point2D{ (double)h,600 }, 80, 80, Vector2D(0, -velocidad), textures[2], false, 0, this, color);
+		Balloon* globo=new  Balloon(Point2D{ (double)h,600 }, 80, 80, Vector2D(0, -velocidad), textures[1], false, 0, this, color);
 		auto it = objects.insert(objects.end(), globo);
 		globo->setItList(it);
 		startBaloonTime = SDL_GetTicks();
@@ -202,7 +187,7 @@ void Game::DisparaFlecha(Point2D pos) {
 		{
 			timecharge = 10;
 		}
-		Arrow* flecha = new Arrow(Vector2D(timecharge + 2, 0), textures[4], this, Point2D(pos.getX() + 20, pos.getY() + 30), 90, 20);
+		Arrow* flecha = new Arrow(Vector2D(timecharge + 4, 0), textures[3], this, Point2D(pos.getX() + 20, pos.getY() + 30), 90, 20);
 		auto it = objects.insert(objects.end(), flecha);
 		arrows.push_back(flecha);
 		flecha->setItList(it);
@@ -222,6 +207,10 @@ void Game::AddPoints(int pointsadd,int hits)
 		scoreboard->Puntuacion(points);
 
 	}
+	if (points/100>level)
+	{
+		NewLvl();
+	}
 }
 
 
@@ -230,16 +219,24 @@ void Game::AddPoints(int pointsadd,int hits)
 bool Game::OnCollisionEnter(SDL_Rect* rect,list<GameObject*>::iterator collider) {
 	
 	
-		for (auto it= arrows.begin();it!=arrows.end();++it)
+	for (auto it = arrows.begin(); it != arrows.end(); ++it)
+	{
+		if (SDL_HasIntersection(rect, (*it)->getCollisionRect()))
 		{
-			if (SDL_HasIntersection(rect, (*it)->getCollisionRect()))
+			if (dynamic_cast<Balloon*>(*collider) != nullptr)
 			{
-				if (dynamic_cast<Balloon*>(*collider) != nullptr)
-				{ AddPoints(POINTS, (*it)->getHits()); }
-				return true;
+				AddPoints(POINTS, (*it)->getHits());
+				int estadistica = rand() % 1;
+				if (estadistica == 0) {
+					double y = (double)rect->y + rect->h;
+					CreateReward(Point2D(rect->x, y));
+
+				}
 			}
+			return true;
+
 		}
-	
+	}
 	return false;
 }
 
@@ -256,7 +253,7 @@ void Game::CreateButterflys() {
 		velX = rand() % 5 - 2;
 		velY = rand() % 5 - 2;
 
-		Butterfly* mariposa = new Butterfly(Point2D((double)posiX, (double)posiY), Vector2D((double)velX, (double)velY), 60, 60, textures[7], this);
+		Butterfly* mariposa = new Butterfly(Point2D((double)posiX, (double)posiY), Vector2D((double)velX, (double)velY), 60, 60, textures[6], this);
 		auto it = objects.insert(objects.end(), mariposa);
 		mariposa->setItList(it);
 	}
@@ -264,11 +261,12 @@ void Game::CreateButterflys() {
 void Game::CreateReward(Point2D pos)
 {
 	
-		int color = rand() % 5;
-		Reward* premio = new Reward(pos, Vector2D(0, 0.1), 80, 80, textures[8], textures[9], this, color);
-		auto it = objects.insert(objects.end(), premio);
+		int color = rand() % 6;
+		Reward* premio = new Reward(pos, Vector2D(0, 0.1), 80, 70, textures[7], textures[8], this, color);
 		eventHandler.push_back(premio);
-		premio->setItList(it);
+		auto et = objects.insert(objects.end(), premio);
+		premio->setItList(et);
+
 	
 	
 }
@@ -276,9 +274,5 @@ void Game::CreateReward(Point2D pos)
 void Game::NewLvl()
 { 
 	level++;
-	/*for (auto it = objects.begin(); it != objects.end(); ++it) {
-
-		(*it)->render();
-
-	}*/
+	fondo = new Texture(renderer, niveles[level].filename, 1, 1);
 }

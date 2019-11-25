@@ -28,7 +28,8 @@ void  Balloon::update() {
 	double i = pos.getX();
 	double j = pos.getY();
 
-	explotado = game->OnCollisionEnter(getCollisionRect(),this->i);
+	
+	if(!explotado)explotado = game->OnCollisionEnter(getDestRect(),this->i);
 	if (explotado && instPinchazo == 0)
 	{
 		//game->AddPoints(POINTS,);
@@ -49,11 +50,8 @@ void  Balloon::update() {
 	}
 	if (estado>=7)
 	{
-		int estadistica = rand() % 3;
-		if (estadistica == 0)
-		{
-			game->CreateReward(pos);
-		}
+		
+		
 		game->KillObject(this->i);
 	}
 

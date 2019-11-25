@@ -13,7 +13,7 @@ void Reward::update() {
 	
 	if (burbuja)
 	{
-		burbuja = game->OnCollisionEnter(getDestRect(),i);
+		burbuja = !game->OnCollisionEnter(getDestRect(),i);
 
 	}
 	
@@ -22,24 +22,23 @@ void Reward::update() {
 	}
 	else
 	{
+		
 		game->KillObject(i);
 	}
 }
 
 void Reward::render() {
-	SDL_Rect* destRect = ArrowsGameObject::getDestRect();
+	SDL_Rect* destRect = ArrowsGameObject::getCollisionRect();
+	destRect->x = destRect->x - width/4 ;
+	destRect->y = destRect->y - height/4 ;
+	textura->renderFrame(*destRect, color, estado, 0, SDL_FLIP_NONE);
 	if (burbuja)
 	{
-
+		destRect = ArrowsGameObject::getDestRect();
+		
 		burbuje->render(*destRect, SDL_FLIP_NONE);
 
 	}
-	 destRect = ArrowsGameObject::getCollisionRect();
-	 destRect->x = destRect->x - 20;
-	 destRect->y = destRect->y - 20;
-
-	textura->renderFrame(*destRect, color, estado, 0, SDL_FLIP_NONE);
-	
 	estado++;
 	if (estado==6)
 	{
@@ -48,13 +47,19 @@ void Reward::render() {
 }
 
 void Reward::handleEvent(SDL_Event& event)
-{ 
+{
 	if (event.type == SDL_MOUSEBUTTONDOWN && !burbuja)
 	{
-		cout << "holajimmoncio";
-		game->KillObject(i);
-
+		
+		int errorX= abs( event.button.x-pos.getX());
+		int errorY= abs(event.button.y-pos.getY());
+		if (errorX<50 && errorY<50 )
+		{
+			
+			game->KillObject(i);
+		}	
 	}
-
-
 }
+
+
+
