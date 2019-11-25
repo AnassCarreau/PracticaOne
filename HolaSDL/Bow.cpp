@@ -16,9 +16,6 @@ Bow::Bow(Point2D _pos, uint _w, uint _h, Vector2D _velocity, Texture* _texture, 
 	
 }
 
-
-
-
  void Bow::render(){ 
 	 //si el texture esta cargado renderizamos su imagen respectiva
 	 if (cargado) {
@@ -66,10 +63,19 @@ Bow::Bow(Point2D _pos, uint _w, uint _h, Vector2D _velocity, Texture* _texture, 
 	 }
  }
  void Bow::saveToFile(ofstream& output){
-	 if (cargado) output << "1";
-	 else output << "0";
-	 output << time;
-	 ArrowsGameObject::saveToFile (output);
+	 ArrowsGameObject::saveToFile(output);
+	 if (cargado) output << "cargado" <<endl;
+	 else output << "nocargado" << endl;
+ }
+
+ void Bow::loadFromFile(ifstream& input) {
+	 ArrowsGameObject::loadFromFile(input);
+	 string line;
+	 input >> line;
+	 if (line == "cargado") {
+		 cargado = true;
+	 }
+	 else cargado = false;
  }
 
 	 

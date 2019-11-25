@@ -50,11 +50,18 @@ void  Balloon::update() {
 	}
 	if (estado>=7)
 	{
-		
-		
 		game->KillObject(this->i);
 	}
+}
 
+void Balloon::saveToFile(ofstream& output) {
+	ArrowsGameObject::saveToFile(output);
+	output << color <<endl;
+}
+
+void Balloon::loadFromFile(ifstream& input) {
+	ArrowsGameObject::loadFromFile(input);
+	input >> color;
 }
  
 	

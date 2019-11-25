@@ -38,12 +38,10 @@ void Butterfly::update() {
 		game->KillObject(this->i);
 
 	}
-
-	
-	    Pong();
-		ArrowsGameObject::update();
-		//mientras este viva y en los limites cada cierto tiempo le cambiamos la direccion
+	Pong();
+	ArrowsGameObject::update();
 }
+
 void Butterfly::Pong()
 {
 	if (pos.getX()<=0 || pos.getX()>=WIN_WIDTH)
@@ -54,4 +52,12 @@ void Butterfly::Pong()
 	{
 		velocity = Vector2D(velocity.getX(),- velocity.getY());
 	}
+}
+
+void Butterfly::saveToFile(ofstream& output) {
+	ArrowsGameObject::saveToFile(output);
+}
+
+void Butterfly::loadFromFile(ifstream& input) {
+	ArrowsGameObject::loadFromFile(input);
 }

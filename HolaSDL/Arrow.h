@@ -15,8 +15,9 @@ public:
 	virtual void render();
 	virtual void update();
 	//virtual ~Arrow() {};
-
 	SDL_Rect* getCollisionRect();
+	void loadFromFile(ifstream& input);
+	void saveToFile(ofstream& outuput);
 };
 #endif
 

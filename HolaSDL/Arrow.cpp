@@ -18,7 +18,6 @@ void Arrow::update() {
 	if ( pos.getX()+width  < WIN_WIDTH)
 	{
 		ArrowsGameObject::update();
-
 	}
 	else
 	{
@@ -36,6 +35,14 @@ int Arrow::getHits()
 {
 	hits++;
 	return hits;
+}
+
+void Arrow::saveToFile(ofstream& output) {
+	ArrowsGameObject::saveToFile(output);
+}
+
+void Arrow::loadFromFile(ifstream& output) {
+	ArrowsGameObject::loadFromFile(output);
 }
 
 

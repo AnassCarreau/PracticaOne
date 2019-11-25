@@ -19,6 +19,8 @@ public:
 	Balloon(Point2D esqIzq, uint w, uint h, Vector2D velocidad, Texture* globo, bool explotado, uint instPinchazo, Game* game, int color);
 	virtual void render();
 	virtual void update();
+	void loadFromFile(ifstream& input);
+	void saveToFile(ofstream& outuput);
 	//virtual ~Balloon() {};
 
 };

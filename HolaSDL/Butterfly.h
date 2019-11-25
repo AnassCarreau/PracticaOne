@@ -15,9 +15,9 @@ class Butterfly:public ArrowsGameObject
 		virtual void update();
 		virtual void render();
 		//virtual ~Butterfly() {};
-
 		void Pong();
-
+		void saveToFile(ofstream& output);
+		void loadFromFile(ifstream& input);
 };
 #endif
 

@@ -24,14 +24,10 @@ public:
 	virtual void render();
 	virtual void update();
 	//virtual ~Bow() {};
-
 	virtual void handleEvent(SDL_Event& event);
 	// ~Bow() {};
-
-
-protected:
-	void saveToFile(ofstream &output);
-
+	void loadFromFile(ifstream& input);
+	void saveToFile(ofstream& outuput);
 };
 #endif
 

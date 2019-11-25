@@ -6,8 +6,7 @@
 class SDLError:public ArrowsError
 {
 	public:
-		//SDL_GetError();
-		//IMG_GetError();
+		
 };
 #endif
 

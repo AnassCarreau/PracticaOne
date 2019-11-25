@@ -16,9 +16,9 @@ private:
 		virtual void update();
 		virtual void render();
 	//	virtual ~Reward() {};
-
 		virtual void handleEvent(SDL_Event& event);
-
+		void saveToFile(ofstream& output);
+		void loadFromFile(ifstream& input);
 };
 #endif
 

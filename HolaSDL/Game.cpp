@@ -189,9 +189,11 @@ void Game::DisparaFlecha(Point2D pos) {
 		flecha->setItList(it);
 		NUM_FLECHAS--;
 
+		/*objects.push_back(flecha);
+		flecha->setItList(--objects.end());*/
+
 		scoreboard->Arrows(NUM_FLECHAS);
 	}
-	
 }
 //metodo para añadir puntos
 void Game::AddPoints(int pointsadd,int hits)
