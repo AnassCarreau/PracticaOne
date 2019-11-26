@@ -23,6 +23,8 @@ Game::Game() {
 		textures[i] = new Texture(renderer, imags[i].filename, imags[i].nRows, imags[i].nCols);
 		
 	}
+	scoreboard = new Scoreboard(Point2D(300, 0), 25, 35, textures[5], textures[4], NUM_FLECHAS);
+	objects.push_back(scoreboard);
 	int n;
 	ifstream input;
 	cout << "Si quieres cargar una partida pulsa '1', si quieres empezar de cero pulsa cualquier numero:" << endl;
@@ -30,29 +32,22 @@ Game::Game() {
 	if (n == 1) {
 		loadFroamFile(input);
 	}
-	scoreboard = new Scoreboard(Point2D(300, 0), 25, 35, textures[5], textures[4], NUM_FLECHAS);
-	objects.push_back(scoreboard);
-	//Creacion de los gameobjects (los globos y las flechas los generamos mediante un metodo que los genera en un vector)
-	Bow* arco = new Bow(Point2D(0, 100), 80, 80, Vector2D(0, 10), textures[0], textures[2], this);
-	objects.push_back(arco);
+	else
+	{
+		Bow* arco = new Bow(Point2D(0, 100), 80, 80, Vector2D(0, 10), textures[0], textures[2], this);
+		objects.push_back(arco);
 		arco->setItList(--objects.end());
-	eventHandler.push_back(arco);
-	NewLvl();
+		eventHandler.push_back(arco);
+		NewLvl(0);
 
+	}
 
-	//creacion de las mariposas
-
-	
-	
+	//Creacion de los gameobjects (los globos y las flechas los generamos mediante un metodo que los genera en un vector)
 	
 	/*ArrowsGameObject* temp = new Arrow(Point2D(0, 0), textures[4], this, Vector2D(0, 10), 80, 80);
 	objects.push_back(temp);
 	auto it=--objects.end();
 	temp->setItList(it);*/
-	
-	
-
-	
 
 	run();	
 }
@@ -99,15 +94,19 @@ void Game::run() {
 		}
 		objectsToErase.clear();
 	}
-	//pedimos el nombre del jugador
-    string name;
+	int g;
+	ofstream output;
+	cout << "Si quieres guardar la partida pulsa '2'" << endl;
+	cin >> g;
+	if (g == 2) saveToFile(output);
+    /*string name;
 	cin >> name;
 	//lee el archivo
 	score.Load("score.txt");
 	//añade la puntuacion de la partida y ordena las mejores
 	score.addScore(name, puntuacion);
 	//guarda el archivo
-	score.save("score.txt");
+	score.save("score.txt");*/
 	
 }
 //metodo que actualiza el estado del juego
@@ -217,7 +216,8 @@ void Game::AddPoints(int pointsadd,int hits)
 	}
 	if (puntuacion/100>level)
 	{
-		NewLvl();
+		level++;
+		NewLvl(level);
 	}
 }
 
@@ -271,15 +271,15 @@ void Game::CreateReward(Point2D pos)
 {
 	
 		int color = rand() % 6;
-		Reward* premio = new Reward(pos, Vector2D(0, 0.1), 80, 70, textures[7], textures[8], this, color);
+		Reward* premio = new Reward(pos, Vector2D(0, 0.1), 100, 70, textures[7], textures[8], this, color);
 		eventHandler.push_back(premio);
 		auto et = objects.insert(objects.end(), premio);
 		premio->setItList(et);
 }
 
-void Game::NewLvl()
+void Game::NewLvl(int _level)
 {
-	level++;
+	level = _level;
 	fondo = new Texture(renderer, niveles[level].filename, 1, 1);
 	for (auto it = objects.begin(); it != objects.end(); ++it) {
 		if (dynamic_cast<Bow*>(*it) == nullptr && dynamic_cast<Scoreboard*>(*it) == nullptr)
@@ -308,7 +308,13 @@ void Game::saveToFile(ofstream& output) {
 		output << level << endl;
 		output << puntuacion << endl;
 		output << NUM_FLECHAS << endl;
+		int objetos = objects.size();
+		output << objetos << endl;
+		for (auto it = ++objects.begin(); it != objects.end(); ++it) {
+			dynamic_cast<ArrowsGameObject*>(*it)->saveToFile(output);
+		}
 	}
+	output.close();
 }
 
 void Game::loadFroamFile(ifstream& input) {
@@ -319,29 +325,36 @@ void Game::loadFroamFile(ifstream& input) {
 	//si se abre cargamos el archivo
 	else {
 		input >> level;
-		//NewLvl(level);
+		fondo = new Texture(renderer, niveles[level].filename, 1, 1);
+		VEL_BAL = niveles[level].velBal;
+		VEL_BUT = niveles[level].velBut;
 		input >> puntuacion;
+		scoreboard->Puntuacion(puntuacion);
 		input >> NUM_FLECHAS;
+		scoreboard->Arrows(NUM_FLECHAS);
 		int obj;
-		
 		input >> obj;
-
-		/*for (int i = 0; i < obj; i++)
-		{
-			GameObject* H;
-			objects.push_back(H);
-		}*/
 		string line;
-		
 		for (int i = 0; i < obj;i++) {
 			input >> line;
 			//falta que cada objeto sepa cual es su textura
-			if (line == "Mariposa")objects.push_back(new Butterfly());
-			else if (line == "Globo")objects.push_back(new Balloon());
-			else if (line == "Flecha")objects.push_back(new Arrow());
-			else if (line == "Arco")objects.push_back(new Bow());
-			else if (line == "Premio")objects.push_back(new Reward());
-			dynamic_cast<ArrowsGameObject*>(*--objects.end())->loadFromFile(input);
+			if (line == "Mariposa")objects.push_back(new Butterfly(Point2D(NULL,NULL), Vector2D(NULL, NULL), 20, 20, textures[6],this));
+			else if (line == "Globo")objects.push_back(new Balloon(Point2D(NULL,NULL), 20, 20, Vector2D(NULL, NULL), textures[1], false, 0, this, NULL));
+			else if (line == "Flecha")
+			{
+				objects.push_back(new Arrow(Vector2D(NULL, NULL), textures[3], this, Point2D(NULL, NULL), 20, 20));
+				arrows.push_back(dynamic_cast<Arrow*>(objects.back()));
+			}
+			else if (line == "Arco") {
+				objects.push_back(new Bow(Point2D(0, 0), 20, 20, Vector2D(0, 0), textures[0], textures[2], this));
+				eventHandler.push_back(dynamic_cast<EventHandler*>(objects.back()));
+			}
+			else if (line == "Premio") {
+				objects.push_back(new Reward(Point2D(0, 0), Vector2D(0, 0), 20, 20, textures[7], textures[8], this, 0));
+				eventHandler.push_back(dynamic_cast<EventHandler*>(objects.back()));
+			}
+			dynamic_cast<ArrowsGameObject*>(objects.back())->loadFromFile(input);
+			dynamic_cast<ArrowsGameObject*>(objects.back())->setItList(--objects.end());
 		}
 	}
 	input.close();

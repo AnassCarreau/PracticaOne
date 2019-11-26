@@ -21,7 +21,6 @@ protected:
 	ArrowsGameObject(Point2D pos, Vector2D vel, uint width, uint height, Texture* textura, Game* game);
 	virtual ~ArrowsGameObject();
 public:
-	ArrowsGameObject();
 	virtual void render();
 	virtual void update();
 	SDL_Rect* getDestRect();

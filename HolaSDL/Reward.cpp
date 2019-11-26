@@ -1,12 +1,13 @@
 #include "Reward.h"
 #include "Game.h"
 
-Reward::Reward() :ArrowsGameObject() {}
+const int time_frame = 200;
 Reward::Reward(Point2D esqIzq, Vector2D vel, uint ancho, uint alto, Texture* premio, Texture* _burbuje,Game* game, int _color):ArrowsGameObject(esqIzq, vel, ancho, alto, premio, game){
 	burbuja = true;
 	burbuje = _burbuje;
 	estado = 0;
 	color = _color;
+	time = SDL_GetTicks();
 
 }
 
@@ -40,7 +41,11 @@ void Reward::render() {
 		burbuje->render(*destRect, SDL_FLIP_NONE);
 
 	}
-	estado++;
+	if (time+time_frame<SDL_GetTicks())
+	{
+		estado++;
+		time = SDL_GetTicks();
+	}
 	if (estado==6)
 	{
 		estado = 0;
@@ -63,6 +68,7 @@ void Reward::handleEvent(SDL_Event& event)
 }
 
 void Reward::saveToFile(ofstream& output) {
+	output << "Premio" <<endl;
 	ArrowsGameObject::saveToFile(output);
 	if (burbuja) output << "burbuja" << endl;
 	else output << "noburbuja" << endl;

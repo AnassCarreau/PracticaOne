@@ -1,7 +1,6 @@
 #include "ArrowsGameObject.h";
 #include "Game.h";
 
-ArrowsGameObject::ArrowsGameObject(){}
 ArrowsGameObject::ArrowsGameObject(Point2D esqIzq, Vector2D vel, uint _width, uint _height, Texture* _textura, Game* _game):pos(esqIzq),velocity ( vel) ,width ( _width),height ( _height),textura ( _textura),game( _game)
 {}
 
@@ -35,25 +34,15 @@ SDL_Rect* ArrowsGameObject::getCollisionRect()
 };
 void ArrowsGameObject::saveToFile(ofstream& output)
 {
-	//abrimos el archivo
-	output.open("guardados.txt");
-	//si no se abre lanzamos excepcion
-	if (!output.is_open()) cout << "No se ha podido guardar, no se encuentra el archivo" << endl;
-	//si se puede abrir guardamos la partida
-	else {
-		output << pos.getX() << endl;
-		output << pos.getY() << endl;
-		output << velocity.getX() << endl;
-		output << velocity.getY() << endl;
-		output << width << endl;
-		output << height << endl;
-		//output << textura << endl;
-		//output << "this" << endl;
-	}
+	output << pos.getX() << endl;
+	output << pos.getY() << endl;
+	output << velocity.getX() << endl;
+	output << velocity.getY() << endl;
+	output << width << endl;
+	output << height << endl;
 }
 void ArrowsGameObject::loadFromFile(ifstream &input)
 {
-	//abrimos el archivo
 	int x, y;
 	input>> x;
 	input >> y;
@@ -62,10 +51,7 @@ void ArrowsGameObject::loadFromFile(ifstream &input)
 	input >> y;
 	velocity = Vector2D((double)x, (double)y);
 	input >> width;
-	input >> height;
-	//input >> textura;
-	//input >> game;
-	
+	input >> height;	
 }
 
 void ArrowsGameObject::setItList(list<GameObject*>::iterator it)

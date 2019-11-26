@@ -92,7 +92,7 @@ public:
 	void KillObject(list<GameObject*>::iterator it);
 	void CreateButterflys();
 	void CreateReward(Point2D pos);
-	void NewLvl();
+	void NewLvl(int level);
 	void saveToFile(ofstream& output);
 	void loadFroamFile(ifstream& input);
 };

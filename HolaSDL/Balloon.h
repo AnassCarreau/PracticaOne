@@ -16,7 +16,6 @@ private:
 	bool explotado = false;
 	uint instPinchazo = 0;
 public:
-	Balloon();
 	Balloon(Point2D esqIzq, uint w, uint h, Vector2D velocidad, Texture* globo, bool explotado, uint instPinchazo, Game* game, int color);
 	virtual void render();
 	virtual void update();

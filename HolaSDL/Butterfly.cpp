@@ -2,7 +2,6 @@
 #include "Game.h"
 
 const int TIME_Animation = 600;
-Butterfly::Butterfly():ArrowsGameObject(){}
 
 Butterfly::Butterfly(Point2D esqIzq, Vector2D vel, uint ancho, uint alto, Texture* butterfly, Game* game):ArrowsGameObject(esqIzq, vel, ancho, alto, butterfly, game){}
 
@@ -57,6 +56,7 @@ void Butterfly::Pong()
 }
 
 void Butterfly::saveToFile(ofstream& output) {
+	output << "Mariposa" <<endl;
 	ArrowsGameObject::saveToFile(output);
 }
 

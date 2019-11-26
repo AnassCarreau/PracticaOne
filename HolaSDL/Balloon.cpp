@@ -6,8 +6,6 @@
 typedef unsigned int uint;
 const int TIME_Animation = 600;
 
-Balloon::Balloon() :ArrowsGameObject() {}
-
 Balloon::Balloon(Point2D esqIzq, uint w, uint h, Vector2D velocidad, Texture* globo, bool _explotado, uint _instPinchazo, Game* game, int _color) : ArrowsGameObject(esqIzq, velocidad, w, h, globo, game){
 	explotado = _explotado;
 	instPinchazo = _instPinchazo;
@@ -57,6 +55,7 @@ void  Balloon::update() {
 }
 
 void Balloon::saveToFile(ofstream& output) {
+	output << "Globo" <<endl;
 	ArrowsGameObject::saveToFile(output);
 	output << color <<endl;
 }

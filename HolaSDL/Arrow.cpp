@@ -4,7 +4,6 @@
 
 
 typedef unsigned int uint;
-Arrow::Arrow():ArrowsGameObject() {}
 
 Arrow::Arrow(Vector2D dir, Texture* flecha, Game* game, Point2D posIni, uint width, uint height) : ArrowsGameObject(posIni, dir, width, height, flecha, game)
 {
@@ -39,6 +38,7 @@ int Arrow::getHits()
 }
 
 void Arrow::saveToFile(ofstream& output) {
+	output << "Flecha" <<endl;
 	ArrowsGameObject::saveToFile(output);
 }
 

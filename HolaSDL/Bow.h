@@ -20,7 +20,6 @@ private:
 	Vector2D velaux = Vector2D(0, 0);
 	bool mov = false;
 public:
-	Bow();
 	Bow(Point2D esqIzq, uint w, uint h, Vector2D velocidad, Texture* arco, Texture* arcoC,  Game* game);
 	virtual void render();
 	virtual void update();
