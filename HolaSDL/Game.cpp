@@ -10,18 +10,25 @@ typedef unsigned int uint;
 
 Game::Game() {
 	//Primero inicializamos SDL
-
+	
 	SDL_Init(SDL_INIT_EVERYTHING);
 	window = SDL_CreateWindow("Practica 1", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
 		WIN_WIDTH, WIN_HEIGHT, SDL_WINDOW_SHOWN);
 	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 	if (window == nullptr || renderer == nullptr) throw "Error loading the SDL window or renderer";
-
+	
 	//Creacion de las texturas
 	for (uint i = 0; i < NUM_TEXTURES; i++) {
 	
 		textures[i] = new Texture(renderer, imags[i].filename, imags[i].nRows, imags[i].nCols);
 		
+	}
+	int n;
+	ifstream input;
+	cout << "Si quieres cargar una partida pulsa '1', si quieres empezar de cero pulsa cualquier numero:" << endl;
+	cin >> n;
+	if (n == 1) {
+		loadFroamFile(input);
 	}
 	scoreboard = new Scoreboard(Point2D(300, 0), 25, 35, textures[5], textures[4], NUM_FLECHAS);
 	objects.push_back(scoreboard);
@@ -72,13 +79,7 @@ Game::~Game() {
 }
 //metodo principal del juego con estructura->eventos->actualizar->renderizar
 void Game::run() {
-	int n;
-	ifstream input;
-	cout << "Si quieres cargar una partida pulsa '1', si quieres empezar de cero pulsa cualquier numero:" << endl;
-	cin >> n;
-	if (n == 1) { 
-		loadFroamFile(input);
-	}
+	
 	uint32_t startTime, frameTime; //variables para el control del tiempo
 	startTime = SDL_GetTicks(); //tiempo inicial en milisegundos
 	startBaloonTime = SDL_GetTicks();
@@ -104,7 +105,7 @@ void Game::run() {
 	//lee el archivo
 	score.Load("score.txt");
 	//añade la puntuacion de la partida y ordena las mejores
-	score.addScore(name, points);
+	score.addScore(name, puntuacion);
 	//guarda el archivo
 	score.save("score.txt");
 	
@@ -204,17 +205,17 @@ void Game::DisparaFlecha(Point2D pos) {
 void Game::AddPoints(int pointsadd,int hits)
 {
 	if (hits <= 0) {
-		points += pointsadd;
+		puntuacion += pointsadd;
 	}
 	else {
-		points += pointsadd + sqrt(hits - 1) * pointsadd;
+		puntuacion += pointsadd + sqrt(hits - 1) * pointsadd;
 	}
-	if (points>=0)
+	if (puntuacion>=0)
 	{
-		scoreboard->Puntuacion(points);
+		scoreboard->Puntuacion(puntuacion);
 
 	}
-	if (points/100>level)
+	if (puntuacion/100>level)
 	{
 		NewLvl();
 	}
@@ -305,7 +306,7 @@ void Game::saveToFile(ofstream& output) {
 	//si se puede abrir guardamos la partida
 	else {
 		output << level << endl;
-		output << points << endl;
+		output << puntuacion << endl;
 		output << NUM_FLECHAS << endl;
 	}
 }
@@ -319,13 +320,11 @@ void Game::loadFroamFile(ifstream& input) {
 	else {
 		input >> level;
 		//NewLvl(level);
-		input >> points;
-		scoreboard->Puntuacion(points);
+		input >> puntuacion;
 		input >> NUM_FLECHAS;
-		scoreboard->Arrows(NUM_FLECHAS);
 		int obj;
+		
 		input >> obj;
-		objects.resize(obj);
 
 		/*for (int i = 0; i < obj; i++)
 		{
@@ -334,14 +333,15 @@ void Game::loadFroamFile(ifstream& input) {
 		}*/
 		string line;
 		
-		for (auto it = ++objects.begin(); it != objects.end(); ++it) {
+		for (int i = 0; i < obj;i++) {
 			input >> line;
+			//falta que cada objeto sepa cual es su textura
 			if (line == "Mariposa")objects.push_back(new Butterfly());
 			else if (line == "Globo")objects.push_back(new Balloon());
 			else if (line == "Flecha")objects.push_back(new Arrow());
 			else if (line == "Arco")objects.push_back(new Bow());
 			else if (line == "Premio")objects.push_back(new Reward());
-			dynamic_cast<ArrowsGameObject*>(*it)->loadFromFile(input);
+			dynamic_cast<ArrowsGameObject*>(*--objects.end())->loadFromFile(input);
 		}
 	}
 	input.close();

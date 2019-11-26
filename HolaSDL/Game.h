@@ -68,7 +68,6 @@ private:
 
 	Scores score;
 	uint32_t startBaloonTime = 0, frameBaloonTime = 0; //variables para el control del tiempo
-	int points = 0;
 	Lvl niveles[NUM_Lvl] = {
 	{"..\\images\\bg1.png", 10, 10, 0.5,5,2,4},
 	{"..\\images\\bg_spring_trees_1.png", 10, 2,0.5,5,2,4},
