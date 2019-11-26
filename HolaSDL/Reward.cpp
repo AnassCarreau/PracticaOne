@@ -1,6 +1,7 @@
 #include "Reward.h"
 #include "Game.h"
 
+Reward::Reward() :ArrowsGameObject() {}
 Reward::Reward(Point2D esqIzq, Vector2D vel, uint ancho, uint alto, Texture* premio, Texture* _burbuje,Game* game, int _color):ArrowsGameObject(esqIzq, vel, ancho, alto, premio, game){
 	burbuja = true;
 	burbuje = _burbuje;

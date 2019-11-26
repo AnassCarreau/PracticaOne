@@ -94,5 +94,7 @@ public:
 	void CreateButterflys();
 	void CreateReward(Point2D pos);
 	void NewLvl();
+	void saveToFile(ofstream& output);
+	void loadFroamFile(ifstream& input);
 };
 #endif

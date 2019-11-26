@@ -21,12 +21,13 @@ protected:
 	ArrowsGameObject(Point2D pos, Vector2D vel, uint width, uint height, Texture* textura, Game* game);
 	virtual ~ArrowsGameObject();
 public:
+	ArrowsGameObject();
 	virtual void render();
 	virtual void update();
 	SDL_Rect* getDestRect();
 	SDL_Rect* getCollisionRect();
-	void loadFromFile(ifstream& input);
-	void saveToFile(ofstream& outuput);
+	virtual void loadFromFile(ifstream& input);
+	virtual void saveToFile(ofstream& outuput);
 	void setItList(list<GameObject*>::iterator it);
 	
 };

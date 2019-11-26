@@ -47,9 +47,7 @@ void Scoreboard::render(){
 	}
     for (int i = 0; i < numberarrows; i++)
 	{
-		
 		destRect.x -= 25;
-
 		arrows->render(destRect, SDL_FLIP_NONE);
 	}
 		

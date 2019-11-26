@@ -12,6 +12,7 @@ private:
 	int color = 0;
 	int estado = 0;
 	public:
+		Reward();
 		Reward(Point2D esqIzq, Vector2D vel, uint ancho, uint alto, Texture* premio,Texture*burbuje, Game* game,int color );
 		virtual void update();
 		virtual void render();

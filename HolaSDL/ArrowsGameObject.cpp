@@ -1,6 +1,7 @@
 #include "ArrowsGameObject.h";
 #include "Game.h";
 
+ArrowsGameObject::ArrowsGameObject(){}
 ArrowsGameObject::ArrowsGameObject(Point2D esqIzq, Vector2D vel, uint _width, uint _height, Texture* _textura, Game* _game):pos(esqIzq),velocity ( vel) ,width ( _width),height ( _height),textura ( _textura),game( _game)
 {}
 
@@ -53,23 +54,18 @@ void ArrowsGameObject::saveToFile(ofstream& output)
 void ArrowsGameObject::loadFromFile(ifstream &input)
 {
 	//abrimos el archivo
-	input.open("guardados.txt");
-	//si no se puede abrir lanzamos una excepcion
-	if (!input.is_open()) cout << "No se encuentra el fichero" << endl;
-	//si se abre cargamos el archivo
-	else {
-		char x, y;
-		input >> x;
-		input >> y;
-		pos = Point2D((double)x, (double)y);
-		input >> x;
-		input >> y;
-		velocity = Vector2D((double)x, (double)y);
-		input >> width;
-		input >> height;
-		//input >> textura;
-		//input >> game;
-	}
+	int x, y;
+	input>> x;
+	input >> y;
+	pos = Point2D((double)x, (double)y);
+	input >> x;
+	input >> y;
+	velocity = Vector2D((double)x, (double)y);
+	input >> width;
+	input >> height;
+	//input >> textura;
+	//input >> game;
+	
 }
 
 void ArrowsGameObject::setItList(list<GameObject*>::iterator it)

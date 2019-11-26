@@ -24,13 +24,14 @@ Game::Game() {
 		
 	}
 	scoreboard = new Scoreboard(Point2D(300, 0), 25, 35, textures[5], textures[4], NUM_FLECHAS);
-	auto it = objects.insert(objects.end(), scoreboard);
-	NewLvl();
+	objects.push_back(scoreboard);
 	//Creacion de los gameobjects (los globos y las flechas los generamos mediante un metodo que los genera en un vector)
 	Bow* arco = new Bow(Point2D(0, 100), 80, 80, Vector2D(0, 10), textures[0], textures[2], this);
-	 it=objects.insert(objects.end(),arco);
-	arco->setItList(it);
+	objects.push_back(arco);
+		arco->setItList(--objects.end());
 	eventHandler.push_back(arco);
+	NewLvl();
+
 
 	//creacion de las mariposas
 
@@ -71,6 +72,13 @@ Game::~Game() {
 }
 //metodo principal del juego con estructura->eventos->actualizar->renderizar
 void Game::run() {
+	int n;
+	ifstream input;
+	cout << "Si quieres cargar una partida pulsa '1', si quieres empezar de cero pulsa cualquier numero:" << endl;
+	cin >> n;
+	if (n == 1) { 
+		loadFroamFile(input);
+	}
 	uint32_t startTime, frameTime; //variables para el control del tiempo
 	startTime = SDL_GetTicks(); //tiempo inicial en milisegundos
 	startBaloonTime = SDL_GetTicks();
@@ -89,8 +97,6 @@ void Game::run() {
 			eventHandler.remove(dynamic_cast<EventHandler*>(*it));
 		}
 		objectsToErase.clear();
-		
-
 	}
 	//pedimos el nombre del jugador
     string name;
@@ -160,7 +166,6 @@ void Game::generateBalloons() {
 		auto it = objects.insert(objects.end(), globo);
 		globo->setItList(it);
 		startBaloonTime = SDL_GetTicks();
-
 	}
 	
 }
@@ -269,9 +274,6 @@ void Game::CreateReward(Point2D pos)
 		eventHandler.push_back(premio);
 		auto et = objects.insert(objects.end(), premio);
 		premio->setItList(et);
-
-	
-	
 }
 
 void Game::NewLvl()
@@ -286,7 +288,6 @@ void Game::NewLvl()
 		}
 		
 	}
-	
 	arrows.clear();
 	NUM_FLECHAS = niveles[level].numFlecha;
 	NUM_BUTTERFLYS = niveles[level].numMariposas;
@@ -294,5 +295,54 @@ void Game::NewLvl()
 	VEL_BUT = niveles[level].velBut;
 	scoreboard->Arrows(NUM_FLECHAS);
 	CreateButterflys();
+}
 
+void Game::saveToFile(ofstream& output) {
+	//abrimos el archivo
+	output.open("guardados.txt");
+	//si no se abre lanzamos excepcion
+	if (!output.is_open()) cout << "No se ha podido guardar, no se encuentra el archivo" << endl;
+	//si se puede abrir guardamos la partida
+	else {
+		output << level << endl;
+		output << points << endl;
+		output << NUM_FLECHAS << endl;
+	}
+}
+
+void Game::loadFroamFile(ifstream& input) {
+	//abrimos el archivo
+	input.open("guardados.txt");
+	//si no se puede abrir lanzamos una excepcion
+	if (!input.is_open()) cout << "No se encuentra el fichero" << endl;
+	//si se abre cargamos el archivo
+	else {
+		input >> level;
+		//NewLvl(level);
+		input >> points;
+		scoreboard->Puntuacion(points);
+		input >> NUM_FLECHAS;
+		scoreboard->Arrows(NUM_FLECHAS);
+		int obj;
+		input >> obj;
+		objects.resize(obj);
+
+		/*for (int i = 0; i < obj; i++)
+		{
+			GameObject* H;
+			objects.push_back(H);
+		}*/
+		string line;
+		
+		for (auto it = ++objects.begin(); it != objects.end(); ++it) {
+			input >> line;
+			if (line == "Mariposa")objects.push_back(new Butterfly());
+			else if (line == "Globo")objects.push_back(new Balloon());
+			else if (line == "Flecha")objects.push_back(new Arrow());
+			else if (line == "Arco")objects.push_back(new Bow());
+			else if (line == "Premio")objects.push_back(new Reward());
+			dynamic_cast<ArrowsGameObject*>(*it)->loadFromFile(input);
+		}
+	}
+	input.close();
 }

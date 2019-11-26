@@ -2,6 +2,7 @@
 #include "Game.h"
 
 const int TIME_Animation = 600;
+Butterfly::Butterfly():ArrowsGameObject(){}
 
 Butterfly::Butterfly(Point2D esqIzq, Vector2D vel, uint ancho, uint alto, Texture* butterfly, Game* game):ArrowsGameObject(esqIzq, vel, ancho, alto, butterfly, game){}
 
@@ -32,6 +33,7 @@ void Butterfly::update() {
 		instMuerte = SDL_GetTicks();
 		game->AddPoints(-5, 0);
 		velocity = Vector2D(0, 2);
+		
 	}
 	else if (SDL_GetTicks() > instMuerte + TIME_Animation) {
 

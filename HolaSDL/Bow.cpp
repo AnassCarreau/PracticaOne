@@ -8,6 +8,8 @@ typedef unsigned int uint;
 {
 
 };*/
+Bow::Bow() :ArrowsGameObject() {}
+
 Bow::Bow(Point2D _pos, uint _w, uint _h, Vector2D _velocity, Texture* _texture, Texture* _textureC,Game*_game) : ArrowsGameObject(_pos, _velocity, _w, _h, _texture, _game) {
 	arcoC = _textureC;
 	aux = textura;
