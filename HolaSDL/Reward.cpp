@@ -16,15 +16,13 @@ void Reward::update() {
 	if (burbuja)
 	{
 		burbuja = !game->OnCollisionEnter(getDestRect(),i);
-
 	}
 	
 	if (pos.getY() >= 0 && pos.getY() <= WIN_HEIGHT  ) {
 		ArrowsGameObject::update();
 	}
 	else
-	{
-		
+	{		
 		game->KillObject(i);
 	}
 }
@@ -61,7 +59,7 @@ void Reward::handleEvent(SDL_Event& event)
 		int errorY= abs(event.button.y-pos.getY());
 		if (errorX<50 && errorY<50 )
 		{
-			
+			accion();
 			game->KillObject(i);
 		}	
 	}

@@ -12,6 +12,11 @@
 #include <list>
 #include "Scoreboard.h"
 #include "Reward.h"
+#include "GiveMeArrows.h"
+#include "BigArrows.h"
+#include "FileNotFoundError.h"
+#include "FileFormatError.h"
+#include "SDLError.h"
 
 typedef unsigned int uint;
 
@@ -55,14 +60,14 @@ private:
 	Texture* fondo;
 	double timecharge = 0;
 	double timeshoot = 0;
+	int arrowsSize = 1;
 	Scoreboard* scoreboard;
 	struct MinMaxValue VEL_BAL;
 	struct MinMaxValue VEL_BUT;
-
 	list <EventHandler*> eventHandler;
 	list<GameObject*> objectsToErase;
 	list<Arrow*> arrows;
-
+	//Reward* premio[2]={new GiveMeArrows(),}
 	list<GameObject*>objects;
 
 
@@ -95,5 +100,7 @@ public:
 	void NewLvl(int level);
 	void saveToFile(ofstream& output);
 	void loadFroamFile(ifstream& input);
+	void AddArrows(int arrows);
+	void ArrowSize(int proporcion);
 };
 #endif
