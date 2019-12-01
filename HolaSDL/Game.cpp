@@ -148,6 +148,8 @@ void Game::handleEvents() {
 			for (auto it = eventHandler.begin(); it != eventHandler.end(); ++it) {
 
 				(*it)->handleEvent(event);
+				
+
 
 			}
 		}
@@ -188,7 +190,7 @@ void Game::DisparaFlecha(Point2D pos) {
 		{
 			timecharge = 10;
 		}
-		Arrow* flecha = new Arrow(Vector2D(timecharge + 4, 0), textures[3], this, Point2D(pos.getX() + 20, pos.getY() + 30), 90*arrowsSize, 20*arrowsSize);
+		Arrow* flecha = new Arrow(Vector2D(timecharge + 4, 0), textures[3], this, Point2D(pos.getX() + 20, pos.getY() + 30), 90+arrowsSize, 20+arrowsSize);
 		auto it = objects.insert(objects.end(), flecha);
 		arrows.push_back(flecha);
 		flecha->setItList(it);
@@ -292,11 +294,15 @@ void Game::NewLvl(int _level)
 		if (dynamic_cast<Bow*>(*it) == nullptr && dynamic_cast<Scoreboard*>(*it) == nullptr)
 		{
 			objectsToErase.push_back(*it);
+			
+
+
 			eventHandler.remove(dynamic_cast<Reward*>(*it));
 		}
 		
 	}
 	arrows.clear();
+	arrowsSize = 0;
 	NUM_FLECHAS = niveles[level].numFlecha;
 	NUM_BUTTERFLYS = niveles[level].numMariposas;
 	VEL_BAL = niveles[level].velBal;
@@ -328,60 +334,59 @@ void Game::saveToFile(ofstream& output) {
 }
 
 void Game::loadFroamFile(ifstream& input) {
-	try {
-		//abrimos el archivo
-		input.open("guardados.txt");
-		//si no se puede abrir lanzamos una excepcion
-		if (!input.is_open()) cout << "No se encuentra el fichero" << endl;
-		//si se abre cargamos el archivo
-		else {
-			input >> level;
-			fondo = new Texture(renderer, niveles[level].filename, 1, 1);
-			VEL_BAL = niveles[level].velBal;
-			VEL_BUT = niveles[level].velBut;
-			input >> puntuacion;
-			scoreboard->Puntuacion(puntuacion);
-			input >> NUM_FLECHAS;
-			scoreboard->Arrows(NUM_FLECHAS);
-			int obj;
-			input >> obj;
-			string line;
-			for (int i = 0; i < obj; i++) {
-				input >> line;
-				//falta que cada objeto sepa cual es su textura
-				if (line == "Mariposa")objects.push_back(new Butterfly(Point2D(NULL, NULL), Vector2D(NULL, NULL), 20, 20, textures[6], this));
-				else if (line == "Globo")objects.push_back(new Balloon(Point2D(NULL, NULL), 20, 20, Vector2D(NULL, NULL), textures[1], false, 0, this, NULL));
-				else if (line == "Flecha")
-				{
-					objects.push_back(new Arrow(Vector2D(NULL, NULL), textures[3], this, Point2D(NULL, NULL), 20, 20));
-					arrows.push_back(dynamic_cast<Arrow*>(objects.back()));
-				}
-				else if (line == "Arco") {
-					objects.push_back(new Bow(Point2D(0, 0), 20, 20, Vector2D(0, 0), textures[0], textures[2], this));
-					eventHandler.push_back(dynamic_cast<EventHandler*>(objects.back()));
-				}
-				else if (line == "Premio") {
-					//	objects.push_back(new Reward(Point2D(0, 0), Vector2D(0, 0), 20, 20, textures[7], textures[8], this, 0));
-					eventHandler.push_back(dynamic_cast<EventHandler*>(objects.back()));
-				}
-				else
-				{
-					FileFormatError::FileError();
-				}
-				dynamic_cast<ArrowsGameObject*>(objects.back())->loadFromFile(input);
-				dynamic_cast<ArrowsGameObject*>(objects.back())->setItList(--objects.end());
+
+	//abrimos el archivo
+	input.open("guardados.txt");
+	//si no se puede abrir lanzamos una excepcion
+	if (!input.is_open()) FileNotFoundError::FileNotFound("guardados.txt");
+	//si se abre cargamos el archivo
+	else {
+		input >> level;
+		fondo = new Texture(renderer, niveles[level].filename, 1, 1);
+		VEL_BAL = niveles[level].velBal;
+		VEL_BUT = niveles[level].velBut;
+		input >> puntuacion;
+		scoreboard->Puntuacion(puntuacion);
+		input >> NUM_FLECHAS;
+		scoreboard->Arrows(NUM_FLECHAS);
+		int obj;
+		input >> obj;
+		string line;
+		for (int i = 0; i < obj; i++) {
+			input >> line;
+			//falta que cada objeto sepa cual es su textura
+			if (line == "Mariposa")objects.push_back(new Butterfly(Point2D(NULL, NULL), Vector2D(NULL, NULL), 20, 20, textures[6], this));
+			else if (line == "Globo")objects.push_back(new Balloon(Point2D(NULL, NULL), 20, 20, Vector2D(NULL, NULL), textures[1], false, 0, this, NULL));
+			else if (line == "Flecha")
+			{
+				objects.push_back(new Arrow(Vector2D(NULL, NULL), textures[3], this, Point2D(NULL, NULL), 20, 20));
+				arrows.push_back(dynamic_cast<Arrow*>(objects.back()));
 			}
+			else if (line == "Arco") {
+				objects.push_back(new Bow(Point2D(0, 0), 20, 20, Vector2D(0, 0), textures[0], textures[2], this));
+				eventHandler.push_back(dynamic_cast<EventHandler*>(objects.back()));
+			}
+			else if (line == "Premio") {
+				//	objects.push_back(new Reward(Point2D(0, 0), Vector2D(0, 0), 20, 20, textures[7], textures[8], this, 0));
+				eventHandler.push_back(dynamic_cast<EventHandler*>(objects.back()));
+			}
+			else
+			{
+				FileFormatError::FileError();
+			}
+			dynamic_cast<ArrowsGameObject*>(objects.back())->loadFromFile(input);
+			dynamic_cast<ArrowsGameObject*>(objects.back())->setItList(--objects.end());
 		}
-		input.close();
 	}
-	catch (logic_error & e) { FileNotFoundError::FileNotFound("guardados.txt"); }
+	input.close();
 }
+	
  void Game::AddArrows(int arrows)
  {
 	 NUM_FLECHAS += arrows;
 	 scoreboard->Arrows(NUM_FLECHAS);
  }
- void Game::ArrowSize(int prop)
+ void Game::ArrowSize(double prop)
  {
-	 arrowsSize *= prop;
+	 arrowsSize += prop;
  }

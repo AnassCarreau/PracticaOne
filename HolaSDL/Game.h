@@ -67,7 +67,6 @@ private:
 	list <EventHandler*> eventHandler;
 	list<GameObject*> objectsToErase;
 	list<Arrow*> arrows;
-	//Reward* premio[2]={new GiveMeArrows(),}
 	list<GameObject*>objects;
 
 
@@ -101,6 +100,6 @@ public:
 	void saveToFile(ofstream& output);
 	void loadFroamFile(ifstream& input);
 	void AddArrows(int arrows);
-	void ArrowSize(int proporcion);
+	void ArrowSize(double proporcion);
 };
 #endif

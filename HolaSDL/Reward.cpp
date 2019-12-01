@@ -52,17 +52,28 @@ void Reward::render() {
 
 void Reward::handleEvent(SDL_Event& event)
 {
-	if (event.type == SDL_MOUSEBUTTONDOWN && !burbuja)
+	if (event.type == SDL_MOUSEBUTTONDOWN && !burbuja && !power)
 	{
-		
 		int errorX= abs( event.button.x-pos.getX());
 		int errorY= abs(event.button.y-pos.getY());
 		if (errorX<50 && errorY<50 )
 		{
-			accion();
-			game->KillObject(i);
+			power = true;
+			accion(true);
+			cout << "ñpñ";
+			timeP = SDL_GetTicks();
+			height = 10;
+			//game->KillObject(i);
 		}	
 	}
+	if (timeP + timePower < SDL_GetTicks() && power)
+	{
+		int jo = SDL_GetTicks();
+		accion(false);
+		game->KillObject(i);
+
+	}
+	
 }
 
 void Reward::saveToFile(ofstream& output) {

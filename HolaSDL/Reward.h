@@ -12,6 +12,9 @@ private:
 	int color = 0;
 	int estado = 0;
 	int time = 0;
+	bool power = false;
+	int timeP = 0;
+	int timePower = 6000;
 	public:
 		Reward();
 		Reward(Point2D esqIzq, Vector2D vel, uint ancho, uint alto, Texture* premio,Texture*burbuje, Game* game,int color );
@@ -21,7 +24,8 @@ private:
 		virtual void handleEvent(SDL_Event& event);
 		void saveToFile(ofstream& output);
 		void loadFromFile(ifstream& input);
-		virtual void accion()=0;
+		virtual void accion(bool active)=0;
+
 };
 #endif
 
