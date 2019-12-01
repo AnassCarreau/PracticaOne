@@ -20,6 +20,6 @@ C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\FileNotFoundError.h(6,10): w
 C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\FileFormatError.h(4,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\SDLError.h(4,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\SDLError.h(5,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(192,55): warning C4244:  '+=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(379,21): warning C4244:  '+=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(194,55): warning C4244:  '+=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\forev\OneDrive\Desktop\PracticaOne\HolaSDL\Game.cpp(378,21): warning C4244:  '+=': conversión de 'double' a 'int'; posible pérdida de datos
   HolaSDL.vcxproj -> C:\Users\forev\OneDrive\Desktop\PracticaOne\bin\HolaSDLDebug.exe

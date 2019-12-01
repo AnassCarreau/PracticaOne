@@ -50,10 +50,12 @@ Game::~Game() {
 	//scoreboard = nullptr;
 	//elimina los objetos de la lista objetos
 	for (auto it = objects.begin(); it != objects.end(); ++it) {
-		delete (*it);
+		//delete (*it);
 		(*it) = nullptr;
 	}
-	objects.erase(objects.begin(), objects.end());
+	/*delete globo;
+	globo = nullptr;
+	//objects.erase(objects.begin(), objects.end());
 
 	//objects.clear();
 	//elimina los objetos de la lista eventhandler
@@ -206,25 +208,22 @@ void Game::AddPoints(int pointsadd,int hits)
 
 
 //metodo que mira si alguna flecha ha tocado con un globo
-bool Game::OnCollisionEnter(SDL_Rect* rect,list<GameObject*>::iterator collider) {
-	
+bool Game::OnCollisionEnter(SDL_Rect rect,list<GameObject*>::iterator collider) {
 	
 	for (auto it = arrows.begin(); it != arrows.end(); ++it)
 	{
-		if (SDL_HasIntersection(rect, (*it)->getCollisionRect()))
+		if (SDL_HasIntersection(&rect, &(*it)->getCollisionRect()))
 		{
 			if (dynamic_cast<Balloon*>(*collider) != nullptr)
 			{
 				AddPoints(POINTS, (*it)->getHits());
 				int estadistica = rand() % 1;
 				if (estadistica == 0) {
-					double y = (double)rect->y + rect->h;
-					CreateReward(Point2D(rect->x, y));
-
+					double y = (double)rect.y + rect.h;
+					CreateReward(Point2D(rect.x, y));
 				}
 			}
 			return true;
-
 		}
 	}
 	return false;

@@ -6,12 +6,12 @@ const int TIME_Animation = 600;
 Butterfly::Butterfly(Point2D esqIzq, Vector2D vel, uint ancho, uint alto, Texture* butterfly, Game* game):ArrowsGameObject(esqIzq, vel, ancho, alto, butterfly, game){}
 
 void Butterfly::render() {
-	SDL_Rect* destRect = ArrowsGameObject::getDestRect();
+	SDL_Rect destRect = ArrowsGameObject::getDestRect();
 	if (muerte) {
-		textura->renderFrame(*destRect, mariposon, 0, 0, SDL_FLIP_NONE);
+		textura->renderFrame(destRect, mariposon, 0, 0, SDL_FLIP_NONE);
 	}
 	else {
-		textura->renderFrame(*destRect, mariposon, vuelo, 0, SDL_FLIP_NONE);
+		textura->renderFrame(destRect, mariposon, vuelo, 0, SDL_FLIP_NONE);
 	}
 }
 

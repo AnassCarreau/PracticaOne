@@ -25,10 +25,10 @@ void Arrow::update() {
 	}
 }
 //metodo para saber el rect de la flecha
-SDL_Rect* Arrow::getCollisionRect() {
-	SDL_Rect* rectArrow = ArrowsGameObject::getCollisionRect();
-	rectArrow->x += 3 * width / 4;
-	rectArrow->w = width / 4;
+SDL_Rect Arrow::getCollisionRect() {
+	SDL_Rect rectArrow = ArrowsGameObject::getCollisionRect();
+	rectArrow.x += 3 * width / 4;
+	rectArrow.w = width / 4;
 	return rectArrow;
 }
 int Arrow::getHits()

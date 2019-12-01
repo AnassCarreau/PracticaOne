@@ -90,7 +90,7 @@ public:
 	void update();
 	void CargaFlecha();
 	void DisparaFlecha(Point2D pos);
-	bool OnCollisionEnter(SDL_Rect* rect, list<GameObject*>::iterator it);
+	bool OnCollisionEnter(SDL_Rect rect, list<GameObject*>::iterator it);
 	void generateBalloons();
 	void AddPoints(int points, int hits);
 	void KillObject(list<GameObject*>::iterator it);

@@ -28,15 +28,15 @@ void Reward::update() {
 }
 
 void Reward::render() {
-	SDL_Rect* destRect = ArrowsGameObject::getCollisionRect();
-	destRect->x = destRect->x - width/4 ;
-	destRect->y = destRect->y - height/4 ;
-	textura->renderFrame(*destRect, color, estado, 0, SDL_FLIP_NONE);
+	SDL_Rect destRect = ArrowsGameObject::getCollisionRect();
+	destRect.x = destRect.x - width/4 ;
+	destRect.y = destRect.y - height/4 ;
+	textura->renderFrame(destRect, color, estado, 0, SDL_FLIP_NONE);
 	if (burbuja)
 	{
 		destRect = ArrowsGameObject::getDestRect();
 		
-		burbuje->render(*destRect, SDL_FLIP_NONE);
+		burbuje->render(destRect, SDL_FLIP_NONE);
 
 	}
 	if (time+time_frame<SDL_GetTicks())
