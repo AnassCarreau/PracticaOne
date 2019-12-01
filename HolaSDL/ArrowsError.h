@@ -8,7 +8,7 @@ using namespace std;
 class ArrowsError: public logic_error
 {
 	public:
-		ArrowsError() :logic_error("logical error") { what(); };
+		ArrowsError(const string& f) :logic_error("ArrowsError: " + f) {};
 };
 
 #endif

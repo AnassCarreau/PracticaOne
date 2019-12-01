@@ -5,7 +5,7 @@
 #include "ArrowsGameObject.h"
 
 //class Game;
-const int POINTS = 20;
+const int POINTS = 5;
 
 typedef unsigned int uint;
 class Balloon : public ArrowsGameObject {

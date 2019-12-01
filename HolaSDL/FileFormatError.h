@@ -3,11 +3,12 @@
 
 #include "ArrowsError.h";
 #include <iostream>
+#include <string>
 
 class FileFormatError: public ArrowsError
 {
 	public:
-		static void FileError() { cout << "El formato de archivo no es correcto"; };
+		FileFormatError(string f) : ArrowsError(f){};
 };
 #endif
 

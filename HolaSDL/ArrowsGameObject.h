@@ -16,7 +16,7 @@ protected:
 	Vector2D velocity;
 	Texture* textura;
 	Game* game;
-
+	SDL_Rect* rectaso;
 	list<GameObject*>::iterator i;
 	ArrowsGameObject(Point2D pos, Vector2D vel, uint width, uint height, Texture* textura, Game* game);
 	virtual ~ArrowsGameObject();

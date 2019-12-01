@@ -8,6 +8,8 @@ ArrowsGameObject::ArrowsGameObject(Point2D esqIzq, Vector2D vel, uint _width, ui
  {
 	 textura = nullptr;
 	 game = nullptr;
+	 delete rectaso;
+	 rectaso = nullptr;
  }
 
 void ArrowsGameObject::render()
@@ -21,7 +23,8 @@ void ArrowsGameObject::update()
 
 SDL_Rect* ArrowsGameObject::getDestRect()
 {
-	return new SDL_Rect{ (int)pos.getX(),  (int)pos.getY(),(int)width,(int)height };
+	rectaso = new SDL_Rect{ (int)pos.getX(),  (int)pos.getY(),(int)width,(int)height };
+	return rectaso;
 }; 
 SDL_Rect* ArrowsGameObject::getCollisionRect()
 {
@@ -29,8 +32,8 @@ SDL_Rect* ArrowsGameObject::getCollisionRect()
 	int pointY = pos.getY()+height/2;
 	int arrowwidth = width/2;
 	int arrowheight = height/2;
-	SDL_Rect* rectArrow = new SDL_Rect{ pointX, pointY, arrowwidth,arrowheight };
-	return rectArrow;
+	SDL_Rect* rectaso = new SDL_Rect{ pointX, pointY, arrowwidth,arrowheight };
+	return rectaso;
 };
 void ArrowsGameObject::saveToFile(ofstream& output)
 {
@@ -43,13 +46,13 @@ void ArrowsGameObject::saveToFile(ofstream& output)
 }
 void ArrowsGameObject::loadFromFile(ifstream &input)
 {
-	int x, y;
+	double x, y, velX, velY;
 	input>> x;
 	input >> y;
-	pos = Point2D((double)x, (double)y);
-	input >> x;
-	input >> y;
-	velocity = Vector2D((double)x, (double)y);
+	pos = Point2D(x, y);
+	input >> velX;
+	input >> velY;
+	velocity = Vector2D(velX, velY);
 	input >> width;
 	input >> height;	
 }

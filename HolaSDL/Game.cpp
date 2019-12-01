@@ -15,7 +15,7 @@ Game::Game() {
 	window = SDL_CreateWindow("Practica 1", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
 		WIN_WIDTH, WIN_HEIGHT, SDL_WINDOW_SHOWN);
 	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
-	if (window == nullptr || renderer == nullptr) SDLError::SDL_DameError();/*throw "Error loading the SDL window or renderer"*/;
+	if (window == nullptr || renderer == nullptr) throw SDLError();
 	
 	//Creacion de las texturas
 	for (uint i = 0; i < NUM_TEXTURES; i++) {
@@ -41,33 +41,26 @@ Game::Game() {
 		NewLvl(0);
 
 	}
-
-	//Creacion de los gameobjects (los globos y las flechas los generamos mediante un metodo que los genera en un vector)
-	
-	/*ArrowsGameObject* temp = new Arrow(Point2D(0, 0), textures[4], this, Vector2D(0, 10), 80, 80);
-	objects.push_back(temp);
-	auto it=--objects.end();
-	temp->setItList(it);*/
-
 	run();	
 }
 //metodo de destruccion de basura
 Game::~Game() {
 	for (uint i = 0; i < NUM_TEXTURES; i++) delete textures[i];
-	delete scoreboard;
-	scoreboard = nullptr;
-	//delete bow;
-	//bow = nullptr;
-	/*for (int i = 0; i < arrows.size(); i++) {
-		delete arrows[i];
-		arrows[i] = nullptr;
+	//delete scoreboard;
+	//scoreboard = nullptr;
+	//elimina los objetos de la lista objetos
+	for (auto it = objects.begin(); it != objects.end(); ++it) {
+		delete (*it);
+		(*it) = nullptr;
 	}
-	for (int j = 0; j < balloons.size(); j++) {
-		delete balloons[j];
-		balloons[j] = nullptr;
-	}*/ 
-	//que cada objeto se destruya a si mismo 
-	
+	objects.erase(objects.begin(), objects.end());
+
+	//objects.clear();
+	//elimina los objetos de la lista eventhandler
+	/*for (auto it = eventHandler.begin(); it != eventHandler.end(); ++it) {
+		delete (*it);
+		(*it) = nullptr;
+	}*/
 	SDL_DestroyRenderer(renderer);
 	SDL_DestroyWindow(window);
 	SDL_Quit();
@@ -99,15 +92,7 @@ void Game::run() {
 	cout << "Si quieres guardar la partida pulsa '2'" << endl;
 	cin >> g;
 	if (g == 2) saveToFile(output);
-    /*string name;
-	cin >> name;
-	//lee el archivo
-	score.Load("score.txt");
-	//añade la puntuacion de la partida y ordena las mejores
-	score.addScore(name, puntuacion);
-	//guarda el archivo
-	score.save("score.txt");*/
-	
+	//else throw ArrowsError("Ese no es el numero 2, no se ha podido guardar la partida");
 }
 //metodo que actualiza el estado del juego
 void Game::update() {
@@ -115,9 +100,7 @@ void Game::update() {
 	generateBalloons();
 	
 	for (auto it = objects.begin(); it != objects.end(); ++it) {
-
 		(*it)->update();
-
 	}	
 }
 //metodo que renderiza todos los objetos del juego
@@ -148,9 +131,6 @@ void Game::handleEvents() {
 			for (auto it = eventHandler.begin(); it != eventHandler.end(); ++it) {
 
 				(*it)->handleEvent(event);
-				
-
-
 			}
 		}
 	}
@@ -294,9 +274,6 @@ void Game::NewLvl(int _level)
 		if (dynamic_cast<Bow*>(*it) == nullptr && dynamic_cast<Scoreboard*>(*it) == nullptr)
 		{
 			objectsToErase.push_back(*it);
-			
-
-
 			eventHandler.remove(dynamic_cast<Reward*>(*it));
 		}
 		
@@ -312,25 +289,23 @@ void Game::NewLvl(int _level)
 }
 
 void Game::saveToFile(ofstream& output) {
-	try {
-		//abrimos el archivo
-		output.open("guardados.txt");
-		//si no se abre lanzamos excepcion
-		if (!output.is_open()) cout << "No se ha podido guardar, no se encuentra el archivo" << endl;
-		//si se puede abrir guardamos la partida
-		else {
-			output << level << endl;
-			output << puntuacion << endl;
-			output << NUM_FLECHAS << endl;
-			int objetos = objects.size();
-			output << objetos << endl;
-			for (auto it = ++objects.begin(); it != objects.end(); ++it) {
-				dynamic_cast<ArrowsGameObject*>(*it)->saveToFile(output);
-			}
+	//abrimos el archivo
+	output.open("guardados.txt");
+	//si no se abre lanzamos excepcion
+	if (!output.is_open()) throw FileNotFoundError("No se encuentra el archivo");
+	//si se puede abrir guardamos la partida
+	else {
+		output << level << endl;
+		output << puntuacion << endl;
+		output << NUM_FLECHAS << endl;
+		int objetos = objects.size();
+		output << objetos << endl;
+		for (auto it = ++objects.begin(); it != objects.end(); ++it) {
+			dynamic_cast<ArrowsGameObject*>(*it)->saveToFile(output);
 		}
-		output.close();
 	}
-	catch (logic_error & e) { FileNotFoundError::FileNotFound("guardados.txt"); }
+	output.close();
+
 }
 
 void Game::loadFroamFile(ifstream& input) {
@@ -338,7 +313,7 @@ void Game::loadFroamFile(ifstream& input) {
 	//abrimos el archivo
 	input.open("guardados.txt");
 	//si no se puede abrir lanzamos una excepcion
-	if (!input.is_open()) FileNotFoundError::FileNotFound("guardados.txt");
+	if (!input.is_open()) throw FileNotFoundError("No se encuentra el archivo");
 	//si se abre cargamos el archivo
 	else {
 		input >> level;
@@ -350,6 +325,7 @@ void Game::loadFroamFile(ifstream& input) {
 		input >> NUM_FLECHAS;
 		scoreboard->Arrows(NUM_FLECHAS);
 		int obj;
+		int color;
 		input >> obj;
 		string line;
 		for (int i = 0; i < obj; i++) {
@@ -367,12 +343,24 @@ void Game::loadFroamFile(ifstream& input) {
 				eventHandler.push_back(dynamic_cast<EventHandler*>(objects.back()));
 			}
 			else if (line == "Premio") {
-				//	objects.push_back(new Reward(Point2D(0, 0), Vector2D(0, 0), 20, 20, textures[7], textures[8], this, 0));
+				
+				input >> color;
+				switch (color)
+				{
+					case 0:
+						objects.push_back(new GiveMeArrows(Point2D(0, 0), Vector2D(0, 0), 20, 20, textures[7], textures[8], this, color));
+						break;
+					case 1:
+						objects.push_back(new BigArrows(Point2D(0, 0), Vector2D(0, 0), 20, 20, textures[7], textures[8], this, color));
+						break;
+					default:
+					break;
+				}
 				eventHandler.push_back(dynamic_cast<EventHandler*>(objects.back()));
 			}
 			else
 			{
-				FileFormatError::FileError();
+				throw FileFormatError("Formato de archivo incorrecto");
 			}
 			dynamic_cast<ArrowsGameObject*>(objects.back())->loadFromFile(input);
 			dynamic_cast<ArrowsGameObject*>(objects.back())->setItList(--objects.end());

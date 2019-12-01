@@ -3,13 +3,12 @@
 
 #include "ArrowsError.h";
 #include "Game.h";
+#include <string>
 
 class SDLError:public ArrowsError
 {
 	public:
-		static void SDL_DameError() { SDL_GetError(); };
-		static void SDL_ErrorImagen() { IMG_GetError(); };
-		
+		SDLError() : ArrowsError(SDL_GetError()) {};
 };
 #endif
 

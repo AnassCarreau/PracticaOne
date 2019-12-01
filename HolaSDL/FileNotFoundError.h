@@ -8,7 +8,7 @@
 class FileNotFoundError: public ArrowsError
 {
 		public:
-			static void FileNotFound(string file) { cout << "No se pudo encontrar el archivo " << file <<endl; };
+			FileNotFoundError(string f) : ArrowsError(f){};
 };
 #endif
 
