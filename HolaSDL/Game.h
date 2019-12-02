@@ -73,12 +73,12 @@ private:
 	Scores score;
 	uint32_t startBaloonTime = 0, frameBaloonTime = 0; //variables para el control del tiempo
 	Lvl niveles[NUM_Lvl] = {
-	{"..\\images\\bg1.png", 10, 10, 0.5,5,2,4},
-	{"..\\images\\bg_spring_trees_1.png", 10, 2,0.5,5,2,4},
-	{"..\\images\\Cartoon_Forest_BG_01.png", 10, 10,0.5,5,2,4},
-	{"..\\images\\Cartoon_Forest_BG_02.png", 10, 10,0.5,5,2,4},
-	{"..\\images\\Cartoon_Forest_BG_03.png", 10, 10,0.5,5,2,4},
-	{"..\\images\\Cartoon_Forest_BG_04.png", 10, 10,0.5,5,2,4}
+	{"..\\images\\bg1.png", 10, 3, 0,5,2,4},
+	{"..\\images\\bg_spring_trees_1.png", 11, 4,1,5,2,4},
+	{"..\\images\\Cartoon_Forest_BG_01.png", 12, 8,2,5,2,4},
+	{"..\\images\\Cartoon_Forest_BG_02.png", 13, 12,3,6,2,4},
+	{"..\\images\\Cartoon_Forest_BG_03.png", 14, 15,3,7,2,4},
+	{"..\\images\\Cartoon_Forest_BG_04.png", 15, 20,3,8,2,4}
 	};
 	ImagenesAtributos imags[NUM_TEXTURES] = { {"..\\images\\Bow2.png", 1, 1},{"..\\images\\balloons.png", 7, 6},{"..\\images\\Bow1.png", 1, 1},{"..\\images\\Arrow1.png",1,1},{"..\\images\\Arrow2.png",1,1},{"..\\images\\digits1.png",1,10},{"..\\images\\butterfly2.png",4,10},{"..\\images\\rewards.png",10,8} ,{"..\\images\\bubble.png",1,1} };
 public:
@@ -101,5 +101,6 @@ public:
 	void loadFroamFile(ifstream& input);
 	void AddArrows(int arrows);
 	void ArrowSize(double proporcion);
+	
 };
 #endif

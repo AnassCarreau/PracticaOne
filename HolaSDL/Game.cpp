@@ -46,23 +46,16 @@ Game::Game() {
 //metodo de destruccion de basura
 Game::~Game() {
 	for (uint i = 0; i < NUM_TEXTURES; i++) delete textures[i];
-	//delete scoreboard;
-	//scoreboard = nullptr;
-	//elimina los objetos de la lista objetos
-	for (auto it = objects.begin(); it != objects.end(); ++it) {
-		//delete (*it);
-		(*it) = nullptr;
+	auto it = objects.begin();
+	while (it!=objects.end())
+	{
+		objects.remove(*it);
+		it = objects.begin();
 	}
-	/*delete globo;
-	globo = nullptr;
-	//objects.erase(objects.begin(), objects.end());
-
-	//objects.clear();
-	//elimina los objetos de la lista eventhandler
-	/*for (auto it = eventHandler.begin(); it != eventHandler.end(); ++it) {
-		delete (*it);
-		(*it) = nullptr;
-	}*/
+	
+	objectsToErase.clear();
+	arrows.clear();
+	objects.clear();
 	SDL_DestroyRenderer(renderer);
 	SDL_DestroyWindow(window);
 	SDL_Quit();
@@ -74,7 +67,7 @@ void Game::run() {
 	startTime = SDL_GetTicks(); //tiempo inicial en milisegundos
 	startBaloonTime = SDL_GetTicks();
 	const int FRAME_RATE = 20 ; //20fps
-	while (!exit) { 
+	while (!exit && NUM_BUTTERFLYS!=0 && level<6 && NUM_FLECHAS!=0) { 
 		handleEvents();
 		//actualizamos el juego cada Frame_Rate
 		frameTime = SDL_GetTicks() - startTime;
@@ -83,11 +76,7 @@ void Game::run() {
 			startTime = SDL_GetTicks();
 		}		
 		render();
-		for (auto it = objectsToErase.begin(); it != objectsToErase.end(); ++it) {
-			objects.remove(*it);
-			eventHandler.remove(dynamic_cast<EventHandler*>(*it));
-		}
-		objectsToErase.clear();
+		
 	}
 	int g;
 	ofstream output;
@@ -101,9 +90,17 @@ void Game::update() {
 	
 	generateBalloons();
 	
-	for (auto it = objects.begin(); it != objects.end(); ++it) {
-		(*it)->update();
+	for (auto et = objects.begin(); et != objects.end(); ++et) {
+		(*et)->update();
 	}	
+	for (auto it = objectsToErase.begin(); it != objectsToErase.end(); ++it) {
+		objects.remove(*it);
+		eventHandler.remove(dynamic_cast<EventHandler*>(*it));
+		arrows.remove(dynamic_cast<Arrow*>(*it));
+
+		
+	}	
+	objectsToErase.clear();
 }
 //metodo que renderiza todos los objetos del juego
 void Game::render() const {
@@ -149,6 +146,7 @@ void Game::generateBalloons() {
 		Balloon* globo=new  Balloon(Point2D{ (double)h,600 }, 80, 80, Vector2D(0, -velocidad), textures[1], false, 0, this, color);
 		auto it = objects.insert(objects.end(), globo);
 		globo->setItList(it);
+		
 		startBaloonTime = SDL_GetTicks();
 	}
 	
@@ -223,6 +221,12 @@ bool Game::OnCollisionEnter(SDL_Rect rect,list<GameObject*>::iterator collider) 
 					CreateReward(Point2D(rect.x, y));
 				}
 			}
+			 else if (dynamic_cast<Butterfly*>(*collider) != nullptr)
+			{
+				AddPoints(-POINTS/2, 0);
+				NUM_BUTTERFLYS--;
+				
+			}
 			return true;
 		}
 	}
@@ -259,10 +263,12 @@ void Game::CreateReward(Point2D pos)
 			break;
 		case 1: premio = new BigArrows(pos, Vector2D(0, 0.1), 100, 70, textures[7], textures[8], this, color);
 			break;
+		
 		}
 		eventHandler.push_back(premio);
 		auto et = objects.insert(objects.end(), premio);
 		premio->setItList(et);
+	
 }
 
 void Game::NewLvl(int _level)
@@ -352,8 +358,7 @@ void Game::loadFroamFile(ifstream& input) {
 					case 1:
 						objects.push_back(new BigArrows(Point2D(0, 0), Vector2D(0, 0), 20, 20, textures[7], textures[8], this, color));
 						break;
-					default:
-					break;
+					
 				}
 				eventHandler.push_back(dynamic_cast<EventHandler*>(objects.back()));
 			}
@@ -377,3 +382,4 @@ void Game::loadFroamFile(ifstream& input) {
  {
 	 arrowsSize += prop;
  }
+ 

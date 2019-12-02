@@ -30,7 +30,6 @@ void Butterfly::update() {
 	else if (muerte && instMuerte==0)
 	{
 		instMuerte = SDL_GetTicks();
-		game->AddPoints(-5, 0);
 		velocity = Vector2D(0, 2);
 		
 	}

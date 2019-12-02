@@ -60,15 +60,12 @@ void Reward::handleEvent(SDL_Event& event)
 		{
 			power = true;
 			accion(true);
-			cout << "ñpñ";
 			timeP = SDL_GetTicks();
 			height = 10;
-			//game->KillObject(i);
 		}	
 	}
 	if (timeP + timePower < SDL_GetTicks() && power)
 	{
-		int jo = SDL_GetTicks();
 		accion(false);
 		game->KillObject(i);
 
