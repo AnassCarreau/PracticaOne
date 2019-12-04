@@ -6,8 +6,8 @@ ArrowsGameObject::ArrowsGameObject(Point2D esqIzq, Vector2D vel, uint _width, ui
 
  ArrowsGameObject::~ArrowsGameObject()
  {
-	 textura = nullptr;
-	 game = nullptr;
+	/* textura = nullptr;
+	 game = nullptr;*/
  }
 
 void ArrowsGameObject::render()

@@ -45,17 +45,29 @@ Game::Game() {
 }
 //metodo de destruccion de basura
 Game::~Game() {
+
 	for (uint i = 0; i < NUM_TEXTURES; i++) delete textures[i];
-	auto it = objects.begin();
-	while (it!=objects.end())
+
+	for (auto  it =objects.begin() ; it!= objects.end(); ++it)
+	{
+		objectsToErase.push_back(*it);
+	}
+	for (auto it = objectsToErase.begin(); it != objectsToErase.end(); ++it)
 	{
 		objects.remove(*it);
-		it = objects.begin();
+		eventHandler.remove(dynamic_cast<EventHandler*>(*it));
+		arrows.remove(dynamic_cast<Arrow*>(*it));
+		delete* it;
+
 	}
-	
+	delete fondo;
+	fondo = nullptr;
 	objectsToErase.clear();
 	arrows.clear();
 	objects.clear();
+	eventHandler.clear();
+	
+	
 	SDL_DestroyRenderer(renderer);
 	SDL_DestroyWindow(window);
 	SDL_Quit();
@@ -93,13 +105,16 @@ void Game::update() {
 	for (auto et = objects.begin(); et != objects.end(); ++et) {
 		(*et)->update();
 	}	
-	for (auto it = objectsToErase.begin(); it != objectsToErase.end(); ++it) {
+	
+	for (auto it= objectsToErase.begin() ; it!=objectsToErase.end(); ++it)
+	{
 		objects.remove(*it);
 		eventHandler.remove(dynamic_cast<EventHandler*>(*it));
 		arrows.remove(dynamic_cast<Arrow*>(*it));
+		delete *it;
 
-		
-	}	
+	}
+
 	objectsToErase.clear();
 }
 //metodo que renderiza todos los objetos del juego
