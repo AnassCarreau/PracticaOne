@@ -2,12 +2,15 @@
 #define GAMESTATEMACHINE_H_
 
 #include <string>
+#include <stack>
+#include "GameState.h"
+
 using namespace std;
 
 class GameStateMachine
 {
 private:
-	//stack<GameState*>;
+	stack<GameState*> states;
 public:
 	string currentState();
 	void pushState();
