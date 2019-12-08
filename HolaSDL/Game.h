@@ -17,6 +17,9 @@
 #include "FileNotFoundError.h"
 #include "FileFormatError.h"
 #include "SDLError.h"
+#include "GameStateMachine.h"
+#include "MainMenuState.h"
+#include "PlayState.h"
 
 typedef unsigned int uint;
 
@@ -51,6 +54,7 @@ class Game {
 private:
 	SDL_Window* window = nullptr;
 	SDL_Renderer* renderer = nullptr;
+	GameStateMachine* gameStateMachine;
 	bool exit = false;
 	int level = -1;
 	int puntuacion = 0;

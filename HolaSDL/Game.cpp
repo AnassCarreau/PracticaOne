@@ -17,6 +17,8 @@ Game::Game() {
 	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 	if (window == nullptr || renderer == nullptr) throw SDLError();
 	
+	gameStateMachine = new GameStateMachine();
+	gameStateMachine->changeState(new MainMenuState());
 	//Creacion de las texturas
 	for (uint i = 0; i < NUM_TEXTURES; i++) {
 	

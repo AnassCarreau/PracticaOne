@@ -13,9 +13,12 @@ private:
 	stack<GameState*> states;
 public:
 	string currentState();
-	void pushState();
-	void changeState();
+	void pushState(GameState* pState);
+	void changeState(GameState* pState);
 	void popState();
+
+	void update();
+	void render();
 };
 #endif
 
