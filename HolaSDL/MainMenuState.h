@@ -7,7 +7,9 @@
 class MainMenuState: public GameState
 {
 private:
-	static const std::string s_menuID;
+	static const std::string s_menuID;	list<GameObject*> m_gameObjects;
+	static void s_menuToPlay();
+	static void s_exitFromMenu();
 public:
 	virtual void update();
 	virtual void render();

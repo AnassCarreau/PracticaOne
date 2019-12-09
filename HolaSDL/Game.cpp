@@ -118,6 +118,11 @@ void Game::update() {
 	}
 
 	objectsToErase.clear();
+
+
+
+	//	m_pGameStateMachine->update();
+
 }
 //metodo que renderiza todos los objetos del juego
 void Game::render() const {
@@ -136,6 +141,9 @@ void Game::render() const {
 	}
 	
 	SDL_RenderPresent(renderer);
+//	SDL_RenderClear(m_pRenderer);
+	//m_pGameStateMachine->render();
+	//SDL_RenderPresent(m_pRenderer);
 }
 //metodo que controla los eventos del juego
 void Game::handleEvents() {
@@ -150,6 +158,11 @@ void Game::handleEvents() {
 			}
 		}
 	}
+	/*TheInputHandler::Instance()->update();
+	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_RETURN))
+	{
+		m_pGameStateMachine->changeState(new PlayState());
+	}*/	
 }
 //metodo que genera globo cada 2 segundos
 void Game::generateBalloons() {

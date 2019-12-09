@@ -12,7 +12,8 @@ private:
 	Texture* textura;
 	GameState* state;
 public:
-
+	virtual void draw();
+	virtual void clean();
 };
 #endif
 

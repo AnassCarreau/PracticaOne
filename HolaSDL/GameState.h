@@ -6,11 +6,13 @@
 class GameState
 {
 private:
-	list<GameObject*> escenario;
-	list<EventHandler*> eventos;
+
+
 	Game* game;
 public:
 	//GameState(list<GameObject*> escenario, list<EventHandler*> eventos, Game* game);
+	list<GameObject*> escenario;
+	list<EventHandler*> eventos;
 	virtual void update() = 0;
 	virtual void render() = 0;
 	virtual void handleEvent() = 0;

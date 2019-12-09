@@ -1,5 +1,10 @@
 #include "GameStateMachine.h"
 
+
+string GameStateMachine::currentState()
+{
+	return states.top()->getStateID();
+}
 void GameStateMachine::pushState(GameState* pState)
 {
 	states.push(pState);
