@@ -101,7 +101,7 @@ void Game::run() {
 }
 //metodo que actualiza el estado del juego
 void Game::update() {
-	
+	gameStateMachine->update();
 	generateBalloons();
 	
 	for (auto et = objects.begin(); et != objects.end(); ++et) {
@@ -121,7 +121,7 @@ void Game::update() {
 
 
 
-	//	m_pGameStateMachine->update();
+	//	gameStateMachine->update();
 
 }
 //metodo que renderiza todos los objetos del juego
@@ -129,6 +129,7 @@ void Game::render() const {
 	//
 	//limpiamos
 	SDL_RenderClear(renderer);
+	gameStateMachine->render();
 	//renderizado del fondo
 	SDL_Rect bk;
 	bk = { 0,0,WIN_WIDTH,WIN_HEIGHT };
@@ -142,7 +143,7 @@ void Game::render() const {
 	
 	SDL_RenderPresent(renderer);
 //	SDL_RenderClear(m_pRenderer);
-	//m_pGameStateMachine->render();
+	//gameStateMachine->render();
 	//SDL_RenderPresent(m_pRenderer);
 }
 //metodo que controla los eventos del juego

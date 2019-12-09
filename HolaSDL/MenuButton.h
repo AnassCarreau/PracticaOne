@@ -19,7 +19,7 @@ private:
 	Texture* textura;
 public:
 	void render();
-	void update();
+	virtual void update();
 	void handleEvent();
 	MenuButton(const LoaderParams* pParams,void (*callback));
 	virtual void draw();
