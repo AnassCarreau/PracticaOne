@@ -1,30 +1,27 @@
 #ifndef ARROWSGAMEOBJECT_H_
 #define ARROWSGAMEOBJECT_H_
 
-#include "GameObject.h";
 #include "Vector2D.h";
 #include "Texture.h";
-
 #include <fstream>
 #include <list>
-class Game;
-class ArrowsGameObject : public GameObject {
+#include "SDLGameObject.h"
+//class GameState;
+
+
+class ArrowsGameObject : public SDLGameObject {
 
 protected:
-	Point2D pos;
-	uint width, height;
 	Vector2D velocity;
-	Texture* textura;
-	Game* game;
 	
 	list<GameObject*>::iterator i;
-	ArrowsGameObject(Point2D pos, Vector2D vel, uint width, uint height, Texture* textura, Game* game);
+	ArrowsGameObject(Point2D pos, Vector2D vel, uint width, uint height, Texture* textura, GameState* state);
 	virtual ~ArrowsGameObject();
 public:
 	virtual void render();
 	virtual void update();
-	SDL_Rect getDestRect();
-	SDL_Rect getCollisionRect();
+	virtual SDL_Rect getDestRect();
+	virtual SDL_Rect getCollisionRect();
 	virtual void loadFromFile(ifstream& input);
 	virtual void saveToFile(ofstream& outuput);
 	void setItList(list<GameObject*>::iterator it);

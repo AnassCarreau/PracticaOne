@@ -11,7 +11,9 @@ class GameStateMachine
 {
 private:
 	stack<GameState*> states;
+	Game* game;
 public:
+	GameStateMachine(Game* game);
 	string currentState();
 	void pushState(GameState* pState);
 	void changeState(GameState* pState);
@@ -19,6 +21,7 @@ public:
 
 	void update();
 	void render();
+	void handleEvents(SDL_Event event);
 };
 #endif
 

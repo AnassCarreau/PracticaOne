@@ -1,6 +1,6 @@
 #include "GameStateMachine.h"
 
-
+GameStateMachine::GameStateMachine(Game* _game) : game(_game){}
 string GameStateMachine::currentState()
 {
 	return states.top()->getStateID();
@@ -8,18 +8,18 @@ string GameStateMachine::currentState()
 void GameStateMachine::pushState(GameState* pState)
 {
 	states.push(pState);
-	states.top()->onEnter();
+	//states.top()->onEnter();
 }
 
 void GameStateMachine::popState()
 {
 	if (!states.empty())
 	{
-		if (states.top()->onExit())
+		/*if (states.top()->onExit())
 		{
 			delete states.top();
 			states.pop();
-		}
+		}*/
 	}
 }
 
@@ -31,15 +31,15 @@ void GameStateMachine::changeState(GameState* pState)
 		{
 			return; // do nothing
 		}
-		if (states.top()->onExit())
+		/*if (states.top()->onExit())
 		{
 			delete states.top();
 			states.pop();
-		}
+		}*/
 	}
 	states.push(pState);
 	// initialise it
-	states.top()->onEnter();
+	/*states.top()->onEnter();*/
 }
 
 void GameStateMachine::update()
@@ -55,5 +55,12 @@ void GameStateMachine::render()
 	if (!states.empty())
 	{
 		states.top()->render();
+	}
+}
+
+void GameStateMachine::handleEvents(SDL_Event event) {
+	if (!states.empty())
+	{
+		states.top()->handleEvent(event);
 	}
 }

@@ -2,7 +2,7 @@
 #include "Game.h"
 
 const int time_frame = 200;
-Reward::Reward(Point2D esqIzq, Vector2D vel, uint ancho, uint alto, Texture* premio, Texture* _burbuje,Game* game, int _color):ArrowsGameObject(esqIzq, vel, ancho, alto, premio, game){
+Reward::Reward(Point2D esqIzq, Vector2D vel, uint ancho, uint alto, Texture* premio, Texture* _burbuje,GameState* state, int _color):ArrowsGameObject(esqIzq, vel, ancho, alto, premio, state){
 	burbuja = true;
 	burbuje = _burbuje;
 	estado = 0;
@@ -15,7 +15,7 @@ void Reward::update() {
 	
 	if (burbuja)
 	{
-		burbuja = !game->OnCollisionEnter(getDestRect(),i);
+		burbuja = !dynamic_cast<PlayState*>(state)->OnCollisionEnter(getDestRect(),i);
 	}
 	
 	if (pos.getY() >= 0 && pos.getY() <= WIN_HEIGHT  ) {
@@ -23,14 +23,14 @@ void Reward::update() {
 	}
 	else
 	{		
-		game->KillObject(i);
+		dynamic_cast<PlayState*>(state)->KillObject(i);
 	}
 }
 
 void Reward::render() {
 	SDL_Rect destRect = ArrowsGameObject::getCollisionRect();
-	destRect.x = destRect.x - width/4 ;
-	destRect.y = destRect.y - height/4 ;
+	destRect.x = destRect.x - w/4 ;
+	destRect.y = destRect.y - h/4 ;
 	textura->renderFrame(destRect, color, estado, 0, SDL_FLIP_NONE);
 	if (burbuja)
 	{
@@ -61,13 +61,13 @@ void Reward::handleEvent(SDL_Event& event)
 			power = true;
 			accion(true);
 			timeP = SDL_GetTicks();
-			height = 10;
+			h = 10;
 		}	
 	}
 	if (timeP + timePower < SDL_GetTicks() && power)
 	{
 		accion(false);
-		game->KillObject(i);
+		dynamic_cast<PlayState*>(state)->KillObject(i);
 
 	}
 	

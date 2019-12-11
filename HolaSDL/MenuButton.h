@@ -2,6 +2,8 @@
 #define MENUBUTTON_H_
 
 #include "SDLGameObject.h"
+#include "Game.h"
+
 using CallBackOnClick = void(Game* game);
 
 class MenuButton: public SDLGameObject
@@ -13,17 +15,10 @@ private:
 		MOUSE_OVER = 1,
 		CLICKED = 2
 	};
-	void (*m_callback)();
-	bool m_bReleased;
-
-	Texture* textura;
 public:
-	void render();
+	virtual void render();
 	virtual void update();
-	void handleEvent();
-	MenuButton(const LoaderParams* pParams,void (*callback));
-	virtual void draw();
-	virtual void clean();
+	virtual void handleEvents(SDL_Event event);
 };
 #endif
 

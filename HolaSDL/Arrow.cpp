@@ -5,7 +5,7 @@
 
 typedef unsigned int uint;
 
-Arrow::Arrow(Vector2D dir, Texture* flecha, Game* game, Point2D posIni, uint width, uint height) : ArrowsGameObject(posIni, dir, width, height, flecha, game)
+Arrow::Arrow(Vector2D dir, Texture* flecha, GameState* state, Point2D posIni, uint width, uint height) : ArrowsGameObject(posIni, dir, width, height, flecha, state)
 {
 	hits = 0;
 }
@@ -15,20 +15,20 @@ void Arrow::render() {
 }
 
 void Arrow::update() {	
-	if ( pos.getX()+width  < WIN_WIDTH)
+	if ( pos.getX()+w  < WIN_WIDTH)
 	{
 		ArrowsGameObject::update();
 	}
 	else
 	{
-		game->KillObject(i);
+		dynamic_cast<PlayState*>(state)->KillObject(i);
 	}
 }
 //metodo para saber el rect de la flecha
 SDL_Rect Arrow::getCollisionRect() {
 	SDL_Rect rectArrow = ArrowsGameObject::getCollisionRect();
-	rectArrow.x += 3 * width / 4;
-	rectArrow.w = width / 4;
+	rectArrow.x += 3 * w / 4;
+	rectArrow.w = w / 4;
 	return rectArrow;
 }
 int Arrow::getHits()

@@ -9,7 +9,7 @@ typedef unsigned int uint;
 
 };*/
 
-Bow::Bow(Point2D _pos, uint _w, uint _h, Vector2D _velocity, Texture* _texture, Texture* _textureC,Game*_game) : ArrowsGameObject(_pos, _velocity, _w, _h, _texture, _game) {
+Bow::Bow(Point2D _pos, uint _w, uint _h, Vector2D _velocity, Texture* _texture, Texture* _textureC,GameState*_state) : ArrowsGameObject(_pos, _velocity, _w, _h, _texture, _state) {
 	arcoC = _textureC;
 	aux = textura;
 	cargado = false;
@@ -32,7 +32,7 @@ Bow::Bow(Point2D _pos, uint _w, uint _h, Vector2D _velocity, Texture* _texture, 
  }
 
  void Bow::update() {
-	 if (pos.getY()+velocity.getY()+height <=600 && pos.getY() + velocity.getY()  >=0 && mov)
+	 if (pos.getY()+velocity.getY()+h <=600 && pos.getY() + velocity.getY()  >=0 && mov)
 	 {
 		 ArrowsGameObject::update();
 		 mov = false;
@@ -50,13 +50,13 @@ Bow::Bow(Point2D _pos, uint _w, uint _h, Vector2D _velocity, Texture* _texture, 
 			 break;
 		 case SDLK_LEFT:
 			 if (!cargado){
-				 game->CargaFlecha();
+				 dynamic_cast<PlayState*>(state)->CargaFlecha();
 				 cargado = true;
 			 }
 			 break;
 		 case SDLK_RIGHT:
 			 if (cargado) {
-				 game->DisparaFlecha(pos);
+				 dynamic_cast<PlayState*>(state)->DisparaFlecha(pos);
 				 cargado = false;
 			 }
 			 break;

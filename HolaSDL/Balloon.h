@@ -1,5 +1,5 @@
-#ifndef Balloon_H_
-#define Balloon_H_
+#ifndef BALLOON_H_
+#define BALLOON_H_
 
 #include "Texture.h"
 #include "ArrowsGameObject.h"
@@ -16,7 +16,7 @@ private:
 	bool explotado = false;
 	uint instPinchazo = 0;
 public:
-	Balloon(Point2D esqIzq, uint w, uint h, Vector2D velocidad, Texture* globo, bool explotado, uint instPinchazo, Game* game, int color);
+	Balloon(Point2D esqIzq, uint w, uint h, Vector2D velocidad, Texture* globo, bool explotado, uint instPinchazo, GameState* game, int color);
 	virtual void render();
 	virtual void update();
 	void loadFromFile(ifstream& input);

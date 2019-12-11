@@ -10,8 +10,7 @@ private:
 	static const std::string s_endID;
 	static void s_gameOverToMain();
 	static void s_restartPlay();
-	static const std::string s_gameOverID;
-	std::vector<GameObject*> m_gameObjects;
+	//static const std::string s_gameOverID;
 public:
 	virtual void update();
 	virtual void render();

@@ -16,8 +16,7 @@ private:
 	int timeP = 0;
 	int timePower = 6000;
 	public:
-		Reward();
-		Reward(Point2D esqIzq, Vector2D vel, uint ancho, uint alto, Texture* premio,Texture*burbuje, Game* game,int color );
+		Reward(Point2D esqIzq, Vector2D vel, uint ancho, uint alto, Texture* premio,Texture*burbuje, GameState* state,int color );
 		virtual void update();
 		virtual void render();
 	//	virtual ~Reward() {};

@@ -6,7 +6,7 @@
 typedef unsigned int uint;
 const int TIME_Animation = 600;
 
-Balloon::Balloon(Point2D esqIzq, uint w, uint h, Vector2D velocidad, Texture* globo, bool _explotado, uint _instPinchazo, Game* game, int _color) : ArrowsGameObject(esqIzq, velocidad, w, h, globo, game){
+Balloon::Balloon(Point2D esqIzq, uint w, uint h, Vector2D velocidad, Texture* globo, bool _explotado, uint _instPinchazo, GameState* state, int _color) : ArrowsGameObject(esqIzq, velocidad, w, h, globo, state){
 	explotado = _explotado;
 	instPinchazo = _instPinchazo;
 	color = _color;
@@ -29,7 +29,7 @@ void  Balloon::update() {
 	double j = pos.getY();
 
 	
-	if(!explotado)explotado = game->OnCollisionEnter(getDestRect(),this->i);
+	if(!explotado)explotado = dynamic_cast<PlayState*>(state)->OnCollisionEnter(getDestRect(),this->i);
 	if (explotado && instPinchazo == 0)
 	{
 		//game->AddPoints(POINTS,);
@@ -41,7 +41,7 @@ void  Balloon::update() {
 	}
 	else
 	{
-		game->KillObject(this->i);
+		dynamic_cast<PlayState*>(state)->KillObject(this->i);
 	}
 	
 	  
@@ -50,7 +50,7 @@ void  Balloon::update() {
 	}
 	if (estado>=7)
 	{
-		game->KillObject(this->i);
+		dynamic_cast<PlayState*>(state)->KillObject(this->i);
 	}
 }
 

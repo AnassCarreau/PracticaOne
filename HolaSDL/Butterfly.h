@@ -11,7 +11,7 @@ class Butterfly:public ArrowsGameObject
 		int vuelo = 0;
 		int instMuerte = 0;
 	public:	
-		Butterfly(Point2D esqIzq, Vector2D vel, uint ancho, uint alto, Texture* butterfly, Game* game);
+		Butterfly(Point2D esqIzq, Vector2D vel, uint ancho, uint alto, Texture* butterfly, GameState* game);
 		virtual void update();
 		virtual void render();
 		//virtual ~Butterfly() {};

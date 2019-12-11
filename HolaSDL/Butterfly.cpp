@@ -3,7 +3,7 @@
 
 const int TIME_Animation = 600;
 
-Butterfly::Butterfly(Point2D esqIzq, Vector2D vel, uint ancho, uint alto, Texture* butterfly, Game* game):ArrowsGameObject(esqIzq, vel, ancho, alto, butterfly, game){}
+Butterfly::Butterfly(Point2D esqIzq, Vector2D vel, uint ancho, uint alto, Texture* butterfly, GameState* state): ArrowsGameObject(esqIzq, vel, ancho, alto, butterfly, state){}
 
 void Butterfly::render() {
 	SDL_Rect destRect = ArrowsGameObject::getDestRect();
@@ -20,7 +20,7 @@ void Butterfly::update() {
 	double j = pos.getY();
 	
 
-	if(!muerte)muerte = game->OnCollisionEnter(getCollisionRect(),this->i);
+	if(!muerte)muerte = dynamic_cast<PlayState*>(state)->OnCollisionEnter(getCollisionRect(),this->i);
 	if (!muerte && vuelo < 9) {
 		vuelo++;
 		if (vuelo >= 9) {
@@ -35,8 +35,7 @@ void Butterfly::update() {
 	}
 	else if (SDL_GetTicks() > instMuerte + TIME_Animation) {
 
-		game->KillObject(this->i);
-
+		dynamic_cast<PlayState*>(state)->KillObject(this->i);
 	}
 	Pong();
 	ArrowsGameObject::update();

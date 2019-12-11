@@ -4,7 +4,7 @@
 #include "ArrowsError.h";
 #include <iostream>
 #include <string>
-
+#pragma
 class FileFormatError: public ArrowsError
 {
 	public:
