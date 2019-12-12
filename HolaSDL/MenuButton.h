@@ -15,6 +15,7 @@ private:
 		MOUSE_OVER = 1,
 		CLICKED = 2
 	};
+	button_state currentframe;
 public:
 	virtual void render();
 	virtual void update();

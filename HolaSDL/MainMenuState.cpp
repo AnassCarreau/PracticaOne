@@ -15,7 +15,6 @@ void MainMenuState::update()
 }
 void MainMenuState::render()
 {
-
 	/*for (GameObject* ob : m_gameObjects)
 	{
 		ob->render();
