@@ -22,8 +22,9 @@ Game::Game() {
 		textures[i] = new Texture(renderer, imags[i].filename, imags[i].nRows, imags[i].nCols);
 
 	}
+
 	gameStateMachine = new GameStateMachine(this);
-	gameStateMachine->changeState(new PlayState(this));
+	gameStateMachine->changeState(new MainMenuState(this));
 	
 	run();	
 }
@@ -82,7 +83,26 @@ void Game::handleEvents() {
 		}
 	}
 }
+void Game::Play() {
+	gameStateMachine->changeState(new PlayState(this));
+}
+void Game::Pause() {
+	gameStateMachine->changeState(new PauseState(this));
+}
+void Game::Exit() {
+	SDL_Quit();
+}
+void Game::Load() {
+	
+}
 
+void Game::Save() {
+
+}
+
+void Game::Menu() {
+	gameStateMachine->changeState(new MainMenuState(this));
+}
 Texture* Game::GetTexture(int index) {
 	return textures[index];
 }

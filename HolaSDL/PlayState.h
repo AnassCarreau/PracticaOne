@@ -15,6 +15,7 @@
 #include "FileNotFoundError.h"
 class FileFormatError;
 #include "SDLError.h"
+#include "MenuButton.h"
 #include <string>
 
 const uint NUM_Lvl = 6;
@@ -40,6 +41,7 @@ class PlayState:public GameState
 {
 private:
 	//variables de game que usaremos para el estado play
+	MenuButton* pauseButton;
 	int level = -1;
 	int puntuacion = 0;
 	uint NUM_BUTTERFLYS;
@@ -72,7 +74,7 @@ public:
 	~PlayState();
 	virtual void update();
 	virtual void render();
-	virtual void handleEvent(SDL_Event event);
+	virtual void handleEvent(SDL_Event& event);
 	//virtual bool onEnter();
 	//virtual bool onExit();
 	virtual std::string getStateID() const { return s_playID; };

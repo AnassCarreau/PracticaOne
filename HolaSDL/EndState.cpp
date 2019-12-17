@@ -3,61 +3,23 @@
 
 const std::string EndState::s_endID = "END";
 
+EndState::EndState(Game* game) : GameState(game) {
+	exitButton = new MenuButton(Point2D(300, 400), 200, 100, game->GetTexture(14), this, ExitCallback);
+	menuButton = new MenuButton(Point2D(300, 250), 200, 100, game->GetTexture(12), this, MenuCallback);
+	objects.push_back(exitButton);
+	eventHandler.push_back(exitButton);
+}
 void EndState::update()
 {
-	// nothing for now
+	exitButton->update();
+	menuButton->update();
 }
 void EndState::render()
 {
-	// nothing for now
+	exitButton->render();
+	menuButton->render();
 }
-void EndState::handleEvent() {
-
-}
-//bool EndState::onEnter()
-//{
-//
-//	/*if (!TheTextureManager::Instance()->load("assets/gameover.png",
-//		"gameovertext", TheGame::Instance()->getRenderer()))
-//	{
-//		return false;
-//	}
-//	if (!TheTextureManager::Instance()->load("assets/main.png",
-//		"mainbutton", TheGame::Instance()->getRenderer()))
-//	{
-//		return false;
-//	}
-//	if (!TheTextureManager::Instance()->load("assets/restart.png",
-//		"restartbutton", TheGame::Instance()->getRenderer()))
-//	{
-//		return false;
-//	}
-//	GameObject* gameOverText = new AnimatedGraphic(new
-//		LoaderParams(200, 100, 190, 30, "gameovertext", 2), 2);
-//	GameObject* button1 = new MenuButton(new LoaderParams(200, 200,
-//		200, 80, "mainbutton"), s_gameOverToMain);
-//	GameObject* button2 = new MenuButton(new LoaderParams(200, 300,
-//		200, 80, "restartbutton"), s_restartPlay);
-//	m_gameObjects.push_back(gameOverText);
-//	
-//	m_gameObjects.push_back(button1);
-//	m_gameObjects.push_back(button2);
-//	std::cout << "entering PauseState\n";
-//	return true;*/
-//}
-bool EndState::onExit()
-{
-	std::cout << "exiting EndState\n";
-	return true;
-}
-
-void EndState::s_gameOverToMain()
-{
-	/*TheGame::Instance()->getStateMachine()->changeState(new
-		MenuState());*/
-}
-void EndState::s_restartPlay()
-{
-	/*TheGame::Instance()->getStateMachine()->changeState(new
-		PlayState());*/
+void EndState::handleEvent(SDL_Event& event) {
+	exitButton->handleEvent(event);
+	menuButton->handleEvent(event);
 }

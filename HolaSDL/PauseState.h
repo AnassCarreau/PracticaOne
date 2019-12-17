@@ -7,14 +7,14 @@ class PauseState:public GameState
 {
 private:
 	static const std::string s_pauseID;
-	static void s_pauseToMain();
-	static void s_resumePlay();
-	list<GameObject*> m_gameObjects;
-
+	MenuButton* saveButton;
+	MenuButton* menuButton;
 public:
+	PauseState(Game* game);
+	~PauseState();
 	virtual void update();
 	virtual void render();
-	virtual void handleEvent();
+	virtual void handleEvent(SDL_Event& event);
 	//virtual bool onEnter();
 	//virtual bool onExit();
 

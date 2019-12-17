@@ -5,6 +5,7 @@
 #include "Vector2D.h";
 #include "Texture.h";
 class GameState;
+class MenuButton;
 
 class SDLGameObject: public GameObject
 {

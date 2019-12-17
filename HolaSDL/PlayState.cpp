@@ -4,8 +4,11 @@
 const std::string PlayState::s_playID = "PLAY";
 
 PlayState::PlayState(Game* _game) :GameState(_game) {
+	pauseButton = new MenuButton(Point2D(600, 0), 100, 100, game->GetTexture(10), this, PauseCallback);
 	scoreboard = new Scoreboard(Point2D(300, 0), 25, 35, game->GetTexture(5), game->GetTexture(4), NUM_FLECHAS);
 	objects.push_back(scoreboard);
+	//objects.push_back(pauseButton);
+	//eventHandler.push_back(pauseButton);
 	startBaloonTime = SDL_GetTicks();
 	int n;
 	ifstream input;
@@ -50,7 +53,7 @@ PlayState::~PlayState() {
 	eventHandler.clear();
 }
 void PlayState::update()
-{
+{	
 	generateBalloons();
 
 	for (auto et = objects.begin(); et != objects.end(); ++et) {
@@ -75,47 +78,21 @@ void PlayState::render()
 	bk = { 0,0,WIN_WIDTH,WIN_HEIGHT };
 
 	fondo->render(bk, SDL_FLIP_NONE);
+	pauseButton->render();
 	//renderizado arco
 	for (auto it = objects.begin(); it != objects.end(); ++it) {
 
 		(*it)->render();
 	}
 }
-void PlayState::handleEvent(SDL_Event event) {
+void PlayState::handleEvent(SDL_Event& event) {
 	
 	for (auto it = eventHandler.begin(); it != eventHandler.end(); ++it) {
 
 		(*it)->handleEvent(event);
 	}
+	pauseButton->handleEvent(event);
 }
-//bool PlayState::onEnter()
-//{
-//	/*if (!TheTextureManager::Instance()->load("assets/helicopter.png",
-//		"helicopter", TheGame::Instance()->getRenderer()))
-//	{
-//		return false;
-//	}
-//	GameObject* player = new Bow(new LoaderParams(100, 100, 128,
-//		55, "helicopter");
-//	escenario.push_back(player);
-//	std::cout << "entering PlayState\n";
-//	return true;*/
-//}
-
-
-//bool PlayState::onExit()
-//{
-//	/*for (GameObject* ob : escenario)
-//	{
-//		ob->clean();
-//	}
-//
-//	escenario.clear();
-//		TheTextureManager::Instance()
-//		->clearFromTextureMap("helicopter");
-//	std::cout << "exiting PlayState\n";
-//	return true;*/
-//}
 
 void PlayState::generateBalloons() {
 

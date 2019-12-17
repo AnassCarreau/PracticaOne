@@ -1,20 +1,24 @@
 #ifndef MAINMENUSTATE_H_
 #define MAINMENUSTATE_H_
 
-//#include "MenuButton.h"
-#include <string>
-#include "GameState.h"
+#include "GameState.h";
+#include "MenuButton.h";
+#include <string>;
 
 class MainMenuState: public GameState
 {
 private:
 	static const std::string s_menuID;
-	static void s_menuToPlay();
-	static void s_exitFromMenu();
+	MenuButton* playButton;
+	MenuButton* loadButton;
+	MenuButton* exitButton;
+
 public:
+	MainMenuState(Game* game);
+	~MainMenuState();
 	virtual void update();
 	virtual void render();
-	virtual void handleEvent();
+	virtual void handleEvent(SDL_Event& event);
 	/*virtual bool onEnter();
 	virtual bool onExit();*/
 
