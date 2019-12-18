@@ -24,15 +24,16 @@ Game::Game() {
 	}
 
 	gameStateMachine = new GameStateMachine(this);
-	gameStateMachine->changeState(new MainMenuState(this));
-	
+	MainMenuState* menu = new MainMenuState(this);
+	gameStateMachine->pushState(menu);
+	gameStateMachine->changeState(menu);
 	run();	
 }
 //metodo de destruccion de basura
 Game::~Game() {
 
 	for (uint i = 0; i < NUM_TEXTURES; i++) delete textures[i];
-
+	
 	SDL_DestroyRenderer(renderer);
 	SDL_DestroyWindow(window);
 	SDL_Quit();
@@ -77,32 +78,55 @@ void Game::handleEvents() {
 	while (SDL_PollEvent(&event) && !exit) {
 		if (event.type == SDL_QUIT) exit = true;
 		else {
-			/*GameStateMachine* gm = new GameStateMachine(this);
-			gm->currentState()->handleEvents(event);*/
-			gameStateMachine->handleEvents(event);
+			gameStateMachine->currentState()->handleEvent(event);
 		}
 	}
 }
 void Game::Play() {
-	gameStateMachine->changeState(new PlayState(this));
+	gameStateMachine->pushState(new PlayState(this, false));
 }
 void Game::Pause() {
-	gameStateMachine->changeState(new PauseState(this));
+	gameStateMachine->pushState(new PauseState(this));
 }
 void Game::Exit() {
 	SDL_Quit();
 }
 void Game::Load() {
-	
+	gameStateMachine->changeState(new PlayState(this, true));
 }
 
 void Game::Save() {
-
+	ofstream output;
+	gameStateMachine->popState();
+	dynamic_cast<PlayState*>(gameStateMachine->currentState())->saveToFile(output);
+	gameStateMachine->pushState(new PauseState(this));
+	cout << "Partida guardada";
+	SDL_Quit();
 }
 
 void Game::Menu() {
 	gameStateMachine->changeState(new MainMenuState(this));
 }
+void Game::GameOver() {
+	EndState* end = new EndState(this);
+	gameStateMachine->pushState(end);
+	gameStateMachine->changeState(end);
+	cout << "Has perdido";
+}
+
+void Game::YouWin() {
+	EndState* end = new EndState(this);
+	gameStateMachine->pushState(end);
+	gameStateMachine->changeState(end);
+	cout << "Has ganado";
+}
+
+void Game::ContinuePlaying() {
+	gameStateMachine->popState();
+	PlayState* plays = dynamic_cast<PlayState*>(gameStateMachine->currentState());
+	gameStateMachine->pushState(plays);
+}
+
 Texture* Game::GetTexture(int index) {
 	return textures[index];
 }

@@ -15,13 +15,6 @@ private:
 
 public:
 	MainMenuState(Game* game);
-	~MainMenuState();
-	virtual void update();
-	virtual void render();
-	virtual void handleEvent(SDL_Event& event);
-	/*virtual bool onEnter();
-	virtual bool onExit();*/
-
 	virtual std::string getStateID() const { return s_menuID; };
 };
 #endif

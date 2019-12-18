@@ -14,7 +14,7 @@ private:
 	Game* game;
 public:
 	GameStateMachine(Game* game);
-	string currentState();
+	GameState* currentState();
 	void pushState(GameState* pState);
 	void changeState(GameState* pState);
 	void popState();

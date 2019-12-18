@@ -13,6 +13,7 @@ void ExitCallback(Game* game);
 //callback para el juego
 void PauseCallback(Game* game);
 //callbacks para el menu pausa
+void ContinuePlayingCallback(Game* game);
 void SaveCallback(Game* game);
 void MenuCallback(Game* game);
 
@@ -24,7 +25,6 @@ private:
 public:
 	MenuButton(Point2D pos, uint w, uint h, Texture* normalButton, GameState* state, CallBackOnClick* call);
 	virtual void render();
-	virtual void update();
 	virtual void handleEvent(SDL_Event& event);
 };
 #endif

@@ -12,6 +12,7 @@
 #include "PlayState.h"
 #include "PauseState.h"
 #include "EndState.h"
+#include "PlayState.h"
 
 typedef unsigned int uint;
 
@@ -49,6 +50,9 @@ public:
 	void Load();
 	void Save();
 	void Menu();
+	void GameOver();
+	void YouWin();
+	void ContinuePlaying();
 	Texture* GetTexture(int index);
 	SDL_Renderer* GetRenderer();
 	GameStateMachine* getStateMachine() { return gameStateMachine; };

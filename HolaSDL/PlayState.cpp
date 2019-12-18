@@ -1,20 +1,20 @@
 #include "PlayState.h";
 #include "GameState.h";
+#include "checkML.h"
+
 
 const std::string PlayState::s_playID = "PLAY";
 
-PlayState::PlayState(Game* _game) :GameState(_game) {
-	pauseButton = new MenuButton(Point2D(600, 0), 100, 100, game->GetTexture(10), this, PauseCallback);
+PlayState::PlayState(Game* _game, bool _cargar) :GameState(_game) {
+	cargar = _cargar;
+	pauseButton = new MenuButton(Point2D(750, 0), 50, 50, game->GetTexture(10), this, PauseCallback);
 	scoreboard = new Scoreboard(Point2D(300, 0), 25, 35, game->GetTexture(5), game->GetTexture(4), NUM_FLECHAS);
 	objects.push_back(scoreboard);
-	//objects.push_back(pauseButton);
-	//eventHandler.push_back(pauseButton);
+	objects.push_back(pauseButton);
+	eventHandler.push_back(pauseButton);
 	startBaloonTime = SDL_GetTicks();
-	int n;
 	ifstream input;
-	cout << "Si quieres cargar una partida pulsa '1', si quieres empezar de cero pulsa cualquier numero:" << endl;
-	cin >> n;
-	if (n == 1) {
+	if (cargar) {
 		loadFroamFile(input);
 	}
 	else
@@ -25,14 +25,11 @@ PlayState::PlayState(Game* _game) :GameState(_game) {
 		eventHandler.push_back(arco);
 		NewLvl(0);
 	}
-	/*int g;
-	ofstream output;
-	cout << "Si quieres guardar la partida pulsa '2'" << endl;
-	cin >> g;
-	if (g == 2) saveToFile(output);*/
+
 };
 
 PlayState::~PlayState() {
+	GameState::~GameState();
 	for (auto it = objects.begin(); it != objects.end(); ++it)
 	{
 		objectsToErase.push_back(*it);
@@ -54,21 +51,26 @@ PlayState::~PlayState() {
 }
 void PlayState::update()
 {	
-	generateBalloons();
-
-	for (auto et = objects.begin(); et != objects.end(); ++et) {
-		(*et)->update();
+	if (level >= 5) {
+		game->YouWin();
 	}
-
-	for (auto it = objectsToErase.begin(); it != objectsToErase.end(); ++it)
-	{
-		objects.remove(*it);
-		eventHandler.remove(dynamic_cast<EventHandler*>(*it));
-		arrows.remove(dynamic_cast<Arrow*>(*it));
-		delete* it;
+	if (NUM_BUTTERFLYS <= 0 || NUM_FLECHAS <= 0) {
+		game->GameOver();
 	}
+	else {
+		GameState::update();
+		generateBalloons();
 
-	objectsToErase.clear();
+		for (auto it = objectsToErase.begin(); it != objectsToErase.end(); ++it)
+		{
+			objects.remove(*it);
+			eventHandler.remove(dynamic_cast<EventHandler*>(*it));
+			arrows.remove(dynamic_cast<Arrow*>(*it));
+			delete* it;
+		}
+
+		objectsToErase.clear();
+	}
 }
 
 void PlayState::render()
@@ -78,21 +80,9 @@ void PlayState::render()
 	bk = { 0,0,WIN_WIDTH,WIN_HEIGHT };
 
 	fondo->render(bk, SDL_FLIP_NONE);
-	pauseButton->render();
-	//renderizado arco
-	for (auto it = objects.begin(); it != objects.end(); ++it) {
-
-		(*it)->render();
-	}
+	GameState::render();
 }
-void PlayState::handleEvent(SDL_Event& event) {
-	
-	for (auto it = eventHandler.begin(); it != eventHandler.end(); ++it) {
 
-		(*it)->handleEvent(event);
-	}
-	pauseButton->handleEvent(event);
-}
 
 void PlayState::generateBalloons() {
 
@@ -234,7 +224,7 @@ void PlayState::NewLvl(int _level)
 	level = _level;
 	fondo = new Texture(game->GetRenderer(), niveles[level].filename, 1, 1);
 	for (auto it = objects.begin(); it != objects.end(); ++it) {
-		if (dynamic_cast<Bow*>(*it) == nullptr && dynamic_cast<Scoreboard*>(*it) == nullptr)
+		if (dynamic_cast<Bow*>(*it) == nullptr && dynamic_cast<Scoreboard*>(*it) == nullptr && dynamic_cast<MenuButton*>(*it) == nullptr)
 		{
 			objectsToErase.push_back(*it);
 			eventHandler.remove(dynamic_cast<Reward*>(*it));
@@ -264,7 +254,9 @@ void PlayState::saveToFile(ofstream& output) {
 		int objetos = objects.size();
 		output << objetos << endl;
 		for (auto it = ++objects.begin(); it != objects.end(); ++it) {
-			dynamic_cast<ArrowsGameObject*>(*it)->saveToFile(output);
+			if (dynamic_cast<MenuButton*>(*it) == nullptr) {
+				dynamic_cast<ArrowsGameObject*>(*it)->saveToFile(output);
+			}
 		}
 	}
 	output.close();

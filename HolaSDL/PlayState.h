@@ -39,9 +39,10 @@ struct Lvl
 
 class PlayState:public GameState
 {
-private:
+protected:
 	//variables de game que usaremos para el estado play
 	MenuButton* pauseButton;
+	bool cargar;
 	int level = -1;
 	int puntuacion = 0;
 	uint NUM_BUTTERFLYS;
@@ -70,13 +71,10 @@ private:
 	//id del estado play
 	static const std::string s_playID;
 public:
-	PlayState(Game* game);
+	PlayState(Game* game, bool cargar);
 	~PlayState();
 	virtual void update();
 	virtual void render();
-	virtual void handleEvent(SDL_Event& event);
-	//virtual bool onEnter();
-	//virtual bool onExit();
 	virtual std::string getStateID() const { return s_playID; };
 	void CargaFlecha();
 	void DisparaFlecha(Point2D pos);

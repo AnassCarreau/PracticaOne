@@ -1,5 +1,7 @@
 #include "Reward.h"
 #include "Game.h"
+#include "checkML.h"
+
 
 const int time_frame = 200;
 Reward::Reward(Point2D esqIzq, Vector2D vel, uint ancho, uint alto, Texture* premio, Texture* _burbuje,GameState* state, int _color):ArrowsGameObject(esqIzq, vel, ancho, alto, premio, state){

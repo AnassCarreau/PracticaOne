@@ -4,10 +4,6 @@
 #include <iostream>
 typedef unsigned int uint;
 
-/*Bow::~Bow() 
-{
-
-};*/
 
 Bow::Bow(Point2D _pos, uint _w, uint _h, Vector2D _velocity, Texture* _texture, Texture* _textureC,GameState*_state) : ArrowsGameObject(_pos, _velocity, _w, _h, _texture, _state) {
 	arcoC = _textureC;

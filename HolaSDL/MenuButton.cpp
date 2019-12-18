@@ -1,5 +1,7 @@
 #include "MenuButton.h"
 #include "SDLGameObject.h"
+#include "checkML.h"
+
 MenuButton::MenuButton(Point2D pos, uint w, uint h, Texture* Button, GameState* state, CallBackOnClick* _call)
 	: SDLGameObject(pos, w, h, Button, state) { callbackbutton = _call; }
 
@@ -19,16 +21,16 @@ void LoadCallback(Game* game) {
 	game->Load();
 }
 
+void ContinuePlayingCallback(Game* game) {
+	game->ContinuePlaying();
+}
+
 void SaveCallback(Game* game) {
 	game->Save();
 }
 
 void MenuCallback(Game* game) {
 	game->Menu();
-}
-
-void MenuButton::update() {
-	
 }
 
 void MenuButton::render() {

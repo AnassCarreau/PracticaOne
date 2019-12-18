@@ -1,5 +1,7 @@
 #include "GiveMeArrows.h"
 #include"Game.h"
+#include "checkML.h"
+
 
 GiveMeArrows::GiveMeArrows(Point2D esqIzq, Vector2D vel, uint ancho, uint alto, Texture* premio, Texture* _burbuje, GameState* state, int _color) :Reward(esqIzq, vel, ancho, alto, premio, _burbuje, state, _color) {}
 

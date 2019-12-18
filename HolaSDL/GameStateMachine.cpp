@@ -1,25 +1,23 @@
 #include "GameStateMachine.h"
+#include "checkML.h"
+
 
 GameStateMachine::GameStateMachine(Game* _game) : game(_game){}
-string GameStateMachine::currentState()
+GameState* GameStateMachine::currentState()
 {
-	return states.top()->getStateID();
+	return states.top();
 }
 void GameStateMachine::pushState(GameState* pState)
 {
 	states.push(pState);
-	//states.top()->onEnter();
 }
 
 void GameStateMachine::popState()
 {
 	if (!states.empty())
 	{
-		/*if (states.top()->onExit())
-		{
-			delete states.top();
-			states.pop();
-		}*/
+		delete states.top();
+		states.pop();
 	}
 }
 
@@ -31,15 +29,8 @@ void GameStateMachine::changeState(GameState* pState)
 		{
 			return; // do nothing
 		}
-		/*if (states.top()->onExit())
-		{
-			delete states.top();
-			states.pop();
-		}*/
 	}
 	states.push(pState);
-	// initialise it
-	/*states.top()->onEnter();*/
 }
 
 void GameStateMachine::update()

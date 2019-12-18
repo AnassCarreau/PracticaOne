@@ -9,15 +9,10 @@ private:
 	static const std::string s_pauseID;
 	MenuButton* saveButton;
 	MenuButton* menuButton;
+	MenuButton* continuePlayButton;
 public:
 	PauseState(Game* game);
 	~PauseState();
-	virtual void update();
-	virtual void render();
-	virtual void handleEvent(SDL_Event& event);
-	//virtual bool onEnter();
-	//virtual bool onExit();
-
 	virtual std::string getStateID() const { return s_pauseID; };
 };
 #endif
