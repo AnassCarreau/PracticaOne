@@ -1,39 +1,51 @@
 #include "Arrow.h"
+#include "Game.h"
 #include "checkML.h"
 
 
 typedef unsigned int uint;
 
-
-Arrow::Arrow():esqIzq(), width(), height(), velocity(),flecha(){}
-
-Arrow::Arrow(Point2D esqIzq, uint width, uint height, Vector2D vel, Texture* textura)
-	: esqIzq(esqIzq), width(width), height(height), velocity(vel), flecha(textura) {}
-void Arrow::render() {
-	SDL_Rect destRect;
-	destRect.x = esqIzq.getX();
-	destRect.y = esqIzq.getY();
-	destRect.w = width;
-	destRect.h = height;
-	flecha->renderFrame(destRect, 0, 0, 0, SDL_FLIP_NONE);
+Arrow::Arrow(Vector2D dir, Texture* flecha, GameState* state, Point2D posIni, uint width, uint height) : ArrowsGameObject(posIni, dir, width, height, flecha, state)
+{
+	hits = 0;
 }
 
-bool Arrow::update() {	
-	esqIzq=esqIzq.operator+(velocity);
-	int i=	esqIzq.getX();
-	return i > 800;
-	
+void Arrow::render() {
+	ArrowsGameObject::render();
+}
+
+void Arrow::update() {	
+	if ( pos.getX()+w  < WIN_WIDTH)
+	{
+		ArrowsGameObject::update();
+	}
+	else
+	{
+		dynamic_cast<PlayState*>(state)->KillObject(i);
+	}
 }
 //metodo para saber el rect de la flecha
-SDL_Rect* Arrow::PosFlecha() {
-
-	int pointX = esqIzq.getX() + 3*width / 4;
-	int pointY = esqIzq.getY();
-	int arrowwidth = width / 4;
-	int arrowheight = height;
-	SDL_Rect* rectArrow = new SDL_Rect{ pointX, pointY, arrowwidth,arrowheight};
-	
+SDL_Rect Arrow::getCollisionRect() {
+	SDL_Rect rectArrow = ArrowsGameObject::getCollisionRect();
+	rectArrow.x += 3 * w / 4;
+	rectArrow.w = w / 4;
 	return rectArrow;
-
 }
+int Arrow::getHits()
+{
+	hits++;
+	return hits;
+}
+
+void Arrow::saveToFile(ofstream& output) {
+	output << "Flecha" <<endl;
+	ArrowsGameObject::saveToFile(output);
+}
+
+void Arrow::loadFromFile(ifstream& input) {
+	ArrowsGameObject::loadFromFile(input);
+}
+
+
+
 

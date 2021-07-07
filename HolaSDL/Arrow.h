@@ -1,24 +1,22 @@
 #ifndef ARROW_H_
 #define ARROW_H_
 
-#include "Vector2D.h"
 #include "Texture.h"
+#include "ArrowsGameObject.h";
+
 class Game;
-class Arrow
-{
+class Arrow: public ArrowsGameObject{
 private:
-	Point2D esqIzq;
-	uint width, height;
-	Vector2D velocity;
-	Texture* flecha;
-	
+	int hits=0;
 public:
-	Arrow();
-	Arrow(Point2D esqIzq, uint width, uint height, Vector2D vel, Texture* textura);
-	void render();
-	bool update();
-	SDL_Rect* PosFlecha();
-	
+	int getHits();
+	Arrow(Vector2D dir, Texture* flecha, GameState* state, Point2D posIni, uint width, uint height);
+	virtual void render();
+	virtual void update();
+	virtual ~Arrow() {};
+	SDL_Rect getCollisionRect();
+	void loadFromFile(ifstream& input);
+	void saveToFile(ofstream& outuput);
 };
 #endif
 

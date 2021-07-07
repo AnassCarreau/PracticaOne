@@ -2,8 +2,7 @@
 #include "checkML.h"
 
 using namespace std;
-Scoreboard::Scoreboard() :esqIzq(), ancho(), alto(), points(),arrows(),numberarrows() {	
-}
+
 Scoreboard::Scoreboard(Point2D esqIzq, uint ancho, uint alto, Texture* points, Texture* arrows,int numberArrows) : esqIzq(esqIzq), ancho(ancho), alto(alto), points(points), arrows(arrows),numberarrows(numberArrows)
 {
 	digitos.push_back(0);
@@ -12,10 +11,12 @@ Scoreboard::Scoreboard(Point2D esqIzq, uint ancho, uint alto, Texture* points, T
 
 
 //restamos flechas
-void Scoreboard::Arrows()
+void Scoreboard::Arrows(int arrow)
 {
-	numberarrows--;
+	numberarrows = arrow;
 }
+
+
 //metodo que controla los puntos
 void Scoreboard::Puntuacion(int score)
 {
@@ -29,8 +30,6 @@ void Scoreboard::Puntuacion(int score)
 		score = score / 10;
 	}
 	digitos.push_back(score);
-
-
 }
 void Scoreboard::render(){
 	
@@ -48,13 +47,12 @@ void Scoreboard::render(){
 	}
     for (int i = 0; i < numberarrows; i++)
 	{
-		
 		destRect.x -= 25;
-
 		arrows->render(destRect, SDL_FLIP_NONE);
 	}
 		
 }
+void Scoreboard::update(){}
 
 
 
